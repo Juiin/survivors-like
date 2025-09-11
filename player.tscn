@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=3 uid="uid://clpgcnfbjrsnu"]
+
+[ext_resource type="Texture2D" uid="uid://nfvegxqw3veh" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Resource" uid="uid://b06iv7m0juebf" path="res://player_stats.tres" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cqdkhs6c67bqp" path="res://camera_2d.tscn" id="3_1jxqw"]
+[ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="4_dw050"]
+[ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="5_1jxqw"]
+[ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_2hs0m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
+shader = ExtResource("4_dw050")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_onrkg")
+stats = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="Camera2D" parent="." groups=["camera"] instance=ExtResource("3_1jxqw")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_b26j0")
+sprite_frames = SubResource("SpriteFrames_hqtel")
+frame_progress = 0.283952
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.78
+autostart = true
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_sweqy")
+metadata/_custom_type_script = "uid://dot06i76bu1x0"
+
+[node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_1jxqw")]
+offset_left = -35.0
+offset_top = -28.0
+offset_right = 36.0
+offset_bottom = -18.0
+health_component = NodePath("../HealthComponent")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_1jxqw")
+
+[node name="HurtboxComponent" type="Node" parent="Hurtbox" node_paths=PackedStringArray("health_component", "area_2d")]
+unique_name_in_owner = true
+script = ExtResource("5_2hs0m")
+health_component = NodePath("../../HealthComponent")
+area_2d = NodePath("..")
+metadata/_custom_type_script = "uid://cxkixd4an1ym"

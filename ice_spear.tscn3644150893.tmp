@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbkrxu70p1q8c"]
+
+[ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="1_5x8l0"]
+[ext_resource type="Script" uid="uid://dgkcfq5tv4w2n" path="res://ice_spear.gd" id="1_vloot"]
+[ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="3_fhspa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vloot"]
+size = Vector2(5.77756, 30.1853)
+
+[node name="IceSpear" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_vloot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.30383
+texture = ExtResource("1_5x8l0")
+
+[node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
+script = ExtResource("3_fhspa")
+damage = null
+area_2d = NodePath("..")
+metadata/_custom_type_script = "uid://bey62ij0i7l6l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0124161, 1.47415)
+rotation = 1.59698
+scale = Vector2(1.22, 1.22)
+shape = SubResource("RectangleShape2D_vloot")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
