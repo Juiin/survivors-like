@@ -8,6 +8,7 @@ const lifetime := 1
 var sfx = preload("res://Audio/new_ice_spear.mp3")
 
 func _ready() -> void:
+	print("ice_spear")
 	Utils.play_audio(sfx, 0.7, 0.9)
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 

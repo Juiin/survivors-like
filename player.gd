@@ -21,10 +21,19 @@ enum form {
 
 var current_form: form = form.ST
 
+var ice_spear_stored := 0
+var max_ice_spear_stored := 5
+var ice_spear_store_time := 2.0
+
 func _ready() -> void:
 	attack_timer.wait_time = 0.5
 	attack_timer.start()
 	attack_timer.timeout.connect(attack)
+
+	create_tween().set_loops().tween_callback(
+		func():
+			update_ice_spear_stored(ice_spear_stored + 1)
+	).set_delay(ice_spear_store_time)
 	
 	health_component.connect("died", died)
 	health_component.connect("took_damage", flash)
@@ -49,8 +58,23 @@ func _physics_process(delta):
 		Effects.spawn_damage_text(5, get_global_mouse_position())
 
 func attack():
-	var inst = get_attack_scene().instantiate()
-	get_tree().current_scene.add_child(inst)
+
+	var atk_count = 1;
+	if current_form == form.ST && ice_spear_stored > 0:
+		atk_count = ice_spear_stored + 1
+		update_ice_spear_stored(0)
+
+	for i in atk_count:
+		create_tween().tween_callback(
+			func():
+				var inst=get_attack_scene().instantiate()
+				get_tree().current_scene.add_child(inst)
+				).set_delay(i * 0.2)
+		
+
+func update_ice_spear_stored(amount :int) -> void:
+	ice_spear_stored = min(amount, max_ice_spear_stored)
+	%StoredIceSpears.update_count(ice_spear_stored)
 
 func died() -> void:
 	print("player died")
