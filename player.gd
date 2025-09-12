@@ -12,6 +12,8 @@ var spd := 150.0
 var ice_spear_scene := preload("res://ice_spear.tscn")
 var explosion_scene := preload("res://explosion.tscn")
 
+var ice_spear_upgrades: Array[Upgrade] = []
+var explosion_upgrades: Array[Upgrade] = []
 
 enum form {
 	ST,
@@ -58,7 +60,6 @@ func _physics_process(delta):
 		Effects.spawn_damage_text(5, get_global_mouse_position())
 
 func attack():
-
 	var atk_count = 1;
 	if current_form == form.ST && ice_spear_stored > 0:
 		atk_count = ice_spear_stored + 1
@@ -68,11 +69,16 @@ func attack():
 		create_tween().tween_callback(
 			func():
 				var inst=get_attack_scene().instantiate()
+				
 				get_tree().current_scene.add_child(inst)
+				
+				var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
+				for upgrade in upgrade_array.size():
+					upgrade_array[upgrade].apply_upgrade(inst)
 				).set_delay(i * 0.2)
 		
 
-func update_ice_spear_stored(amount :int) -> void:
+func update_ice_spear_stored(amount: int) -> void:
 	ice_spear_stored = min(amount, max_ice_spear_stored)
 	%StoredIceSpears.update_count(ice_spear_stored)
 

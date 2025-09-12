@@ -140,6 +140,7 @@ frame = 15
 frame_progress = 1.0
 
 [node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
+unique_name_in_owner = true
 script = ExtResource("2_j4sxf")
 damage = 5.0
 area_2d = NodePath("..")

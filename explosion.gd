@@ -1,6 +1,11 @@
-extends Area2D
-
+extends Attack
 @onready var sprite := $AnimatedSprite2D
+
+@onready var base_scale := scale
+var aoe_increase := 0.0:
+	set(value):
+		aoe_increase = value
+		scale = base_scale * (1 + value)
 
 var sfx = preload("res://Audio/aoe_form_explosion.mp3")
 
