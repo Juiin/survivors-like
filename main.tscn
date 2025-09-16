@@ -44,6 +44,17 @@ visible = false
 offset_left = -176.0
 offset_right = 16.0
 
+[node name="UpgradeMenuExplosion" parent="UIRoot" instance=ExtResource("4_1bvp3")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_right = 176.0
+grow_horizontal = 0
+type = 1
+
 [node name="IceSpearMoneyUI" type="Panel" parent="UIRoot"]
 offset_left = 7.0
 offset_top = 7.0

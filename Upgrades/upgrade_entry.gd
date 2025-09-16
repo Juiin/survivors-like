@@ -1,9 +1,14 @@
 class_name UpgradeEntry
 extends PanelContainer
 
-var upgrade: Upgrade
+var upgrade_array: Array[Upgrade]
+var upgrade_index : int
+
+var upgrade : Upgrade
 
 func _ready() -> void:
+	upgrade = upgrade_array[upgrade_index]
+
 	%UpgradeName.text = upgrade.upgrade_name
 	%UpgradeDescription.text = upgrade.upgrade_description
 	%BuyButton.text = str(upgrade.cost)
@@ -18,6 +23,7 @@ func _on_buy_button_pressed() -> void:
 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost):
 		Game.adjust_money(upgrade.type, -upgrade.cost)
 		Game.add_upgrade_to_player(upgrade.type, upgrade)
+		upgrade_array.remove_at(upgrade_index)
 		queue_free()
 
 func update_button_status():

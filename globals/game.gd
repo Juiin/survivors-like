@@ -12,7 +12,7 @@ var ice_spear_money: int = 22:
 	set(new_value):
 		ice_spear_money = max(new_value, 0)
 		ice_spear_money_changed.emit()
-var explosion_money: int = 0:
+var explosion_money: int = 12:
 	set(new_value):
 		explosion_money = max(new_value, 0)
 		explosion_money_changed.emit()
