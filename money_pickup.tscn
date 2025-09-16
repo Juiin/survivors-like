@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://004srmttjgor"]
+
+[ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="1_4ww35"]
+[ext_resource type="Script" uid="uid://w8y7v5n4bujx" path="res://money_pickup.gd" id="1_66pdi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66pdi"]
+radius = 6.0
+
+[node name="MoneyPickup" type="Area2D" groups=["money"]]
+script = ExtResource("1_66pdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_66pdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4ww35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=11 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://clpgcnfbjrsnu" path="res://player.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cp418s64xv6h1" path="res://enemy.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ctg8irc8cdaya" path="res://Upgrades/upgrade_menu.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dw881ysp05qpo" path="res://ui_root.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://baa1qf33nv4lr" path="res://ice_spear_money_ui.gd" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://004srmttjgor" path="res://money_pickup.tscn" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="6_272bh"]
+[ext_resource type="Script" uid="uid://68y26l8jhco6" path="res://explosion_money_ui.gd" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://btkg6565k5g1x" path="res://Textures/Items/Gems/Gem_red.png" id="9_4c57u"]
 
 [node name="Main" type="Node2D"]
 
@@ -27,3 +34,114 @@ position = Vector2(116, 129)
 
 [node name="Enemy3" parent="YSort" instance=ExtResource("3_h2yge")]
 position = Vector2(141, -71)
+
+[node name="UIRoot" type="CanvasLayer" parent="."]
+script = ExtResource("4_lquwl")
+
+[node name="UpgradeMenuIceSpear" parent="UIRoot" instance=ExtResource("4_1bvp3")]
+unique_name_in_owner = true
+visible = false
+offset_left = -176.0
+offset_right = 16.0
+
+[node name="IceSpearMoneyUI" type="Panel" parent="UIRoot"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 64.0
+offset_bottom = 38.0
+script = ExtResource("6_5vw27")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIRoot/IceSpearMoneyUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -20.0
+offset_right = 27.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIRoot/IceSpearMoneyUI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="IceSpearMoneyText" type="Label" parent="UIRoot/IceSpearMoneyUI/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12222"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIRoot/IceSpearMoneyUI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_272bh")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="ExplosionMoneyUI" type="Panel" parent="UIRoot"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 37.0
+grow_horizontal = 0
+script = ExtResource("8_kek77")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIRoot/ExplosionMoneyUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -20.0
+offset_right = 27.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIRoot/ExplosionMoneyUI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ExplosionMoneyText" type="Label" parent="UIRoot/ExplosionMoneyUI/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12222"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIRoot/ExplosionMoneyUI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_4c57u")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="MoneyPickup" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(-54, 156)
+
+[node name="MoneyPickup2" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(21, 152)
+
+[node name="MoneyPickup3" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(-84, 125)
+
+[node name="MoneyPickup4" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(-129, 212)

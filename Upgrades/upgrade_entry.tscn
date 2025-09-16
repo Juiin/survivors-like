@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb6hdn57c6afn"]
+
+[ext_resource type="Texture2D" uid="uid://btkg6565k5g1x" path="res://Textures/Items/Gems/Gem_red.png" id="1_8ep8s"]
+[ext_resource type="Script" uid="uid://djmnqcr52qkhw" path="res://Upgrades/upgrade_entry.gd" id="1_16uid"]
+[ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="2_s8w7n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.446236, 0.581841, 0.939634, 0.65098)
+
+[node name="UpgradeEntry" type="PanelContainer"]
+custom_minimum_size = Vector2(172, 30)
+theme_override_styles/panel = SubResource("StyleBoxFlat_272bh")
+script = ExtResource("1_16uid")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade Name"
+
+[node name="UpgradeDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 11
+text = "Upgrade descption might be longdfs dfdsfsdfdsfdsfsdad
+dsadasdasdasdasdasdsadassd"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BuyButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+theme_override_icons/icon = ExtResource("1_8ep8s")
+text = "300"
+icon = ExtResource("2_s8w7n")
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

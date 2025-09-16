@@ -97,3 +97,7 @@ func get_attack_scene() -> PackedScene:
 func flash() -> void:
 	anim.material.set_shader_parameter("hit_flash_on", true)
 	create_tween().tween_callback(func(): anim.material.set_shader_parameter("hit_flash_on", false)).set_delay(0.2)
+
+func _on_pickup_radius_area_entered(area:Area2D) -> void:
+	if area.is_in_group("money"):
+		area.target = self
