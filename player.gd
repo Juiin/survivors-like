@@ -5,15 +5,19 @@ var spd := 150.0
 
 @onready var anim := $AnimatedSprite2D
 @onready var attack_timer := $AttackTimer
+var base_atk_spd := 1.5
+var atk_spd_increase := 0.0
 @onready var health_component := $HealthComponent
-
+@onready var pickup_radius: Area2D = $PickupRadius
+var pickup_radius_increase := 0.0
 @export var stats: Stats
 
-var ice_spear_scene := preload("res://ice_spear.tscn")
-var explosion_scene := preload("res://explosion.tscn")
+var ice_spear_scene := load("res://ice_spear.tscn")
+var explosion_scene := load("res://explosion.tscn")
 
 var ice_spear_upgrades: Array[Upgrade] = []
 var explosion_upgrades: Array[Upgrade] = []
+var global_upgrades: Array[Upgrade] = []
 
 enum form {
 	ST,
@@ -28,7 +32,7 @@ var max_ice_spear_stored := 5
 var ice_spear_store_time := 2.0
 
 func _ready() -> void:
-	attack_timer.wait_time = 0.5
+	attack_timer.wait_time = base_atk_spd / (1 + atk_spd_increase)
 	attack_timer.start()
 	attack_timer.timeout.connect(attack)
 
@@ -98,6 +102,6 @@ func flash() -> void:
 	anim.material.set_shader_parameter("hit_flash_on", true)
 	create_tween().tween_callback(func(): anim.material.set_shader_parameter("hit_flash_on", false)).set_delay(0.2)
 
-func _on_pickup_radius_area_entered(area:Area2D) -> void:
+func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("money"):
 		area.target = self

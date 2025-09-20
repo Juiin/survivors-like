@@ -7,7 +7,7 @@ extends Upgrade
 func _init():
     upgrade_name = "AoE Increase"
     upgrade_description = "Increased Area of Effect"
-    cost = 15
+    cost = [15, 20, 25, 30, 35, 40, 45, 50]
     type = Enums.UpgradeType.EXPLOSION
 
 func apply_upgrade(attack: Attack) -> void:

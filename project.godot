@@ -13,7 +13,6 @@ config_version=5
 config/name="Survivors like"
 run/main_scene="uid://c176l7d8g3owa"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

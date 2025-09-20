@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://b06iv7m0juebf"]
 
-[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://stats.gd" id="1_l3p20"]
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_l3p20"]
 
 [resource]
 script = ExtResource("1_l3p20")

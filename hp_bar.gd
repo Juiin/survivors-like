@@ -9,3 +9,4 @@ func _ready() -> void:
 
 func update_value() -> void:
 	value = health_component.health
+	max_value = health_component.max_health

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://celomulc5ljtm"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_wpjdg"]
+[ext_resource type="SpriteFrames" uid="uid://cccgufv2h22ou" path="res://Textures/Enemy/ameba_red.tres" id="2_wf5xa"]
+
+[resource]
+script = ExtResource("1_wpjdg")
+max_health = 100.0
+sprite = ExtResource("2_wf5xa")
+type = 1
+drop_value = 20
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

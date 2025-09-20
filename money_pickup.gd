@@ -14,10 +14,11 @@ var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
+	scale *= 1.5
 	match type:
 		Enums.UpgradeType.ICE_SPEAR:
 			sprite_2d.texture = ice_spear_sprite
-		Enums.UpgradeType.EXPLOSION:	
+		Enums.UpgradeType.EXPLOSION:
 			sprite_2d.texture = explosion_sprite
 
 func _physics_process(delta: float) -> void:

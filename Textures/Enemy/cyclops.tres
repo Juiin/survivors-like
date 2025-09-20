@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dvx0et8ufve0a"]
+
+[ext_resource type="Texture2D" uid="uid://cn1mg03aj450i" path="res://Textures/Enemy/cyclops.png" id="1_0k7yj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wpeh"]
+atlas = ExtResource("1_0k7yj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10f6q"]
+atlas = ExtResource("1_0k7yj")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wpeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10f6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]

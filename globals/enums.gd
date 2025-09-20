@@ -2,5 +2,6 @@ extends Node
 
 enum UpgradeType {
     ICE_SPEAR,
-    EXPLOSION
+    EXPLOSION,
+    GLOBAL
 }

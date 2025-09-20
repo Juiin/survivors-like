@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=9 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://clpgcnfbjrsnu" path="res://player.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cp418s64xv6h1" path="res://enemy.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ctg8irc8cdaya" path="res://Upgrades/upgrade_menu.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dw881ysp05qpo" path="res://ui_root.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://baa1qf33nv4lr" path="res://ice_spear_money_ui.gd" id="6_5vw27"]
-[ext_resource type="PackedScene" uid="uid://004srmttjgor" path="res://money_pickup.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="6_272bh"]
 [ext_resource type="Script" uid="uid://68y26l8jhco6" path="res://explosion_money_ui.gd" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://btkg6565k5g1x" path="res://Textures/Items/Gems/Gem_red.png" id="9_4c57u"]
@@ -22,20 +20,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
 
 [node name="YSort" type="Node2D" parent="."]
+unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="Player" parent="YSort" instance=ExtResource("2_h2yge")]
 
-[node name="Enemy" parent="YSort" instance=ExtResource("3_h2yge")]
-position = Vector2(-115, 51)
-
-[node name="Enemy2" parent="YSort" instance=ExtResource("3_h2yge")]
-position = Vector2(116, 129)
-
-[node name="Enemy3" parent="YSort" instance=ExtResource("3_h2yge")]
-position = Vector2(141, -71)
-
 [node name="UIRoot" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("4_lquwl")
 
 [node name="UpgradeMenuIceSpear" parent="UIRoot" instance=ExtResource("4_1bvp3")]
@@ -54,6 +45,21 @@ offset_left = -16.0
 offset_right = 176.0
 grow_horizontal = 0
 type = 1
+
+[node name="UpgradeMenuGlobal" parent="UIRoot" instance=ExtResource("4_1bvp3")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -96.0
+offset_top = -130.0
+offset_right = 96.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 1
+type = 2
 
 [node name="IceSpearMoneyUI" type="Panel" parent="UIRoot"]
 offset_left = 7.0
@@ -144,15 +150,3 @@ size_flags_horizontal = 3
 texture = ExtResource("9_4c57u")
 expand_mode = 2
 stretch_mode = 3
-
-[node name="MoneyPickup" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(-54, 156)
-
-[node name="MoneyPickup2" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(21, 152)
-
-[node name="MoneyPickup3" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(-84, 125)
-
-[node name="MoneyPickup4" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(-129, 212)

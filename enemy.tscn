@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp418s64xv6h1"]
+[gd_scene load_steps=13 format=3 uid="uid://cp418s64xv6h1"]
 
 [ext_resource type="Script" uid="uid://r6n2qnlng8q0" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dxje2ac05oewc" path="res://Textures/Enemy/kolbold_weak.png" id="1_7k104"]
-[ext_resource type="Resource" uid="uid://nwinpeixrn5e" path="res://enemy_stats.tres" id="2_qi2p4"]
 [ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="3_hb8ge"]
+[ext_resource type="SpriteFrames" uid="uid://q57ig3da6667" path="res://Textures/Enemy/ameba.tres" id="3_wujgv"]
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_iifgy"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="6_3yqyl"]
@@ -16,29 +15,6 @@ resource_local_to_scene = true
 shader = ExtResource("3_hb8ge")
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
-atlas = ExtResource("1_7k104")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
-atlas = ExtResource("1_7k104")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
-resource_local_to_scene = true
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4gyqm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qi2p4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3yqyl"]
 
@@ -53,7 +29,6 @@ collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_4gyqm")
-stats = ExtResource("2_qi2p4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
@@ -62,13 +37,10 @@ shape = SubResource("CapsuleShape2D_epg4t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_e1ltt")
 position = Vector2(0, -16)
-sprite_frames = SubResource("SpriteFrames_iifgy")
-frame = 1
-frame_progress = 0.216107
+sprite_frames = ExtResource("3_wujgv")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_iifgy")
-max_health = 5555.0
 metadata/_custom_type_script = "uid://dot06i76bu1x0"
 
 [node name="Hurtbox" type="Area2D" parent="."]

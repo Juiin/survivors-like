@@ -144,6 +144,7 @@ unique_name_in_owner = true
 script = ExtResource("2_j4sxf")
 damage = 5.0
 area_2d = NodePath("..")
+hit_limit = 9999
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

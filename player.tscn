@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=18 format=3 uid="uid://clpgcnfbjrsnu"]
 
 [ext_resource type="Texture2D" uid="uid://nfvegxqw3veh" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
@@ -12,6 +12,12 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 11.0
+
+[sub_resource type="Curve2D" id="Curve2D_b26j0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -361, -212, 0, 0, 0, 0, 371, -210, 0, 0, 0, 0, 379, 236, 0, 0, 0, 0, -368, 244, 0, 0, 0, 0, -376, -213, 0, 0, 0, 0, -361, -212)
+}
+point_count = 6
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
 shader = ExtResource("4_dw050")
@@ -56,6 +62,16 @@ position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_i3pqv")
 
 [node name="Camera2D" parent="." groups=["camera"] instance=ExtResource("3_1jxqw")]
+
+[node name="Path2D" type="Path2D" parent="Camera2D"]
+position = Vector2(0, -11.2123)
+scale = Vector2(1, 1.04595)
+curve = SubResource("Curve2D_b26j0")
+
+[node name="SpawnPathFollow" type="PathFollow2D" parent="Camera2D/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-361, -212)
+rotation = 0.00273223
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b26j0")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://mqxo6m340w6f"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_0aw0q"]
+[ext_resource type="SpriteFrames" uid="uid://dvx0et8ufve0a" path="res://Textures/Enemy/cyclops.tres" id="2_1yqti"]
+
+[resource]
+script = ExtResource("1_0aw0q")
+max_health = 50.0
+sprite = ExtResource("2_1yqti")
+type = 1
+drop_value = 15
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

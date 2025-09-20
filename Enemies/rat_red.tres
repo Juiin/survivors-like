@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://c2djgnqkv4a10"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_2ip8j"]
+[ext_resource type="SpriteFrames" uid="uid://cflrv3al1odc1" path="res://Textures/Enemy/rat_strong.tres" id="2_v1s5h"]
+
+[resource]
+script = ExtResource("1_2ip8j")
+max_health = 25.0
+sprite = ExtResource("2_v1s5h")
+type = 1
+drop_value = 10
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

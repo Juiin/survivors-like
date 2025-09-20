@@ -5,12 +5,14 @@ extends CharacterBody2D
 @onready var health_component := $HealthComponent
 var spd := 50.0
 
-@export var stats: Stats : set = set_stats
+var stats: Stats
 
-func set_stats(value: Stats) -> void:
-    stats = value.create_instance()
 
 func _ready() -> void:
+    stats = stats.create_instance()
+    health_component.max_health = stats.max_health * Game.enemy_health_multi
+    anim.sprite_frames = stats.sprite
+
     health_component.connect("died", die)
     health_component.connect("took_damage", flash)
 
@@ -27,6 +29,11 @@ func _physics_process(delta):
         anim.stop()
 
 func die() -> void:
+    var inst = preload("res://money_pickup.tscn").instantiate()
+    inst.global_position = global_position
+    inst.value = stats.drop_value
+    inst.type = stats.type
+    get_tree().current_scene.get_node("%YSort").add_child(inst)
     queue_free()
 
 func flash() -> void:
