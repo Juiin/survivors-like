@@ -1,6 +1,6 @@
 extends Attack
 
-
+var ice_spear_pickup := preload("uid://dof70rjknoom5")
 @onready var sprite := $Sprite2D
 const lifetime := 1
 
@@ -20,6 +20,8 @@ var ice_spear_proj_spd_increase := 0.0:
 
 var return_percent = 0.0
 var has_returned := false
+
+var drop_percent := 0.0
 
 var sfx = preload("res://Audio/new_ice_spear.mp3")
 
@@ -47,13 +49,17 @@ func die() -> void:
 		# hitbox_component.hit_list.clear()
 		hitbox_component.hit_count = 0
 	else:
+		if randf() <= drop_percent:
+			var ice_spear = ice_spear_pickup.instantiate()
+			ice_spear.position = position	
+			get_tree().current_scene.add_child(ice_spear)
 		queue_free()
 	# var tween = create_tween()
 	# tween.tween_property(sprite, "modulate:a", 0, 0.5)
 	# tween.tween_callback(queue_free)
 
 func start_die_tween():
-	if die_tween: 
+	if die_tween:
 		die_tween.kill()
 
 	die_tween = create_tween()

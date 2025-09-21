@@ -75,7 +75,7 @@ func add_upgrade_to_player(type: Enums.UpgradeType, upgrade: Upgrade):
 			player.explosion_upgrades.append(upgrade)
 		Enums.UpgradeType.GLOBAL:
 			player.global_upgrades.append(upgrade)
-			upgrade.apply_player_upgrade(player)
+	upgrade.apply_player_upgrade(player)
 
 func spawn_enemy():
 	var enemy_stats: Stats

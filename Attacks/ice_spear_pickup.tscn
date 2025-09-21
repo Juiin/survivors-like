@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dof70rjknoom5"]
+
+[ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="1_wg41q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhcem"]
+radius = 20.0
+
+[node name="IceSpearPickup" type="Area2D" groups=["ice_spear_pickup"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -2.33874
+texture = ExtResource("1_wg41q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -2.33874
+shape = SubResource("CircleShape2D_nhcem")

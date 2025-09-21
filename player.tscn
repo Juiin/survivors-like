@@ -108,18 +108,21 @@ metadata/_custom_type_script = "uid://cxkixd4an1ym"
 
 [node name="StoredIceSpears" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
+layout_direction = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
+offset_left = -220.0
 offset_top = -50.0
-offset_right = 130.0
+offset_right = 662.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+alignment = 1
 script = ExtResource("9_b26j0")
 
 [node name="PickupRadius" type="Area2D" parent="."]

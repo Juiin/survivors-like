@@ -13,4 +13,5 @@ func update_count(amount: int) -> void:
 		var tex_rect = TextureRect.new()
 		tex_rect.texture = ice_spear_texture
 		tex_rect.stretch_mode = TextureRect.STRETCH_KEEP
+		tex_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		add_child(tex_rect)

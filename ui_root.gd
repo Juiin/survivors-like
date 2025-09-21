@@ -10,6 +10,8 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	ProjSpdUpgrade.new(),
 	PierceUpgrade.new(),
 	ReturnUpgrade.new(),
+	MaxStoredIceSpearsUpgrade.new(),
+	IceSpearDropPickupUpgrade.new(),
 ]
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),

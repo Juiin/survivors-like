@@ -27,9 +27,9 @@ enum form {
 
 var current_form: form = form.ST
 
-var ice_spear_stored := 0
-var max_ice_spear_stored := 5
-var ice_spear_store_time := 2.0
+var ice_spear_stored := 0: set = update_ice_spear_stored
+var max_ice_spear_stored := 3
+var ice_spear_store_time := 2.5
 
 func _ready() -> void:
 	attack_timer.wait_time = base_atk_spd / (1 + atk_spd_increase)
@@ -67,7 +67,7 @@ func attack():
 	var atk_count = 1;
 	if current_form == form.ST && ice_spear_stored > 0:
 		atk_count = ice_spear_stored + 1
-		update_ice_spear_stored(0)
+		ice_spear_stored = 0
 
 	for i in atk_count:
 		create_tween().tween_callback(
@@ -79,7 +79,7 @@ func attack():
 				var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
 				for upgrade in upgrade_array.size():
 					upgrade_array[upgrade].apply_upgrade(inst)
-				).set_delay(i * 0.2)
+				).set_delay(i * (0.2 - i * 0.01))
 		
 
 func update_ice_spear_stored(amount: int) -> void:
@@ -105,3 +105,6 @@ func flash() -> void:
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("money"):
 		area.target = self
+	if area.is_in_group("ice_spear_pickup"):
+		ice_spear_stored += 1
+		area.queue_free()
