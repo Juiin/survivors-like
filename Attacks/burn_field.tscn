@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4gbastswnud"]
+
+[ext_resource type="Script" uid="uid://hvicbgkvhce2" path="res://Attacks/burn_field.gd" id="1_26qwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ly3gc"]
+radius = 15.0
+
+[node name="BurnField" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_26qwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ly3gc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

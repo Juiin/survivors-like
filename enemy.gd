@@ -7,8 +7,14 @@ var spd := 50.0
 
 var stats: Stats
 var frozen := false
+var burning := false
+var burning_timer := 0.0
 
 const FREEZE_DURATION := 5.0
+const BURN_DURATION := 5.0
+
+var anti_burn_tween: Tween
+var anti_freeze_tween: Tween
 
 
 func _ready() -> void:
@@ -35,6 +41,13 @@ func _physics_process(delta):
 	else:
 		anim.stop()
 
+	if burning && burning_timer <= 0.0:
+		health_component.take_damage(Game.burn_damage)
+		Effects.spawn_damage_text(Game.burn_damage, global_position, Color.ORANGE)
+		burning_timer = 1.0
+	else:
+		burning_timer -= delta
+
 func die() -> void:
 	var inst = preload("res://money_pickup.tscn").instantiate()
 	inst.global_position = global_position
@@ -48,6 +61,10 @@ func die() -> void:
 	get_tree().current_scene.get_node("%YSort").add_child(death_inst)
 	death_inst.set_sprite(stats.sprite)
 	death_inst.play()
+
+	var death_sfx_path = "res://Audio/sndEnemyDeath%s.mp3" % str(randi_range(1, 3))
+	print("death_sfx_path: ", death_sfx_path)
+	Utils.play_audio(load(death_sfx_path), 0.9, 1.1, 0.1)
 	queue_free()
 
 func flash() -> void:
@@ -56,7 +73,18 @@ func flash() -> void:
 
 func freeze() -> void:
 	frozen = true
+	if anti_freeze_tween && anti_burn_tween.is_running():
+		anti_freeze_tween.kill()
+
 	anim.modulate = Color(0, 0, 1, 1)
-	var anti_freeze_tween = create_tween()
+	anti_freeze_tween = create_tween()
 	anti_freeze_tween.tween_property(anim, "modulate", Color(1, 1, 1, 1), FREEZE_DURATION)
 	anti_freeze_tween.tween_callback(func(): frozen = false)
+
+func burn() -> void:
+	burning = true
+
+	if anti_burn_tween && anti_burn_tween.is_running():
+		anti_burn_tween.kill()
+	anti_burn_tween = create_tween()
+	anti_burn_tween.tween_callback(func(): burning = false).set_delay(BURN_DURATION)

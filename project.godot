@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 Effects="*res://globals/effects.gd"
 Game="*res://globals/game.gd"
 Enums="*res://globals/enums.gd"
+SfxDeconflicter="*res://globals/sfx-deconflicter.gd"
 
 [display]
 

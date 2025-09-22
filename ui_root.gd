@@ -16,13 +16,7 @@ var ice_spear_upgrades: Array[Upgrade] = [
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	AoeUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
-	GlobalAtkSpdUpgrade.new(),
+	BurnDamageUpgrade.new()
 ]
 var global_upgrades: Array[Upgrade] = [
 	GlobalPickupRadius.new(),
