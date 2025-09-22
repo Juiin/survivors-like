@@ -17,6 +17,10 @@ var money_multi := 1.0
 var enemy_health_multi := 1.0
 
 var burn_damage := 1.0
+var burn_nova_on_kill = 0.0
+var burn_nova_scale_multi := 1.0
+
+var freeze_nova_on_kill = 0.0
 
 var spawn_timer = Timer
 var to_spawn_enemies: Array[Stats] = [RAT_WEAK_STATS]

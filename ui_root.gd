@@ -12,11 +12,15 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	ReturnUpgrade.new(),
 	MaxStoredIceSpearsUpgrade.new(),
 	IceSpearDropPickupUpgrade.new(),
+	FreezeNovaOnPickupUpgrade.new(),
+	FreezeNovaOnKillUpgrade.new()
 ]
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	AoeUpgrade.new(),
-	BurnDamageUpgrade.new()
+	BurnDamageUpgrade.new(),
+	BurnNovaOnKillUpgrade.new(),
+	BurnNovaAoEUpgrade.new()
 ]
 var global_upgrades: Array[Upgrade] = [
 	GlobalPickupRadius.new(),

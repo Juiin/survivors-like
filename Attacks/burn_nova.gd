@@ -11,9 +11,8 @@ func _ready() -> void:
 	timer.connect("timeout", queue_free)
 	add_child(timer)
 	timer.start()
-	Utils.play_audio(preload("res://Audio/sndIceNova.mp3"), 0.9, 1.1, 0.2)
-	Utils.play_audio(preload("res://Audio/SoundEffect/ice.wav"), 0.9, 1.1)
+	
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("freeze"):
-		body.freeze()
+	if body.has_method("burn"):
+		body.burn()

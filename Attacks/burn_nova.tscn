@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://0bpjqia01nj6"]
+[gd_scene load_steps=6 format=3 uid="uid://bafb2ixsn63vg"]
 
-[ext_resource type="Script" uid="uid://dl3m0qmocuh3d" path="res://Attacks/freeze_nova.gd" id="1_japkh"]
-[ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="1_ujpwk"]
+[ext_resource type="Script" uid="uid://biidj34344o85" path="res://Attacks/burn_nova.gd" id="1_u2pxw"]
+[ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="2_b6xwr"]
 
 [sub_resource type="Curve" id="Curve_japkh"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -9,20 +9,20 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_ng6dq"]
 offsets = PackedFloat32Array(0, 0.824766, 1)
-colors = PackedColorArray(0, 0, 0.654902, 1, 0.0235294, 1, 1, 1, 0.0235294, 1, 1, 0)
+colors = PackedColorArray(0.937255, 0.458824, 0, 1, 0.937255, 0.458824, 0, 1, 0.937255, 0.458824, 0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_japkh"]
 radius = 48.0
 
-[node name="FreezeNova" type="Area2D"]
+[node name="BurnNova" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_japkh")
+script = ExtResource("1_u2pxw")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 1
-texture = ExtResource("1_ujpwk")
+texture = ExtResource("2_b6xwr")
 lifetime = 0.5
 one_shot = true
 local_coords = true
