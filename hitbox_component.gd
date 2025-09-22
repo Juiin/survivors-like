@@ -19,6 +19,9 @@ func _ready() -> void:
 
 	
 func _process(delta: float) -> void:
+	if "frozen" in owner and owner.frozen:
+		return
+
 	update_hit_list()
 
 	var overlapping_areas := area_2d.get_overlapping_areas()
@@ -30,7 +33,8 @@ func _process(delta: float) -> void:
 
 		if is_in_hit_list:
 			continue
-
+		
+		
 		var hurtbox_child = Utils.get_child_by_class(area, HurtboxComponent)
 		if hurtbox_child:
 			var dmg_color = Color.WHITE

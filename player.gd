@@ -14,6 +14,9 @@ var pickup_radius_increase := 0.0
 
 var ice_spear_scene := load("res://ice_spear.tscn")
 var explosion_scene := load("res://explosion.tscn")
+var freeze_nova_scene := load("res://Attacks/freeze_nova.tscn")
+
+var freeze_nova_on_pickup := false
 
 var ice_spear_upgrades: Array[Upgrade] = []
 var explosion_upgrades: Array[Upgrade] = []
@@ -80,8 +83,8 @@ func attack():
 				for upgrade in upgrade_array.size():
 					upgrade_array[upgrade].apply_upgrade(inst)
 				).set_delay(i * (0.2 - i * 0.01))
-		
 
+	
 func update_ice_spear_stored(amount: int) -> void:
 	ice_spear_stored = min(amount, max_ice_spear_stored)
 	%StoredIceSpears.update_count(ice_spear_stored)
@@ -105,6 +108,12 @@ func flash() -> void:
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("money"):
 		area.target = self
+	
 	if area.is_in_group("ice_spear_pickup"):
+		Utils.play_audio(preload("res://Audio/ice_spear_pickup.ogg"), 0.9, 1.1)
 		ice_spear_stored += 1
+		if freeze_nova_on_pickup:
+			var nova = freeze_nova_scene.instantiate()
+			nova.position = area.global_position
+			get_tree().current_scene.add_child(nova)
 		area.queue_free()

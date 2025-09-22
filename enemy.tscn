@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://r6n2qnlng8q0" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="3_hb8ge"]
-[ext_resource type="SpriteFrames" uid="uid://q57ig3da6667" path="res://Textures/Enemy/ameba.tres" id="3_wujgv"]
+[ext_resource type="SpriteFrames" uid="uid://b2axoikcpgdhu" path="res://Textures/Enemy/rat_weak.tres" id="3_wujgv"]
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_iifgy"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="6_3yqyl"]
@@ -31,6 +31,7 @@ motion_mode = 1
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_epg4t")
 
@@ -44,6 +45,7 @@ script = ExtResource("4_iifgy")
 metadata/_custom_type_script = "uid://dot06i76bu1x0"
 
 [node name="Hurtbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -60,6 +62,7 @@ metadata/_custom_type_script = "uid://cxkixd4an1ym"
 [node name="Timer" type="Timer" parent="Hurtbox"]
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="HitboxComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("area_2d")]

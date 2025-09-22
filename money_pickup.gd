@@ -28,6 +28,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		Utils.play_audio(pickup_snd, 0.9, 1.1)
+		Utils.play_audio(pickup_snd, 0.9, 1.1, 0.5)
 		Game.adjust_money(type, value)
 		queue_free()
