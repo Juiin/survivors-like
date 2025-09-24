@@ -5,6 +5,8 @@ extends Resource
 @export var sprite: SpriteFrames
 @export var type: Enums.UpgradeType
 @export var drop_value: int
+@export var spd: float = 50
+@export var knockback_recovery:= 3.5
 var health: float
 
 

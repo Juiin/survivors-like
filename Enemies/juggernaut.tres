@@ -9,4 +9,6 @@ max_health = 50.0
 sprite = ExtResource("2_nro5p")
 type = 0
 drop_value = 15
+spd = 40.0
+knockback_recovery = 5.5
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

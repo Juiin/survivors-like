@@ -11,8 +11,6 @@ func _ready() -> void:
 
 	%UpgradeName.text = upgrade.upgrade_name
 	%UpgradeDescription.text = upgrade.upgrade_description
-	print("upgrade: ", upgrade)
-	print("upgrade.level: ", upgrade.level)
 	%BuyButton.text = str(upgrade.cost[upgrade.level])
 	match upgrade.type:
 		Enums.UpgradeType.ICE_SPEAR:
@@ -29,10 +27,11 @@ func _ready() -> void:
 
 func _on_buy_button_pressed() -> void:
 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]):
-		Game.adjust_money(upgrade.type, -upgrade.cost[upgrade.level])
+		upgrade.level += 1
+		Game.adjust_money(upgrade.type, -upgrade.cost[upgrade.level-1])
 		Game.add_upgrade_to_player(upgrade.type, upgrade)
 		Utils.play_audio(preload("res://Audio/purchase.ogg"), 0.9, 1.1)
-		upgrade.level += 1
+		
 		if upgrade.level > upgrade.cost.size() - 1:
 			# upgrade_array.remove_at(upgrade_index)
 			queue_free()

@@ -16,11 +16,16 @@ const BURN_DURATION := 3.0
 var anti_burn_tween: Tween
 var anti_freeze_tween: Tween
 
+var knockback = Vector2.ZERO
+var knockback_recovery := 3.5
+
 
 func _ready() -> void:
 	stats = stats.create_instance()
 	health_component.max_health = stats.max_health * Game.enemy_health_multi
 	anim.sprite_frames = stats.sprite
+	spd = stats.spd
+	knockback_recovery = stats.knockback_recovery
 
 	health_component.connect("died", die)
 	health_component.connect("took_damage", flash)
@@ -30,6 +35,11 @@ func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	var dir = global_position.direction_to(player.global_position)
 	velocity = dir * spd
+
+	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
+	if knockback.length() > 0.0:
+		velocity = knockback
+	
 
 	if frozen:
 		velocity = Vector2.ZERO
@@ -47,6 +57,10 @@ func _physics_process(delta):
 		burning_timer = 1.0
 	else:
 		burning_timer -= delta
+
+func get_knockbacked(dir: Vector2, amount: float) -> void:
+	knockback = dir * amount
+	print("knockback: ", knockback)
 
 func die() -> void:
 	var inst = preload("res://money_pickup.tscn").instantiate()

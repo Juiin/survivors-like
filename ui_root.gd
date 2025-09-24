@@ -7,24 +7,29 @@ extends CanvasLayer
 
 var ice_spear_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
+	PercentDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
 	ProjSpdUpgrade.new(),
 	PierceUpgrade.new(),
 	ReturnUpgrade.new(),
 	MaxStoredIceSpearsUpgrade.new(),
 	IceSpearDropPickupUpgrade.new(),
 	FreezeNovaOnPickupUpgrade.new(),
-	FreezeNovaOnKillUpgrade.new()
+	FreezeNovaOnKillUpgrade.new(),
+	KnockbackUpgrade.new(Enums.UpgradeType.ICE_SPEAR)
 ]
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
+	PercentDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	AoeUpgrade.new(),
 	BurnDamageUpgrade.new(),
 	BurnNovaOnKillUpgrade.new(),
-	BurnNovaAoEUpgrade.new()
+	BurnNovaAoEUpgrade.new(),
+	KnockbackUpgrade.new(Enums.UpgradeType.EXPLOSION)
 ]
 var global_upgrades: Array[Upgrade] = [
 	GlobalPickupRadius.new(),
 	GlobalAtkSpdUpgrade.new(),
+	GlobalMovSpdUpgrade.new(),
 	GlobalLootUpgrade.new()
 	
 ]

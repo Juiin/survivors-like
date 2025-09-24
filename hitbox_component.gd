@@ -1,10 +1,22 @@
 class_name HitboxComponent
 extends Node
 
-@export var damage := 10.0
+@export var base_damage := 10.0
 @export var hit_list_clear_time: float = 0
 @export var area_2d: Area2D
 @export var hit_limit: int = 1
+@export var knockback_amount := 0.0
+
+var flat_dmg := 0.0:
+	set(value):
+		flat_dmg = value
+		recalc_dmg()
+var percent_dmg := 0.0:
+	set(value):
+		percent_dmg = value
+		recalc_dmg()
+
+var damage: float
 
 var hit_count := 0
 
@@ -12,10 +24,11 @@ var player_in_area_timer: float = 0.0
 
 var hit_list: Array[Dictionary] = []
 
-
 func _ready() -> void:
-	# area_2d.connect("area_entered", _on_area_entered)
-	pass
+	recalc_dmg()
+
+func recalc_dmg() -> void:
+	damage = (base_damage + flat_dmg) * (1 + percent_dmg)
 
 	
 func _process(delta: float) -> void:
@@ -47,16 +60,14 @@ func _process(delta: float) -> void:
 				Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
 				dmg_color = Color.RED
 			hurtbox_child.take_damage(damage)
+			if hurtbox_child.owner.has_method("get_knockbacked"):
+				hurtbox_child.owner.get_knockbacked(area_2d.global_position.direction_to(area.global_position), knockback_amount)
 			Effects.spawn_damage_text(damage, area.global_position, dmg_color)
 			hit_list.append({"area": area, "time": Time.get_ticks_msec() / 1000.0})
 			hit_count += 1
 			if hit_count >= hit_limit:
 				owner.die()
 
-# func _on_area_entered(area: Area2D) -> void:
-# 	var hurtbox_child = Utils.get_child_by_class(area, HurtboxComponent)
-# 	if hurtbox_child:
-# 		hurtbox_child.take_damage(damage)
 
 func update_hit_list() -> void:
 	if hit_list_clear_time <= 0:

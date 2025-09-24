@@ -67,7 +67,6 @@ collision_layer = 2
 
 [node name="HitboxComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("area_2d")]
 script = ExtResource("6_3yqyl")
-damage = 5.0
 hit_list_clear_time = 2.0
 area_2d = NodePath("..")
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"
