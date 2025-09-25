@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var explosion_upgrade_menu := %UpgradeMenuExplosion
 @onready var global_upgrade_menu := %UpgradeMenuGlobal
 
+var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
+var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
 var ice_spear_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
 	PercentDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
@@ -12,26 +14,29 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	PierceUpgrade.new(),
 	ReturnUpgrade.new(),
 	MaxStoredIceSpearsUpgrade.new(),
-	IceSpearDropPickupUpgrade.new(),
-	FreezeNovaOnPickupUpgrade.new(),
-	FreezeNovaOnKillUpgrade.new(),
+	ice_spear_drop_pickup,
+	freeze_nova_on_pickup,
+	FreezeNovaOnKillUpgrade.new(freeze_nova_on_pickup),
 	KnockbackUpgrade.new(Enums.UpgradeType.ICE_SPEAR)
 ]
+
+var burn_nova_on_kill: Upgrade = BurnNovaOnKillUpgrade.new()
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	PercentDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	AoeUpgrade.new(),
 	BurnDamageUpgrade.new(),
-	BurnNovaOnKillUpgrade.new(),
-	BurnNovaAoEUpgrade.new(),
+	burn_nova_on_kill,
+	BurnNovaAoEUpgrade.new(burn_nova_on_kill),
 	KnockbackUpgrade.new(Enums.UpgradeType.EXPLOSION)
 ]
+var global_loot : Upgrade = GlobalLootUpgrade.new()
 var global_upgrades: Array[Upgrade] = [
 	GlobalPickupRadius.new(),
 	GlobalAtkSpdUpgrade.new(),
 	GlobalMovSpdUpgrade.new(),
-	GlobalLootUpgrade.new()
-	
+	global_loot,
+	SpawnBossUpgrade.new(global_loot)
 ]
 
 func _unhandled_input(event: InputEvent) -> void:

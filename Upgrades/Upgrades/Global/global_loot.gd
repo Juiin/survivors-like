@@ -8,7 +8,7 @@ var enemy_multi_increase := 0.5
 func _init():
 	upgrade_name = "Risky Loot"
 	upgrade_description = "Monsters have 50% more Health and drop 30% more Gems"
-	cost = [5, 10, 15]
+	cost = [5, 10, 15, 20, 25, 30, 35, 1, 1, 10]
 	type = Enums.UpgradeType.GLOBAL
 
 func apply_player_upgrade(player: Player) -> void:

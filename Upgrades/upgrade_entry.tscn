@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="2_s8w7n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
-bg_color = Color(0.446236, 0.581841, 0.939634, 0.65098)
+resource_local_to_scene = true
+resource_name = "panel"
+bg_color = Color(0.563092, 0.542529, 0.650186, 0.65098)
 
 [node name="UpgradeEntry" type="PanelContainer"]
 custom_minimum_size = Vector2(172, 30)
