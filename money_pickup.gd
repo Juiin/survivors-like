@@ -31,3 +31,6 @@ func _on_body_entered(body: Node2D) -> void:
 		Utils.play_audio(pickup_snd, 0.9, 1.1, 0.35)
 		Game.adjust_money(type, value)
 		queue_free()
+
+func enable_shine():
+	sprite_2d.material.set_shader_parameter("shine_color", Color(1, 1, 1, 0.25))

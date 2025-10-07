@@ -10,4 +10,5 @@ sprite = ExtResource("2_uj8ju")
 type = 0
 spd = 50.0
 knockback_recovery = 3.5
+health_drop_chance = 0
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

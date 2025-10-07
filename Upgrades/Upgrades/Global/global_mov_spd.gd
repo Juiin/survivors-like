@@ -1,12 +1,12 @@
 class_name GlobalMovSpdUpgrade
 extends Upgrade
 
-@export var increase := 10
+@export var increase := 5
 
 
 func _init():
 	upgrade_name = "Movement Speed"
-	upgrade_description = "Increases Movement Speed by 10%"
+	upgrade_description = "Increases Movement Speed by 5%"
 	cost = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
 	type = Enums.UpgradeType.GLOBAL
 	endless = true

@@ -1,12 +1,12 @@
 class_name GlobalAtkSpdUpgrade
 extends Upgrade
 
-@export var atk_spd_increase_percent := 0.2
+@export var atk_spd_increase_percent := 0.1
 
 
 func _init():
 	upgrade_name = "Attack Speed"
-	upgrade_description = "Increases Attack Speed by 20%"
+	upgrade_description = "Increases Attack Speed by 10%"
 	cost = [50, 100, 150, 250, 500, 600, 700, 800, 1000]
 	type = Enums.UpgradeType.GLOBAL
 	endless = true

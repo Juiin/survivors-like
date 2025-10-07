@@ -4,7 +4,7 @@ extends Node
 @export var base_damage := 10.0
 @export var hit_list_clear_time: float = 0
 @export var area_2d: Area2D
-@export var hit_limit: int = 1
+@export var hit_limit: int = -1
 @export var knockback_amount := 0.0
 
 var flat_dmg := 0.0:
@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 			Effects.spawn_damage_text(damage, area.global_position, dmg_color)
 			hit_list.append({"area": area, "time": Time.get_ticks_msec() / 1000.0})
 			hit_count += 1
-			if hit_count >= hit_limit:
+			if hit_limit != -1 && hit_count >= hit_limit:
 				owner.die()
 
 

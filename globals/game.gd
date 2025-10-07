@@ -54,6 +54,9 @@ const ARMOUR_BLUE_STATS = preload("res://Enemies/armour_blue.tres")
 const WIZARD_BLUE_STATS = preload("res://Enemies/wizard_blue.tres")
 const WIZARD_RED_STATS = preload("res://Enemies/wizard_red.tres")
 
+const CHEST_BLUE_STATS = preload("res://Enemies/chest_blue.tres")
+const CHEST_RED_STATS = preload("res://Enemies/chest_red.tres")
+
 const POSSIBLE_ENEMY_STATS = [
 	SLIME_BLUE_STATS,
 	SLIME_RED_STATS,
@@ -121,9 +124,12 @@ var burn_nova_scale_multi := 1.0
 var freeze_nova_on_kill = 0.0
 
 var spawn_timer = Timer
+var health_enemy_spawn_timer = Timer
 var to_spawn_enemies: Array[Stats] = [SLIME_RED_STATS]
 
 var total_currency_collected := 0
+
+var active_enemies := 0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -132,9 +138,14 @@ func _ready() -> void:
 	spawn_timer.connect("timeout", spawn_enemy)
 	spawn_timer.set_wait_time(1)
 
+	health_enemy_spawn_timer = Timer.new()
+	health_enemy_spawn_timer.connect("timeout", spawn_health_enemy)
+	health_enemy_spawn_timer.set_wait_time(90)
 
 	get_tree().current_scene.add_child(spawn_timer)
+	get_tree().current_scene.add_child(health_enemy_spawn_timer)
 	spawn_timer.start()
+	health_enemy_spawn_timer.start()
 
 func _process(delta: float) -> void:
 	if not get_tree().paused:
@@ -171,7 +182,6 @@ func enough_upgrade_cost(type: Enums.UpgradeType, amount: int):
 	return false
 
 func adjust_money(type: Enums.UpgradeType, amount: int):
-	amount *= money_multi
 	match type:
 		Enums.UpgradeType.ICE_SPEAR:
 			ice_spear_money += amount
@@ -193,50 +203,73 @@ func add_upgrade_to_player(type: Enums.UpgradeType, upgrade: Upgrade):
 
 func spawn_enemy():
 	var enemy_stats: Stats
-	const MAX_CURRENCY = 50000
+	const MAX_CURRENCY = 30000
 	if to_spawn_enemies.size() > 0:
 		enemy_stats = to_spawn_enemies.pop_front()
 	
-		if to_spawn_enemies.size() == 0:
-			const MAX_ENEMY_SPAWN_REQ_MONEY = 10000
-			var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 0,(POSSIBLE_ENEMY_STATS.size() - 1) / 2))
-			max_index *= 2
-			max_index = clamp(max_index, 0, POSSIBLE_ENEMY_STATS.size() - 1)
+	if enemy_stats:
+		var enemy_hp = remap(total_currency_collected, 0, MAX_CURRENCY, 50, 3000)
+		enemy_hp *= randf_range(0.7, 1.3)
+		var at_once_enemies = ceili(enemy_hp / enemy_stats.max_health)
+		at_once_enemies = clamp(at_once_enemies, 1, 100)
+		print("at_once_enemies: ", at_once_enemies)
 
-			var possible_enemy_stats = POSSIBLE_ENEMY_STATS.slice(0, max_index + 2)
+		# var swarm_chance = remap(total_currency_collected, 0, MAX_CURRENCY, 0.001, 0.005)
+		var swarm_chance = 0
+		if randf() <= swarm_chance:
+			at_once_enemies *= 3
+			print("Swarm!")
+		for i in at_once_enemies:
+			var enemy = preload("res://enemy.tscn").instantiate()
+			var new_scale = randf_range(1.3, 2.0)
+			spawn_path_follow.get_parent().scale = Vector2(new_scale, new_scale)
+			spawn_path_follow.progress_ratio = randf()
+			enemy.global_position = spawn_path_follow.global_position
+			enemy.stats = enemy_stats
+			get_tree().current_scene.get_node("%YSort").add_child(enemy)
+			if (randf() <= 0.05):
+				enemy.make_elite()
 
-			# dont allow same stats twice in a row
-			possible_enemy_stats = possible_enemy_stats.filter(
-				func(s): return s != enemy_stats
-			)
+	# if spawn list is empty try to add a new one
+	if to_spawn_enemies.size() == 0:
+		const MAX_ENEMY_SPAWN_REQ_MONEY = 8000
+		var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 2, (POSSIBLE_ENEMY_STATS.size() - 1) / 2))
+		max_index *= 2
+		max_index = clamp(max_index, 0, POSSIBLE_ENEMY_STATS.size() - 1)
 
-			var enemy_index = randi_range(0, possible_enemy_stats.size() - 1)
-			
-			
+		var possible_enemy_stats = POSSIBLE_ENEMY_STATS.slice(max(0, max_index + 2 - 20), max_index + 2)
+
+		# dont allow same stats twice in a row
+		possible_enemy_stats = possible_enemy_stats.filter(
+			func(s): return s != enemy_stats
+		)
+
+		var enemy_index = randi_range(0, possible_enemy_stats.size() - 1)
+		
+		
+		# var from_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 7, 1)
+		# var to_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 11, 3)
+		# var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
+
+		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 20, 100)
+		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 150, 450)
+
+		const BASE_SPAWN_TIME = 6
+		var new_spawn_time = BASE_SPAWN_TIME
+		if active_enemies < min_enemy_count:
+			new_spawn_time = remap(active_enemies, 0, min_enemy_count, 0, BASE_SPAWN_TIME)
+
+		new_spawn_time = max(new_spawn_time, 1)
+		spawn_timer.set_wait_time(new_spawn_time)
+
+		if active_enemies < max_enemy_count:
+			print(active_enemies)
 			to_spawn_enemies.append(possible_enemy_stats[enemy_index])
-			
-			var from_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 7, 1)
-			var to_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 11, 3)
-			var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
-			new_spawn_time = max(new_spawn_time, 1)
-			spawn_timer.set_wait_time(new_spawn_time)
-	
-	# var from_at_once_enemies = remap(total_currency_collected, 0, MAX_CURRENCY, 3, 10)
-	# var to_at_once_enemies = remap(total_currency_collected, 0, MAX_CURRENCY, 7, 20)
-	# var at_once_enemies = randi_range(from_at_once_enemies, to_at_once_enemies);
-	
-	var enemy_hp = remap(total_currency_collected, 0, MAX_CURRENCY, 50, 10000)
-	enemy_hp *= randf_range(0.7, 1.3)
-	var at_once_enemies = ceili(enemy_hp / enemy_stats.max_health)
-	print("at_once_enemies: ", at_once_enemies)
 
-	var swarm_chance = remap(total_currency_collected, 0, MAX_CURRENCY, 0.001, 0.005)
-	if randf() <= swarm_chance:
-		at_once_enemies *= 3
-		print("Swarm!")
-	for i in at_once_enemies:
-		var enemy = preload("res://enemy.tscn").instantiate()
-		spawn_path_follow.progress_ratio = randf()
-		enemy.global_position = spawn_path_follow.global_position
-		enemy.stats = enemy_stats
-		get_tree().current_scene.get_node("%YSort").add_child(enemy)
+func spawn_health_enemy():
+	var enemy = preload("res://enemy.tscn").instantiate()
+	spawn_path_follow.progress_ratio = randf()
+	enemy.global_position = spawn_path_follow.global_position
+	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
+	enemy.scale *= 2
+	get_tree().current_scene.get_node("%YSort").add_child(enemy)

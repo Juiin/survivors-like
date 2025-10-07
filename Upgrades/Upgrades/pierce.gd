@@ -7,7 +7,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Pierce"
     upgrade_description = "Ice Spears pierce an additional target"
-    cost = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    cost = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
     type = Enums.UpgradeType.ICE_SPEAR
     endless = true
 

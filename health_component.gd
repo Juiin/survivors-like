@@ -29,3 +29,10 @@ func take_damage(damage: float):
     took_damage.emit()
     if health <= 0:
         died.emit()
+
+func heal(amount: float):
+    amount = min(amount, max_health - health)
+    health += amount
+    
+    Effects.spawn_damage_text(amount, owner.global_position, Color.GREEN)
+    health_changed.emit()

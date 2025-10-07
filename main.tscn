@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=100 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://b8ddjnmac4byl" path="res://Audio/music_1.mp3" id="1_2cqfq"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ctg8irc8cdaya" path="res://Upgrades/upgrade_menu.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dw881ysp05qpo" path="res://ui_root.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://rhapiawr2562" path="res://Upgrades/Upgrades/Global/global_pickup_radius.gd" id="5_2cqfq"]
-[ext_resource type="Script" uid="uid://cxi0jgjnjar0d" path="res://Upgrades/charge_upgrade.gd" id="5_yaehf"]
 [ext_resource type="Script" uid="uid://baa1qf33nv4lr" path="res://ice_spear_money_ui.gd" id="6_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="6_272bh"]
 [ext_resource type="Script" uid="uid://dk680os8e1evy" path="res://Upgrades/Upgrades/Global/global_mov_spd.gd" id="6_yaehf"]
@@ -18,65 +17,69 @@
 [ext_resource type="PackedScene" uid="uid://dcx4jexy4vhgv" path="res://Upgrades/charge_upgrade.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b3khnv2vu7bh4" path="res://tools/charge_spawner.tscn" id="13_ycdy4"]
 
+[sub_resource type="Resource" id="Resource_yaehf"]
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
+
 [sub_resource type="Resource" id="Resource_074og"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_cegan"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_82xsv"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_getpj"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ryguw"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_d13ii"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_0odxb"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_lswn8"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_a6jrf"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_xuqvo"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qsp4k"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_kq58d"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_seu75"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_htxhm"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_jq2sk"]
 script = ExtResource("5_2cqfq")
@@ -84,55 +87,55 @@ increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_4k2k6"]
 script = ExtResource("6_yaehf")
-increase = 10
+increase = 5
 
 [sub_resource type="Resource" id="Resource_0rl1p"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
-
-[sub_resource type="Resource" id="Resource_ok6jj"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_facbu"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
+
+[sub_resource type="Resource" id="Resource_ok6jj"]
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
+
+[sub_resource type="Resource" id="Resource_facbu"]
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_b1qrp"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_come4"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_h8e4i"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4lmeg"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0cp0l"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_d2t1y"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gngh3"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_0n3wm"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qnost"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_wnkbs"]
 script = ExtResource("5_2cqfq")
@@ -140,306 +143,218 @@ increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_f6a44"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0cbny"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_hrvbo"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_uypp3"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_blkrb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_abqjc"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_6iyjs"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4w656"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_e71vb"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
+
+[sub_resource type="Resource" id="Resource_e71vb"]
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_rnkwl"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_vke2r"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_uit24"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_ruth0"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_rm4vd"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_pjyto"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_sm6fg"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_b17eg"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_ntx8l"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_uatky"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1vm84"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_wu3dr"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_cyx1q"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
-[sub_resource type="Resource" id="Resource_0dhbp"]
+[sub_resource type="Resource" id="Resource_cyx1q"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+atk_spd_increase_percent = 0.1
+
+[sub_resource type="Resource" id="Resource_0dhbp"]
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_jx0wj"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_kkkcx"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_34ol3"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_c2n8d"]
 script = ExtResource("5_2cqfq")
 increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_wy5fy"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_gx4rg"]
 script = ExtResource("6_yaehf")
-increase = 10
+increase = 5
 
 [sub_resource type="Resource" id="Resource_5dllo"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_phcyf"]
 script = ExtResource("6_yaehf")
-increase = 10
+increase = 5
 
 [sub_resource type="Resource" id="Resource_birbe"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_f1p13"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4obbf"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_ovcoh"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ppx11"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1yv1y"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_5yh34"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_pjuso"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_23xmf"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_swlj1"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_yysqy"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_n5t1e"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_h6isl"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_53bls"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_lwnsi"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+script = ExtResource("3_dg77c")
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_41lik"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_jbvwl"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_sn1fb"]
-script = ExtResource("6_yaehf")
-increase = 10
+script = ExtResource("5_2cqfq")
+increase_percent = 0.4
 
 [sub_resource type="Resource" id="Resource_yvsr8"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
+script = ExtResource("6_yaehf")
+increase = 5
 
 [sub_resource type="Resource" id="Resource_vieuh"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_yjja3"]
 script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_l0gw7"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_inymm"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
-
-[sub_resource type="Resource" id="Resource_jcxqu"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_0arob"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_dij0e"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_k1udn"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_wat4s"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_ywjan"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
-
-[sub_resource type="Resource" id="Resource_m74q3"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_tko6h"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_am8a1"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_8dc3g"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_htgcl"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_smeu8"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_f3y11"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
-
-[sub_resource type="Resource" id="Resource_cpm2s"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_u81y6"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_rt5wr"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
-
-[sub_resource type="Resource" id="Resource_mnw77"]
-script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.2
-
-[sub_resource type="Resource" id="Resource_vjgyh"]
-script = ExtResource("6_yaehf")
-increase = 10
-
-[sub_resource type="Resource" id="Resource_d5iia"]
-script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase = 5
 
 [node name="Main" type="Node2D"]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("1_2cqfq")
-volume_db = -9.109
+volume_db = -15.0
 autoplay = true
 parameters/looping = true
 
@@ -453,733 +368,337 @@ region_rect = Rect2(0, 0, 10000, 10000)
 
 [node name="ChargeSpawner" parent="." instance=ExtResource("13_ycdy4")]
 
-[node name="@Area2D@24197" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-3156, 497)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="ChargeUpgrade" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-3171, 223)
+upgrade = SubResource("Resource_yaehf")
+
+[node name="@Area2D@232323" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2990, -910)
 upgrade = SubResource("Resource_074og")
 
-[node name="@Area2D@24198" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-3116, -753)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232324" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2873, 642)
 upgrade = SubResource("Resource_cegan")
 
-[node name="@Area2D@24199" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-3064, 865)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232325" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2810, -516)
 upgrade = SubResource("Resource_82xsv")
 
-[node name="@Area2D@24200" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-3031, -1297)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232326" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2798, 1357)
 upgrade = SubResource("Resource_getpj")
 
-[node name="@Area2D@24201" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2918, 604)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232327" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2774, 111)
 upgrade = SubResource("Resource_ryguw")
 
-[node name="@Area2D@24202" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2881, 197)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232328" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2771, -1498)
 upgrade = SubResource("Resource_d13ii")
 
-[node name="@Area2D@24203" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2788, 1351)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232329" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2737, 578)
 upgrade = SubResource("Resource_1u8w0")
 
-[node name="@Area2D@24204" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2742, 1591)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232330" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2716, -628)
 upgrade = SubResource("Resource_0odxb")
 
-[node name="@Area2D@24205" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2710, 81)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232331" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2652, -897)
 upgrade = SubResource("Resource_lswn8")
 
-[node name="@Area2D@24206" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2620, -183)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232332" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2618, -1370)
 upgrade = SubResource("Resource_a6jrf")
 
-[node name="@Area2D@24207" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2609, -907)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232333" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2601, 1212)
 upgrade = SubResource("Resource_xuqvo")
 
-[node name="@Area2D@24208" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2543, -1784)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232334" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2566, 747)
 upgrade = SubResource("Resource_qsp4k")
 
-[node name="@Area2D@24209" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2502, 377)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232335" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2486, 1711)
 upgrade = SubResource("Resource_kq58d")
 
-[node name="@Area2D@24210" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2479, 1245)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232336" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2473, -1661)
 upgrade = SubResource("Resource_seu75")
 
-[node name="@Area2D@24211" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2441, -314)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232337" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2312, -1223)
 upgrade = SubResource("Resource_htxhm")
 
-[node name="@Area2D@24212" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2324, 1067)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232338" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2228, 57)
 upgrade = SubResource("Resource_jq2sk")
 
-[node name="@Area2D@24213" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2237, -219)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232339" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2211, -187)
 upgrade = SubResource("Resource_4k2k6")
 
-[node name="@Area2D@24214" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2191, -1358)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232340" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2086, 1068)
 upgrade = SubResource("Resource_0rl1p")
 
-[node name="@Area2D@24215" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2187, 1430)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232341" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2064, -882)
 upgrade = SubResource("Resource_ok6jj")
 
-[node name="@Area2D@24216" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2077, -305)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232342" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2050, 306)
 upgrade = SubResource("Resource_facbu")
 
-[node name="@Area2D@24217" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-2069, 346)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232343" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-2014, -1767)
 upgrade = SubResource("Resource_b1qrp")
 
-[node name="@Area2D@24218" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1930, -1493)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232344" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1884, 118)
 upgrade = SubResource("Resource_come4")
 
-[node name="@Area2D@24219" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1928, 1071)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232345" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1828, -341)
 upgrade = SubResource("Resource_h8e4i")
 
-[node name="@Area2D@24220" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1748, 1764)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232346" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1781, -1511)
 upgrade = SubResource("Resource_4lmeg")
 
-[node name="@Area2D@24221" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1649, 199)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232347" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1765, 1789)
 upgrade = SubResource("Resource_0cp0l")
 
-[node name="@Area2D@24222" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1648, -788)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232348" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1670, 508)
 upgrade = SubResource("Resource_d2t1y")
 
-[node name="@Area2D@24223" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1586, 1209)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232349" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1619, -1385)
 upgrade = SubResource("Resource_gngh3")
 
-[node name="@Area2D@24224" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1578, -1764)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232350" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1610, -163)
 upgrade = SubResource("Resource_0n3wm")
 
-[node name="@Area2D@24225" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1539, 1776)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232351" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1532, -1767)
 upgrade = SubResource("Resource_qnost")
 
-[node name="@Area2D@24226" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1524, -756)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232352" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1511, 379)
 upgrade = SubResource("Resource_wnkbs")
 
-[node name="@Area2D@24227" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1500, 1470)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232353" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1366, -1782)
 upgrade = SubResource("Resource_f6a44")
 
-[node name="@Area2D@24228" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1499, -92)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232354" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1179, -621)
 upgrade = SubResource("Resource_0cbny")
 
-[node name="@Area2D@24229" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1351, 870)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232355" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-1034, -1348)
 upgrade = SubResource("Resource_hrvbo")
 
-[node name="@Area2D@24230" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1332, -1793)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232356" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-795, -831)
 upgrade = SubResource("Resource_uypp3")
 
-[node name="@Area2D@24231" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1162, -514)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232357" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-773, -1026)
 upgrade = SubResource("Resource_blkrb")
 
-[node name="@Area2D@24232" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1070, 381)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232358" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-751, 207)
 upgrade = SubResource("Resource_abqjc")
 
-[node name="@Area2D@24233" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-1032, -1220)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232359" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-750, 1484)
 upgrade = SubResource("Resource_6iyjs")
 
-[node name="@Area2D@24234" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-794, 1291)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232360" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-693, -75)
 upgrade = SubResource("Resource_4w656")
 
-[node name="@Area2D@24235" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-739, -509)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232361" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-511, -169)
 upgrade = SubResource("Resource_e71vb")
 
-[node name="@Area2D@24236" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-660, -1683)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232362" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-489, -925)
 upgrade = SubResource("Resource_rnkwl")
 
-[node name="@Area2D@24237" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-644, 171)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232363" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-482, 271)
 upgrade = SubResource("Resource_vke2r")
 
-[node name="@Area2D@24238" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-471, -1471)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232364" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-402, -1474)
 upgrade = SubResource("Resource_uit24")
 
-[node name="@Area2D@24239" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-447, -75)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232365" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-389, 1749)
 upgrade = SubResource("Resource_ruth0")
 
-[node name="@Area2D@24240" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-409, -608)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232366" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-312, 1462)
 upgrade = SubResource("Resource_rm4vd")
 
-[node name="@Area2D@24241" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-405, -1763)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232367" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(-116, 776)
 upgrade = SubResource("Resource_pjyto")
 
-[node name="@Area2D@24242" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-226, 37)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232368" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(26, 1467)
 upgrade = SubResource("Resource_sm6fg")
 
-[node name="@Area2D@24243" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-204, -1450)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232369" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(103, -1346)
 upgrade = SubResource("Resource_b17eg")
 
-[node name="@Area2D@24244" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-171, -1077)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232370" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(349, -332)
 upgrade = SubResource("Resource_ntx8l")
 
-[node name="@Area2D@24245" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-83, 816)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232371" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(381, 1031)
 upgrade = SubResource("Resource_uatky")
 
-[node name="@Area2D@24246" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-57, 467)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232372" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(891, 222)
 upgrade = SubResource("Resource_rqtf5")
 
-[node name="@Area2D@24247" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(-47, -85)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232373" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(902, 877)
 upgrade = SubResource("Resource_1vm84")
 
-[node name="@Area2D@24248" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(50, 1596)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232374" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1082, 358)
 upgrade = SubResource("Resource_wu3dr")
 
-[node name="@Area2D@24249" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(90, -1059)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232375" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1139, -101)
 upgrade = SubResource("Resource_cyx1q")
 
-[node name="@Area2D@24250" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(189, -1595)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232376" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1228, 634)
 upgrade = SubResource("Resource_0dhbp")
 
-[node name="@Area2D@24251" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(307, 198)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232377" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1230, -768)
 upgrade = SubResource("Resource_jx0wj")
 
-[node name="@Area2D@24252" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(337, -256)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232378" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1308, -1482)
 upgrade = SubResource("Resource_kkkcx")
 
-[node name="@Area2D@24253" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(355, -1165)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232379" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1325, 374)
 upgrade = SubResource("Resource_34ol3")
 
-[node name="@Area2D@24254" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(409, 511)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232380" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1326, 235)
 upgrade = SubResource("Resource_c2n8d")
 
-[node name="@Area2D@24255" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(452, 1064)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232381" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1443, 1043)
 upgrade = SubResource("Resource_wy5fy")
 
-[node name="@Area2D@24256" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(477, -941)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232382" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1588, 1323)
 upgrade = SubResource("Resource_gx4rg")
 
-[node name="@Area2D@24257" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(576, 86)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232383" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1730, 460)
 upgrade = SubResource("Resource_5dllo")
 
-[node name="@Area2D@24258" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(582, -1471)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232384" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1750, 171)
 upgrade = SubResource("Resource_phcyf")
 
-[node name="@Area2D@24259" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(603, -918)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232385" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1765, 304)
 upgrade = SubResource("Resource_birbe")
 
-[node name="@Area2D@24260" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(636, 804)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232386" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1892, -303)
 upgrade = SubResource("Resource_f1p13")
 
-[node name="@Area2D@24261" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(755, -62)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232387" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1905, 1565)
 upgrade = SubResource("Resource_4obbf")
 
-[node name="@Area2D@24262" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(786, -1668)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232388" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(1919, 794)
 upgrade = SubResource("Resource_ovcoh")
 
-[node name="@Area2D@24263" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(793, 485)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232389" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2019, -781)
 upgrade = SubResource("Resource_ppx11")
 
-[node name="@Area2D@24264" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(941, 486)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232390" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2080, 58)
 upgrade = SubResource("Resource_1yv1y")
 
-[node name="@Area2D@24265" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1007, -1205)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232391" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2153, 262)
 upgrade = SubResource("Resource_5yh34")
 
-[node name="@Area2D@24266" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1148, -648)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232392" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2177, -303)
 upgrade = SubResource("Resource_pjuso")
 
-[node name="@Area2D@24267" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1163, -82)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232393" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2185, -1667)
 upgrade = SubResource("Resource_23xmf")
 
-[node name="@Area2D@24268" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1186, 893)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232394" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2189, -926)
 upgrade = SubResource("Resource_swlj1")
 
-[node name="@Area2D@24269" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1292, 1319)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232395" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2302, -1188)
 upgrade = SubResource("Resource_yysqy")
 
-[node name="@Area2D@24270" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1330, 583)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232396" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2321, -447)
 upgrade = SubResource("Resource_n5t1e")
 
-[node name="@Area2D@24271" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1335, -84)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232397" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2434, -39)
 upgrade = SubResource("Resource_h6isl")
 
-[node name="@Area2D@24272" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1433, 761)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232398" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2471, 956)
 upgrade = SubResource("Resource_53bls")
 
-[node name="@Area2D@24273" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1443, 1448)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232399" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2509, -932)
 upgrade = SubResource("Resource_lwnsi")
 
-[node name="@Area2D@24274" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1458, -1174)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232400" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2800, 1183)
 upgrade = SubResource("Resource_41lik")
 
-[node name="@Area2D@24275" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1605, 614)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232401" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(2899, -389)
 upgrade = SubResource("Resource_jbvwl")
 
-[node name="@Area2D@24276" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1712, 1489)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232402" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(3015, -1528)
 upgrade = SubResource("Resource_sn1fb")
 
-[node name="@Area2D@24277" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1742, 1152)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232403" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(3156, 1630)
 upgrade = SubResource("Resource_yvsr8")
 
-[node name="@Area2D@24278" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1877, -82)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
+[node name="@Area2D@232404" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
+position = Vector2(3157, -956)
 upgrade = SubResource("Resource_vieuh")
-
-[node name="@Area2D@24279" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1880, -1174)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_yjja3")
-
-[node name="@Area2D@24280" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(1901, -243)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_l0gw7")
-
-[node name="@Area2D@24281" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2001, 626)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_inymm")
-
-[node name="@Area2D@24282" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2052, 1639)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_jcxqu")
-
-[node name="@Area2D@24283" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2167, -343)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_0arob")
-
-[node name="@Area2D@24284" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2191, 650)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_dij0e")
-
-[node name="@Area2D@24285" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2308, 598)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_k1udn")
-
-[node name="@Area2D@24286" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2447, -1434)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_wat4s")
-
-[node name="@Area2D@24287" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2600, 506)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_ywjan")
-
-[node name="@Area2D@24288" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2611, -1779)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_m74q3")
-
-[node name="@Area2D@24289" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2836, 1195)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_tko6h")
-
-[node name="@Area2D@24290" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2837, 766)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_am8a1")
-
-[node name="@Area2D@24291" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2859, 1359)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_8dc3g")
-
-[node name="@Area2D@24292" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2860, -14)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_htgcl")
-
-[node name="@Area2D@24293" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2874, -414)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_smeu8")
-
-[node name="@Area2D@24294" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2879, 953)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_f3y11")
-
-[node name="@Area2D@24295" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2883, -1157)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_cpm2s")
-
-[node name="@Area2D@24296" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(2997, -1313)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_u81y6")
-
-[node name="@Area2D@24297" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(3040, -1452)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_rt5wr")
-
-[node name="@Area2D@24298" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(3047, 502)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_mnw77")
-
-[node name="@Area2D@24299" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(3101, 197)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_vjgyh")
-
-[node name="@Area2D@24300" type="Area2D" parent="ChargeSpawner" instance=ExtResource("11_efxa6")]
-position = Vector2(3137, -356)
-scale = Vector2(0.2, 0.2)
-collision_layer = 0
-script = ExtResource("5_yaehf")
-upgrade = SubResource("Resource_d5iia")
 
 [node name="YSort" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -1330,212 +849,3 @@ offset_bottom = 1024.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("10_dg77c")
 metadata/_edit_use_anchors_ = true
-
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24197" to="ChargeSpawner/@Area2D@24197" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24197" to="ChargeSpawner/@Area2D@24197" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24198" to="ChargeSpawner/@Area2D@24198" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24198" to="ChargeSpawner/@Area2D@24198" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24199" to="ChargeSpawner/@Area2D@24199" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24199" to="ChargeSpawner/@Area2D@24199" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24200" to="ChargeSpawner/@Area2D@24200" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24200" to="ChargeSpawner/@Area2D@24200" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24201" to="ChargeSpawner/@Area2D@24201" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24201" to="ChargeSpawner/@Area2D@24201" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24202" to="ChargeSpawner/@Area2D@24202" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24202" to="ChargeSpawner/@Area2D@24202" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24203" to="ChargeSpawner/@Area2D@24203" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24203" to="ChargeSpawner/@Area2D@24203" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24204" to="ChargeSpawner/@Area2D@24204" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24204" to="ChargeSpawner/@Area2D@24204" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24205" to="ChargeSpawner/@Area2D@24205" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24205" to="ChargeSpawner/@Area2D@24205" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24206" to="ChargeSpawner/@Area2D@24206" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24206" to="ChargeSpawner/@Area2D@24206" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24207" to="ChargeSpawner/@Area2D@24207" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24207" to="ChargeSpawner/@Area2D@24207" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24208" to="ChargeSpawner/@Area2D@24208" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24208" to="ChargeSpawner/@Area2D@24208" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24209" to="ChargeSpawner/@Area2D@24209" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24209" to="ChargeSpawner/@Area2D@24209" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24210" to="ChargeSpawner/@Area2D@24210" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24210" to="ChargeSpawner/@Area2D@24210" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24211" to="ChargeSpawner/@Area2D@24211" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24211" to="ChargeSpawner/@Area2D@24211" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24212" to="ChargeSpawner/@Area2D@24212" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24212" to="ChargeSpawner/@Area2D@24212" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24213" to="ChargeSpawner/@Area2D@24213" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24213" to="ChargeSpawner/@Area2D@24213" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24214" to="ChargeSpawner/@Area2D@24214" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24214" to="ChargeSpawner/@Area2D@24214" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24215" to="ChargeSpawner/@Area2D@24215" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24215" to="ChargeSpawner/@Area2D@24215" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24216" to="ChargeSpawner/@Area2D@24216" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24216" to="ChargeSpawner/@Area2D@24216" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24217" to="ChargeSpawner/@Area2D@24217" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24217" to="ChargeSpawner/@Area2D@24217" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24218" to="ChargeSpawner/@Area2D@24218" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24218" to="ChargeSpawner/@Area2D@24218" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24219" to="ChargeSpawner/@Area2D@24219" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24219" to="ChargeSpawner/@Area2D@24219" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24220" to="ChargeSpawner/@Area2D@24220" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24220" to="ChargeSpawner/@Area2D@24220" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24221" to="ChargeSpawner/@Area2D@24221" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24221" to="ChargeSpawner/@Area2D@24221" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24222" to="ChargeSpawner/@Area2D@24222" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24222" to="ChargeSpawner/@Area2D@24222" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24223" to="ChargeSpawner/@Area2D@24223" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24223" to="ChargeSpawner/@Area2D@24223" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24224" to="ChargeSpawner/@Area2D@24224" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24224" to="ChargeSpawner/@Area2D@24224" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24225" to="ChargeSpawner/@Area2D@24225" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24225" to="ChargeSpawner/@Area2D@24225" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24226" to="ChargeSpawner/@Area2D@24226" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24226" to="ChargeSpawner/@Area2D@24226" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24227" to="ChargeSpawner/@Area2D@24227" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24227" to="ChargeSpawner/@Area2D@24227" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24228" to="ChargeSpawner/@Area2D@24228" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24228" to="ChargeSpawner/@Area2D@24228" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24229" to="ChargeSpawner/@Area2D@24229" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24229" to="ChargeSpawner/@Area2D@24229" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24230" to="ChargeSpawner/@Area2D@24230" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24230" to="ChargeSpawner/@Area2D@24230" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24231" to="ChargeSpawner/@Area2D@24231" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24231" to="ChargeSpawner/@Area2D@24231" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24232" to="ChargeSpawner/@Area2D@24232" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24232" to="ChargeSpawner/@Area2D@24232" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24233" to="ChargeSpawner/@Area2D@24233" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24233" to="ChargeSpawner/@Area2D@24233" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24234" to="ChargeSpawner/@Area2D@24234" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24234" to="ChargeSpawner/@Area2D@24234" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24235" to="ChargeSpawner/@Area2D@24235" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24235" to="ChargeSpawner/@Area2D@24235" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24236" to="ChargeSpawner/@Area2D@24236" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24236" to="ChargeSpawner/@Area2D@24236" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24237" to="ChargeSpawner/@Area2D@24237" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24237" to="ChargeSpawner/@Area2D@24237" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24238" to="ChargeSpawner/@Area2D@24238" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24238" to="ChargeSpawner/@Area2D@24238" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24239" to="ChargeSpawner/@Area2D@24239" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24239" to="ChargeSpawner/@Area2D@24239" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24240" to="ChargeSpawner/@Area2D@24240" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24240" to="ChargeSpawner/@Area2D@24240" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24241" to="ChargeSpawner/@Area2D@24241" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24241" to="ChargeSpawner/@Area2D@24241" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24242" to="ChargeSpawner/@Area2D@24242" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24242" to="ChargeSpawner/@Area2D@24242" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24243" to="ChargeSpawner/@Area2D@24243" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24243" to="ChargeSpawner/@Area2D@24243" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24244" to="ChargeSpawner/@Area2D@24244" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24244" to="ChargeSpawner/@Area2D@24244" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24245" to="ChargeSpawner/@Area2D@24245" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24245" to="ChargeSpawner/@Area2D@24245" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24246" to="ChargeSpawner/@Area2D@24246" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24246" to="ChargeSpawner/@Area2D@24246" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24247" to="ChargeSpawner/@Area2D@24247" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24247" to="ChargeSpawner/@Area2D@24247" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24248" to="ChargeSpawner/@Area2D@24248" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24248" to="ChargeSpawner/@Area2D@24248" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24249" to="ChargeSpawner/@Area2D@24249" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24249" to="ChargeSpawner/@Area2D@24249" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24250" to="ChargeSpawner/@Area2D@24250" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24250" to="ChargeSpawner/@Area2D@24250" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24251" to="ChargeSpawner/@Area2D@24251" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24251" to="ChargeSpawner/@Area2D@24251" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24252" to="ChargeSpawner/@Area2D@24252" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24252" to="ChargeSpawner/@Area2D@24252" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24253" to="ChargeSpawner/@Area2D@24253" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24253" to="ChargeSpawner/@Area2D@24253" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24254" to="ChargeSpawner/@Area2D@24254" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24254" to="ChargeSpawner/@Area2D@24254" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24255" to="ChargeSpawner/@Area2D@24255" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24255" to="ChargeSpawner/@Area2D@24255" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24256" to="ChargeSpawner/@Area2D@24256" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24256" to="ChargeSpawner/@Area2D@24256" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24257" to="ChargeSpawner/@Area2D@24257" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24257" to="ChargeSpawner/@Area2D@24257" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24258" to="ChargeSpawner/@Area2D@24258" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24258" to="ChargeSpawner/@Area2D@24258" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24259" to="ChargeSpawner/@Area2D@24259" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24259" to="ChargeSpawner/@Area2D@24259" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24260" to="ChargeSpawner/@Area2D@24260" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24260" to="ChargeSpawner/@Area2D@24260" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24261" to="ChargeSpawner/@Area2D@24261" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24261" to="ChargeSpawner/@Area2D@24261" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24262" to="ChargeSpawner/@Area2D@24262" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24262" to="ChargeSpawner/@Area2D@24262" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24263" to="ChargeSpawner/@Area2D@24263" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24263" to="ChargeSpawner/@Area2D@24263" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24264" to="ChargeSpawner/@Area2D@24264" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24264" to="ChargeSpawner/@Area2D@24264" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24265" to="ChargeSpawner/@Area2D@24265" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24265" to="ChargeSpawner/@Area2D@24265" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24266" to="ChargeSpawner/@Area2D@24266" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24266" to="ChargeSpawner/@Area2D@24266" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24267" to="ChargeSpawner/@Area2D@24267" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24267" to="ChargeSpawner/@Area2D@24267" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24268" to="ChargeSpawner/@Area2D@24268" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24268" to="ChargeSpawner/@Area2D@24268" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24269" to="ChargeSpawner/@Area2D@24269" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24269" to="ChargeSpawner/@Area2D@24269" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24270" to="ChargeSpawner/@Area2D@24270" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24270" to="ChargeSpawner/@Area2D@24270" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24271" to="ChargeSpawner/@Area2D@24271" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24271" to="ChargeSpawner/@Area2D@24271" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24272" to="ChargeSpawner/@Area2D@24272" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24272" to="ChargeSpawner/@Area2D@24272" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24273" to="ChargeSpawner/@Area2D@24273" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24273" to="ChargeSpawner/@Area2D@24273" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24274" to="ChargeSpawner/@Area2D@24274" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24274" to="ChargeSpawner/@Area2D@24274" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24275" to="ChargeSpawner/@Area2D@24275" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24275" to="ChargeSpawner/@Area2D@24275" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24276" to="ChargeSpawner/@Area2D@24276" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24276" to="ChargeSpawner/@Area2D@24276" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24277" to="ChargeSpawner/@Area2D@24277" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24277" to="ChargeSpawner/@Area2D@24277" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24278" to="ChargeSpawner/@Area2D@24278" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24278" to="ChargeSpawner/@Area2D@24278" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24279" to="ChargeSpawner/@Area2D@24279" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24279" to="ChargeSpawner/@Area2D@24279" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24280" to="ChargeSpawner/@Area2D@24280" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24280" to="ChargeSpawner/@Area2D@24280" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24281" to="ChargeSpawner/@Area2D@24281" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24281" to="ChargeSpawner/@Area2D@24281" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24282" to="ChargeSpawner/@Area2D@24282" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24282" to="ChargeSpawner/@Area2D@24282" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24283" to="ChargeSpawner/@Area2D@24283" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24283" to="ChargeSpawner/@Area2D@24283" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24284" to="ChargeSpawner/@Area2D@24284" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24284" to="ChargeSpawner/@Area2D@24284" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24285" to="ChargeSpawner/@Area2D@24285" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24285" to="ChargeSpawner/@Area2D@24285" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24286" to="ChargeSpawner/@Area2D@24286" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24286" to="ChargeSpawner/@Area2D@24286" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24287" to="ChargeSpawner/@Area2D@24287" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24287" to="ChargeSpawner/@Area2D@24287" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24288" to="ChargeSpawner/@Area2D@24288" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24288" to="ChargeSpawner/@Area2D@24288" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24289" to="ChargeSpawner/@Area2D@24289" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24289" to="ChargeSpawner/@Area2D@24289" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24290" to="ChargeSpawner/@Area2D@24290" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24290" to="ChargeSpawner/@Area2D@24290" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24291" to="ChargeSpawner/@Area2D@24291" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24291" to="ChargeSpawner/@Area2D@24291" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24292" to="ChargeSpawner/@Area2D@24292" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24292" to="ChargeSpawner/@Area2D@24292" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24293" to="ChargeSpawner/@Area2D@24293" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24293" to="ChargeSpawner/@Area2D@24293" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24294" to="ChargeSpawner/@Area2D@24294" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24294" to="ChargeSpawner/@Area2D@24294" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24295" to="ChargeSpawner/@Area2D@24295" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24295" to="ChargeSpawner/@Area2D@24295" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24296" to="ChargeSpawner/@Area2D@24296" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24296" to="ChargeSpawner/@Area2D@24296" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24297" to="ChargeSpawner/@Area2D@24297" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24297" to="ChargeSpawner/@Area2D@24297" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24298" to="ChargeSpawner/@Area2D@24298" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24298" to="ChargeSpawner/@Area2D@24298" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24299" to="ChargeSpawner/@Area2D@24299" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24299" to="ChargeSpawner/@Area2D@24299" method="_on_body_exited"]
-[connection signal="body_entered" from="ChargeSpawner/@Area2D@24300" to="ChargeSpawner/@Area2D@24300" method="_on_body_entered"]
-[connection signal="body_exited" from="ChargeSpawner/@Area2D@24300" to="ChargeSpawner/@Area2D@24300" method="_on_body_exited"]

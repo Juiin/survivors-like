@@ -7,6 +7,7 @@ extends Resource
 var drop_value: int
 @export var spd: float = 50
 @export var knockback_recovery := 3.5
+@export var health_drop_chance := 0
 var health: float
 
 
@@ -15,5 +16,5 @@ func create_instance() -> Resource:
     instance.health = max_health
     instance.sprite = sprite
     instance.type = type
-    instance.drop_value = max_health / 2
+    instance.drop_value = ceili(max_health / 2)
     return instance

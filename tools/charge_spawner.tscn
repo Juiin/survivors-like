@@ -5,7 +5,7 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mm7xq"]
 noise_type = 3
-seed = -1798886938
+seed = -1237615835
 frequency = 0.0071
 metadata/_preview_in_3d_space_ = true
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cp418s64xv6h1"]
 
 [ext_resource type="Script" uid="uid://r6n2qnlng8q0" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="3_hb8ge"]
+[ext_resource type="Shader" uid="uid://ed0bls1n8bkc" path="res://outline.gdshader" id="2_wujgv"]
 [ext_resource type="SpriteFrames" uid="uid://b2axoikcpgdhu" path="res://Textures/Enemy/rat_weak.tres" id="3_wujgv"]
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_iifgy"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_epg4t"]
@@ -12,7 +12,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ltt"]
 resource_local_to_scene = true
-shader = ExtResource("3_hb8ge")
+shader = ExtResource("2_wujgv")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_time_scale = 0.0
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false
 
@@ -22,7 +25,12 @@ shader_parameter/hit_flash_on = false
 radius = 19.0263
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8ge"]
-bg_color = Color(1, 0.345919, 0.251676, 1)
+bg_color = Color(0.79, 0.2765, 0.1975, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -67,6 +75,7 @@ collision_layer = 2
 
 [node name="HitboxComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("area_2d")]
 script = ExtResource("6_3yqyl")
+base_damage = 5.0
 hit_list_clear_time = 2.0
 area_2d = NodePath("..")
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"

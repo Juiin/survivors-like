@@ -32,7 +32,7 @@ var current_form: form = form.ST
 
 var ice_spear_stored := 0: set = update_ice_spear_stored
 var max_ice_spear_stored := 3
-var ice_spear_store_time := 2.5
+var ice_spear_store_time := 3.0
 
 func _ready() -> void:
 	attack_timer.wait_time = base_atk_spd / (1 + atk_spd_increase)
@@ -63,8 +63,8 @@ func _physics_process(delta):
 		current_form = form.ST
 	if Input.is_action_just_pressed("2"):
 		current_form = form.AOE
-	if Input.is_action_just_pressed("3"):
-		Effects.spawn_damage_text(5, get_global_mouse_position())
+	if Input.is_action_just_pressed("swap_weapon"):
+		current_form = form.ST if current_form == form.AOE else form.AOE
 
 func attack():
 	var atk_count = 1;

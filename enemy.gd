@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var anim := $AnimatedSprite2D
 @onready var health_component := $HealthComponent
 var spd := 50.0
-
+@onready var hitbox_component: Node = $Hitbox/HitboxComponent
 var stats: Stats
 var frozen := false
 var burning := false
@@ -18,16 +18,27 @@ var anti_freeze_tween: Tween
 var knockback = Vector2.ZERO
 var knockback_recovery := 3.5
 
+var is_elite = false
 
 func _ready() -> void:
 	stats = stats.create_instance()
 	health_component.max_health = stats.max_health * Game.enemy_health_multi
 	anim.sprite_frames = stats.sprite
-	spd = stats.spd
+	spd = stats.spd * randf_range(0.95, 1.05)
 	knockback_recovery = stats.knockback_recovery
+	Game.active_enemies += 1
 
 	health_component.connect("died", die)
 	health_component.connect("took_damage", flash)
+
+func make_elite():
+	knockback_recovery *= 2
+	spd *= 0.8
+	health_component.max_health *= 5
+	hitbox_component.percent_dmg += 1
+	stats.drop_value *= 8
+	scale *= 2
+	is_elite = true
 
 
 func _physics_process(delta):
@@ -36,6 +47,11 @@ func _physics_process(delta):
 	var offset = remap(dist, 0, 500, 0, 100)
 	var dir = global_position.direction_to(player.global_position + Vector2(randf_range(-offset, offset), randf_range(-offset, offset)))
 	velocity = dir * spd
+
+	if dist > 1000:
+		print("despawned enemy")
+		Game.active_enemies -= 1
+		queue_free()
 
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
 	if knockback.length() > 0.0:
@@ -65,13 +81,21 @@ func get_knockbacked(dir: Vector2, amount: float) -> void:
 func die() -> void:
 	var inst = preload("res://money_pickup.tscn").instantiate()
 	inst.global_position = global_position
-	inst.value = stats.drop_value
+	inst.value = ceili(stats.drop_value * Game.money_multi)
 	inst.type = stats.type
 	get_tree().current_scene.get_node("%YSort").add_child(inst)
+	if is_elite:
+		inst.enable_shine()
+
+	if randf() <= stats.health_drop_chance:
+		inst = preload("res://health_pickup.tscn").instantiate()
+		inst.global_position = global_position
+		get_tree().current_scene.get_node("%YSort").add_child(inst)
 
 	var death_anim = preload("res://Effects/death_animation.tscn")
 	var death_inst = death_anim.instantiate()
 	death_inst.position = global_position - Vector2(0, 8)
+	death_inst.scale = scale
 	get_tree().current_scene.get_node("%YSort").add_child(death_inst)
 	death_inst.set_sprite(stats.sprite)
 	death_inst.play()
@@ -89,6 +113,7 @@ func die() -> void:
 		var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
 		nova.position = global_position
 		get_tree().current_scene.add_child(nova)
+	Game.active_enemies -= 1
 	queue_free()
 
 func flash() -> void:

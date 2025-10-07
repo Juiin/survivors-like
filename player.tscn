@@ -15,9 +15,9 @@ radius = 11.0
 
 [sub_resource type="Curve2D" id="Curve2D_b26j0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -361, -212, 0, 0, 0, 0, 371, -210, 0, 0, 0, 0, 379, 236, 0, 0, 0, 0, -368, 244, 0, 0, 0, 0, -376, -213, 0, 0, 0, 0, -361, -212)
+"points": PackedVector2Array(-164.253, 29.3407, 164.253, -29.3407, 13.3569, -277.858, 0, 0, 0, 0, 371, -210, 0, 0, 0, 0, 457.399, 13.3947, 0, 0, 0, 0, 371.753, 218.005, 0, 0, 0, 0, 8.74517, 279.988, 0, 0, 0, 0, -372.71, 227.336, 1.7507, -3.54214, -1.7507, 3.54214, -501.179, 5.39693, 0, 0, 0, 0, -360.192, -263.196, 0, 0, 0, 0, 15.3333, -277.192)
 }
-point_count = 6
+point_count = 9
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
 shader = ExtResource("4_dw050")
@@ -65,14 +65,14 @@ shape = SubResource("CircleShape2D_i3pqv")
 zoom = Vector2(0.75, 0.75)
 
 [node name="Path2D" type="Path2D" parent="Camera2D"]
-position = Vector2(0, -11.2123)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-2, 4)
+scale = Vector2(1.51787, 1.50041)
 curve = SubResource("Curve2D_b26j0")
 
 [node name="SpawnPathFollow" type="PathFollow2D" parent="Camera2D/Path2D"]
 unique_name_in_owner = true
-position = Vector2(-361, -212)
-rotation = 0.00273223
+position = Vector2(13.3569, -277.858)
+rotation = -0.176767
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b26j0")

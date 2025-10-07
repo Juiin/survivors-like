@@ -15,6 +15,8 @@ func _ready() -> void:
 	greyed_out.texture = upgrade.charged_sprite
 	fill.texture = upgrade.charged_sprite
 	fill.scale = Vector2.ZERO
+	connect("body_exited", _on_body_exited)
+	connect("body_entered", _on_body_entered)
 
 func _process(delta):
 	if !charged_up:
