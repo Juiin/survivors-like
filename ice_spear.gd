@@ -23,6 +23,8 @@ var has_returned := false
 
 var drop_percent := 0.0
 
+var batch_number: int
+var offset_distance := 20.0
 var sfx = preload("res://Audio/new_ice_spear.mp3")
 
 func _ready() -> void:
@@ -30,9 +32,23 @@ func _ready() -> void:
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 
 	player = get_tree().get_first_node_in_group("player")
-	position = player.position
-	rotation = position.angle_to_point(get_global_mouse_position())
+	rotation = global_position.angle_to_point(get_global_mouse_position())
+	# position = player.position
 
+	# calculate sideways offset (perpendicular to facing direction)
+	var right_dir = Vector2.RIGHT.rotated(rotation)
+	var perpendicular = right_dir.rotated(deg_to_rad(90)) # i.e. Vector2.UP rotated to match rotation
+
+	# calculate offset amount based on batch_numbers
+	# (alternating left/right: 0=center, 1=right, 2=left, 3=more right, 4=more left, etc.)
+	var side_multiplier = 0
+	if batch_number > 0:
+		side_multiplier = ((batch_number + 1) / 2) * (1 if batch_number % 2 == 1 else -1)
+
+	var offset = perpendicular * offset_distance * side_multiplier
+	position += offset
+	#retarget again so they all converge on the mouse position
+	rotation = global_position.angle_to_point(get_global_mouse_position())
 	start_die_tween()
 
 	
@@ -44,14 +60,14 @@ func _ready() -> void:
 func die() -> void:
 	if !has_returned && randf() <= return_percent:
 		has_returned = true
-		rotation = position.angle_to_point(player.position)
+		rotation = global_position.angle_to_point(player.global_position)
 		start_die_tween()
 		# hitbox_component.hit_list.clear()
 		hitbox_component.hit_count = 0
 	else:
 		if randf() <= drop_percent:
 			var ice_spear = ice_spear_pickup.instantiate()
-			ice_spear.position = position	
+			ice_spear.global_position = global_position
 			get_tree().current_scene.add_child(ice_spear)
 		queue_free()
 	# var tween = create_tween()

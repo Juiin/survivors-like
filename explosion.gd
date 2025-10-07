@@ -17,7 +17,7 @@ func _ready() -> void:
 	Utils.play_audio(sfx, 0.9, 1.1)
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 	sprite.animation_finished.connect(die)
-	position = get_global_mouse_position()
+	global_position = get_global_mouse_position()
 
 	if apply_burn:
 		var inst = burn.instantiate()

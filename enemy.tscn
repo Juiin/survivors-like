@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="6_3yqyl"]
 [ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="7_wujgv"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epg4t"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wujgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ltt"]
 resource_local_to_scene = true
@@ -19,7 +19,7 @@ shader_parameter/blink_time_scale = 0.0
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3yqyl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hb8ge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
 radius = 19.0263
@@ -41,7 +41,7 @@ script = ExtResource("1_4gyqm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_epg4t")
+shape = SubResource("CircleShape2D_wujgv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_e1ltt")
@@ -53,14 +53,12 @@ script = ExtResource("4_iifgy")
 metadata/_custom_type_script = "uid://dot06i76bu1x0"
 
 [node name="Hurtbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
-visible = false
 position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_3yqyl")
+shape = SubResource("CircleShape2D_hb8ge")
 
 [node name="HurtboxComponent" type="Node" parent="Hurtbox" node_paths=PackedStringArray("health_component", "area_2d")]
 script = ExtResource("5_epg4t")
@@ -81,7 +79,7 @@ area_2d = NodePath("..")
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -11)
+position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_3yqyl")
 
 [node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_wujgv")]

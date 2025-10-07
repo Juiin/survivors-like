@@ -252,7 +252,9 @@ func spawn_enemy():
 		# var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
 
 		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 20, 100)
-		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 150, 450)
+		min_enemy_count = clamp(min_enemy_count, 20, 100)
+		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 150, 300)
+		max_enemy_count = clamp(max_enemy_count, 150, 300)
 
 		const BASE_SPAWN_TIME = 6
 		var new_spawn_time = BASE_SPAWN_TIME
@@ -273,3 +275,4 @@ func spawn_health_enemy():
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
 	enemy.scale *= 2
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
+	print(active_enemies)

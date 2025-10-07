@@ -30,6 +30,10 @@ func _ready() -> void:
 
 	health_component.connect("died", die)
 	health_component.connect("took_damage", flash)
+	connect("tree_exiting", Callable(self, "_on_tree_exiting"))
+
+func _on_tree_exiting() -> void:
+	Game.active_enemies -= 1
 
 func make_elite():
 	knockback_recovery *= 2
@@ -50,7 +54,6 @@ func _physics_process(delta):
 
 	if dist > 1000:
 		print("despawned enemy")
-		Game.active_enemies -= 1
 		queue_free()
 
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
@@ -113,7 +116,6 @@ func die() -> void:
 		var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
 		nova.position = global_position
 		get_tree().current_scene.add_child(nova)
-	Game.active_enemies -= 1
 	queue_free()
 
 func flash() -> void:

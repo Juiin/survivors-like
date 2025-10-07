@@ -22,6 +22,8 @@ var ice_spear_upgrades: Array[Upgrade] = []
 var explosion_upgrades: Array[Upgrade] = []
 var global_upgrades: Array[Upgrade] = []
 
+var ice_spear_projectiles := 8
+
 enum form {
 	ST,
 	AOE,
@@ -75,14 +77,19 @@ func attack():
 	for i in atk_count:
 		create_tween().tween_callback(
 			func():
-				var inst=get_attack_scene().instantiate()
-				
-				get_tree().current_scene.add_child(inst)
-				
-				var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
-				for upgrade in upgrade_array.size():
-					upgrade_array[upgrade].apply_upgrade(inst)
-				).set_delay(i * (0.2 - i * 0.01))
+				var attack_count=1
+				if current_form == form.ST:
+					attack_count=ice_spear_projectiles
+				for j in attack_count:
+					var inst=get_attack_scene().instantiate()
+					if current_form == form.ST:
+						inst.batch_number=j
+					add_child(inst)
+					
+					var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
+					for upgrade in upgrade_array.size():
+						upgrade_array[upgrade].apply_upgrade(inst)
+					).set_delay(i * (0.2 - i * 0.01))
 
 	
 func update_ice_spear_stored(amount: int) -> void:
@@ -115,5 +122,5 @@ func _on_pickup_radius_area_entered(area: Area2D) -> void:
 		if freeze_nova_on_pickup:
 			var nova = freeze_nova_scene.instantiate()
 			nova.position = area.global_position
-			get_tree().current_scene.add_child(nova)
+			get_tree().current_scene.call_deferred("add_child", nova)
 		area.queue_free()
