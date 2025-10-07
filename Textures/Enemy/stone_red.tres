@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://5pcclpd8gulb"]
+
+[ext_resource type="Texture2D" uid="uid://c8u8y0xrbwuuo" path="res://Textures/Enemy/stone_red.png" id="1_cmswu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3o4x"]
+atlas = ExtResource("1_cmswu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b8ik"]
+atlas = ExtResource("1_cmswu")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3o4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b8ik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

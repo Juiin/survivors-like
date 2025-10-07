@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://blnquq5di0ifb"]
+
+[ext_resource type="Texture2D" uid="uid://bdty31mwi7wft" path="res://Textures/Enemy/wraith_blue.png" id="1_ymoqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qwng"]
+atlas = ExtResource("1_ymoqt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdqst"]
+atlas = ExtResource("1_ymoqt")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qwng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdqst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

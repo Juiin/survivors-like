@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://bms62o63d5cd6"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_l1alp"]
+[ext_resource type="SpriteFrames" uid="uid://c25gbcum6sff1" path="res://Textures/Enemy/zombie_red.tres" id="2_dtoi8"]
+
+[resource]
+script = ExtResource("1_l1alp")
+max_health = 240.0
+sprite = ExtResource("2_dtoi8")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

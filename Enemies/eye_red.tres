@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://bt5rvsgumwtsm"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_yfcyb"]
+[ext_resource type="SpriteFrames" uid="uid://c5hx5v5m82px" path="res://Textures/Enemy/eye_red.tres" id="2_loba3"]
+
+[resource]
+script = ExtResource("1_yfcyb")
+max_health = 15.0
+sprite = ExtResource("2_loba3")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

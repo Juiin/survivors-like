@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://biydw416isvwv"]
+
+[ext_resource type="Texture2D" uid="uid://c5nh5qx3wqxu4" path="res://Textures/Enemy/plant_blue.png" id="1_xfen5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8obb4"]
+atlas = ExtResource("1_xfen5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqkob"]
+atlas = ExtResource("1_xfen5")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8obb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqkob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -8,5 +8,5 @@ func _ready() -> void:
 	health_component.connect("health_changed", update_value)
 
 func update_value() -> void:
-	value = health_component.health
 	max_value = health_component.max_health
+	value = health_component.health

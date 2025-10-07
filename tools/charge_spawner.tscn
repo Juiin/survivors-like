@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3khnv2vu7bh4"]
+
+[ext_resource type="Script" uid="uid://wmmalh4qm6mw" path="res://tools/charge_spawner.gd" id="1_gtoac"]
+[ext_resource type="PackedScene" uid="uid://dcx4jexy4vhgv" path="res://Upgrades/charge_upgrade.tscn" id="2_mm7xq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mm7xq"]
+noise_type = 3
+seed = -1798886938
+frequency = 0.0071
+metadata/_preview_in_3d_space_ = true
+
+[node name="ChargeSpawner" type="Node2D"]
+script = ExtResource("1_gtoac")
+noise = SubResource("FastNoiseLite_mm7xq")
+spawner = ExtResource("2_mm7xq")

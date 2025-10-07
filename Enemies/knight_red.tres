@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://l84nhu82mc8d"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_rlfmj"]
+[ext_resource type="SpriteFrames" uid="uid://cgg8n672pg8c0" path="res://Textures/Enemy/knight_red.tres" id="2_cv4se"]
+
+[resource]
+script = ExtResource("1_rlfmj")
+max_health = 400.0
+sprite = ExtResource("2_cv4se")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

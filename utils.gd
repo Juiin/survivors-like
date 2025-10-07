@@ -16,3 +16,12 @@ static func play_audio(audio: AudioStream, from_pitch: float = 1.0, to_pitch: fl
 	SfxDeconflicter.play(audio_player)
 	await audio_player.finished
 	audio_player.queue_free()
+
+static func play_audio_return(audio: AudioStream, from_pitch: float = 1.0, to_pitch: float = 1.0, volume: float = 1.0) -> AudioStreamPlayer:
+	var audio_player := AudioStreamPlayer.new()
+	audio_player.stream = audio
+	audio_player.volume_linear = volume
+	audio_player.pitch_scale = randf_range(from_pitch, to_pitch)
+	Engine.get_main_loop().root.add_child(audio_player)
+	SfxDeconflicter.play(audio_player)
+	return audio_player

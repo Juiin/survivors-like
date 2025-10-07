@@ -9,6 +9,9 @@ extends Panel
 var open_tween: Tween
 var close_tween: Tween
 
+var starting_position: Vector2
+func _ready() -> void:
+    starting_position = global_position
 
 func open(upgrades: Array[Upgrade]):
     if open_tween && open_tween.is_running():
@@ -42,8 +45,8 @@ func close():
     if type != Enums.UpgradeType.GLOBAL:
         var x_adjust = -200 if type == Enums.UpgradeType.ICE_SPEAR else 200
         close_tween = create_tween()
-        close_tween.tween_property(self, "global_position", global_position + Vector2(x_adjust, 0), 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+        close_tween.tween_property(self, "global_position", starting_position, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
         close_tween.tween_callback(hide)
     else:
         close_tween = create_tween()
-        close_tween.tween_property(self, "global_position", global_position + Vector2(0, -155), 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+        close_tween.tween_property(self, "global_position", starting_position, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

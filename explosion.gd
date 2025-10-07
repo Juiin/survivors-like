@@ -13,6 +13,7 @@ var burn = preload("res://Attacks/burn_field.tscn")
 var sfx = preload("res://Audio/aoe_form_explosion.mp3")
 
 func _ready() -> void:
+	aoe_increase = -0.5
 	Utils.play_audio(sfx, 0.9, 1.1)
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 	sprite.animation_finished.connect(die)

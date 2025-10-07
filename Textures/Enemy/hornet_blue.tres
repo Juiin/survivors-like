@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b310l64r5pk17"]
+
+[ext_resource type="Texture2D" uid="uid://chj03q56unhc2" path="res://Textures/Enemy/hornet_blue.png" id="1_tyqie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p15ub"]
+atlas = ExtResource("1_tyqie")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3uha"]
+atlas = ExtResource("1_tyqie")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p15ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3uha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

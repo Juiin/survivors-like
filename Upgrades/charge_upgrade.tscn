@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcx4jexy4vhgv"]
+
+[ext_resource type="Script" uid="uid://cxi0jgjnjar0d" path="res://Upgrades/charge_upgrade.gd" id="1_dfilu"]
+[ext_resource type="Texture2D" uid="uid://cs7wiuulwen2p" path="res://Textures/GUI/difficulty.png" id="2_dfilu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfilu"]
+radius = 205.973
+
+[node name="ChargeUpgrade" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 0
+script = ExtResource("1_dfilu")
+
+[node name="GreyedOut" type="Sprite2D" parent="."]
+self_modulate = Color(0.46, 0.46, 0.46, 1)
+texture = ExtResource("2_dfilu")
+
+[node name="Fill" type="Sprite2D" parent="."]
+texture = ExtResource("2_dfilu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dfilu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

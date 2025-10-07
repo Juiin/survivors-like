@@ -62,10 +62,11 @@ position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_i3pqv")
 
 [node name="Camera2D" parent="." groups=["camera"] instance=ExtResource("3_1jxqw")]
+zoom = Vector2(0.75, 0.75)
 
 [node name="Path2D" type="Path2D" parent="Camera2D"]
 position = Vector2(0, -11.2123)
-scale = Vector2(1, 1.04595)
+scale = Vector2(1.5, 1.5)
 curve = SubResource("Curve2D_b26j0")
 
 [node name="SpawnPathFollow" type="PathFollow2D" parent="Camera2D/Path2D"]

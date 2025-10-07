@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bc46b0px7eoih"]
+
+[ext_resource type="Texture2D" uid="uid://d0mn5yiutc3wl" path="res://Textures/Enemy/eye_blue.png" id="1_4ldpe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbgb6"]
+atlas = ExtResource("1_4ldpe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sb72"]
+atlas = ExtResource("1_4ldpe")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbgb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sb72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

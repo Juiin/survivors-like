@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://deth0b7h6qgga"]
+
+[ext_resource type="Texture2D" uid="uid://dm2qgwjjprqmn" path="res://Textures/Enemy/ghost_blue.png" id="1_8e31c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onj3u"]
+atlas = ExtResource("1_8e31c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibr4"]
+atlas = ExtResource("1_8e31c")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onj3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pibr4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

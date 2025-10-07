@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://2prln8f0ry0p"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_gjneg"]
+[ext_resource type="SpriteFrames" uid="uid://mpcgwcybj4q5" path="res://Textures/Enemy/wraith_red.tres" id="2_6ghbi"]
+
+[resource]
+script = ExtResource("1_gjneg")
+max_health = 260.0
+sprite = ExtResource("2_6ghbi")
+type = 1
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

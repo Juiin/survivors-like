@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://cwogfhg15mhjc"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_3uh4s"]
+[ext_resource type="SpriteFrames" uid="uid://dxmxp3u5u4jrs" path="res://Textures/Enemy/frog_blue.tres" id="2_0uf0j"]
+
+[resource]
+script = ExtResource("1_3uh4s")
+max_health = 10.0
+sprite = ExtResource("2_0uf0j")
+type = 0
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

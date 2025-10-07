@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://hp3mshhk1k1u"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_u0j8u"]
+[ext_resource type="SpriteFrames" uid="uid://b3lvnrph4mkqf" path="res://Textures/Enemy/hornet_red.tres" id="2_i8db1"]
+
+[resource]
+script = ExtResource("1_u0j8u")
+max_health = 85.0
+sprite = ExtResource("2_i8db1")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

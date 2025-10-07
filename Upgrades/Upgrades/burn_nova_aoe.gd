@@ -6,10 +6,10 @@ extends Upgrade
 func _init(_req_upgrade: Upgrade):
     upgrade_name = "Burn Nova AoE"
     upgrade_description = "50% increased Burn Nova AoE"
-    cost = [55, 60, 61, 62, 63]
+    cost = [100, 250, 500, 750, 1000]
     type = Enums.UpgradeType.EXPLOSION
     req_upgrade = _req_upgrade
-    req_upgrade_level = 1
+    endless = true
 
 func apply_player_upgrade(player: Player) -> void:
     Game.burn_nova_scale_multi += increase

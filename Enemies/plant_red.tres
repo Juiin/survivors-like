@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://cxktenr4g3fle"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_4udou"]
+[ext_resource type="SpriteFrames" uid="uid://cv6yyyinqdknu" path="res://Textures/Enemy/plant_red.tres" id="2_gyswn"]
+
+[resource]
+script = ExtResource("1_4udou")
+max_health = 70.0
+sprite = ExtResource("2_gyswn")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

@@ -19,7 +19,7 @@ shader_parameter/hit_flash_on = false
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3yqyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
-radius = 31.0
+radius = 19.0263
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8ge"]
 bg_color = Color(1, 0.345919, 0.251676, 1)
@@ -50,6 +50,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_3yqyl")
 
@@ -62,7 +63,6 @@ metadata/_custom_type_script = "uid://cxkixd4an1ym"
 [node name="Timer" type="Timer" parent="Hurtbox"]
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="HitboxComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("area_2d")]

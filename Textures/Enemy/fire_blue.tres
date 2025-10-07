@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cxe0e5c2de0mp"]
+
+[ext_resource type="Texture2D" uid="uid://1hyemoin4adr" path="res://Textures/Enemy/fire_blue.png" id="1_fcxdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndb7c"]
+atlas = ExtResource("1_fcxdg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m311a"]
+atlas = ExtResource("1_fcxdg")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndb7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m311a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

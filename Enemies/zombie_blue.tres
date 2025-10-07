@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://ccmpxgqdh4x6t"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_xnhq3"]
+[ext_resource type="SpriteFrames" uid="uid://dqy7bor25omel" path="res://Textures/Enemy/zombie_blue.tres" id="2_ahch0"]
+
+[resource]
+script = ExtResource("1_xnhq3")
+max_health = 240.0
+sprite = ExtResource("2_ahch0")
+type = 0
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

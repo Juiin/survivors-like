@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1nl4068etp4"]
+
+[ext_resource type="Script" uid="uid://dx7tw6v30yrbm" path="res://new_upgrade_icon.gd" id="1_gg2on"]
+[ext_resource type="Texture2D" uid="uid://d4x3t3vsjnt8" path="res://Textures/GUI/new_upgrade.png" id="2_bvnxd"]
+
+[node name="NewUpgradeIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gg2on")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_bvnxd")
+metadata/_edit_use_anchors_ = true

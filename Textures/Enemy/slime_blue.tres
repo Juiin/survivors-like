@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cymj1n3y0xba2"]
+
+[ext_resource type="Texture2D" uid="uid://dscyo1k6dcojp" path="res://Textures/Enemy/slime_blue.png" id="1_evhwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpr5p"]
+atlas = ExtResource("1_evhwc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmujp"]
+atlas = ExtResource("1_evhwc")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpr5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmujp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

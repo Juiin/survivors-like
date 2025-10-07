@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://d0oexleagvo5n"]
+
+[ext_resource type="Texture2D" uid="uid://dj6ripxhekxk6" path="res://Textures/Enemy/crab_red.png" id="1_h4pxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byr5b"]
+atlas = ExtResource("1_h4pxg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36ruh"]
+atlas = ExtResource("1_h4pxg")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byr5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36ruh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

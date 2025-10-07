@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://ctjt475bykc75"]
+
+[ext_resource type="Texture2D" uid="uid://c5okrjdloxp61" path="res://Textures/Enemy/tornado_blue.png" id="1_7nchd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsjin"]
+atlas = ExtResource("1_7nchd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f6lf"]
+atlas = ExtResource("1_7nchd")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsjin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f6lf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

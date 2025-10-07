@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://byi6iucrwjrhp"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_bhl85"]
+[ext_resource type="SpriteFrames" uid="uid://x1bg2hrhp2te" path="res://Textures/Enemy/tree_stump_blue.tres" id="2_6kcg3"]
+
+[resource]
+script = ExtResource("1_bhl85")
+max_health = 30.0
+sprite = ExtResource("2_6kcg3")
+type = 0
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

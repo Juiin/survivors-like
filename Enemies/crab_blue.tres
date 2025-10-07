@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://dhmelmgyh6m0o"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_moawi"]
+[ext_resource type="SpriteFrames" uid="uid://k8e65pgtl4p" path="res://Textures/Enemy/crab_blue.tres" id="2_0gl4y"]
+
+[resource]
+script = ExtResource("1_moawi")
+max_health = 125.0
+sprite = ExtResource("2_0gl4y")
+type = 0
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

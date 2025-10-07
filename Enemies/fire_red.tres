@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://37ktech8v66k"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_cnle3"]
+[ext_resource type="SpriteFrames" uid="uid://dwtrn00i652lc" path="res://Textures/Enemy/fire_red.tres" id="2_jhdub"]
+
+[resource]
+script = ExtResource("1_cnle3")
+max_health = 175.0
+sprite = ExtResource("2_jhdub")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

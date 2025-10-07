@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dqy7bor25omel"]
+
+[ext_resource type="Texture2D" uid="uid://c1rtl18t5bw3p" path="res://Textures/Enemy/zombie_blue.png" id="1_phf82"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1pui"]
+atlas = ExtResource("1_phf82")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jol03"]
+atlas = ExtResource("1_phf82")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1pui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jol03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://tgymp74pay18"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_dye5b"]
+[ext_resource type="SpriteFrames" uid="uid://05uxdcncdh6w" path="res://Textures/Enemy/snail_red.tres" id="2_8fwvy"]
+
+[resource]
+script = ExtResource("1_dye5b")
+max_health = 40.0
+sprite = ExtResource("2_8fwvy")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

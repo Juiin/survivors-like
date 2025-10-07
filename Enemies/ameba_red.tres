@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_wpjdg")
-max_health = 100.0
+max_health = 300.0
 sprite = ExtResource("2_wf5xa")
 type = 1
 drop_value = 20
+spd = 50.0
+knockback_recovery = 3.5
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

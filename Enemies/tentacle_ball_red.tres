@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://dmkyrlw2wptv2"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_ownne"]
+[ext_resource type="SpriteFrames" uid="uid://cvaxsvkk7c5g8" path="res://Textures/Enemy/tentacle_ball_red.tres" id="2_hvh7h"]
+
+[resource]
+script = ExtResource("1_ownne")
+max_health = 145.0
+sprite = ExtResource("2_hvh7h")
+type = 1
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

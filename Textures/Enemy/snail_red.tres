@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://05uxdcncdh6w"]
+
+[ext_resource type="Texture2D" uid="uid://c70uf7jafmph" path="res://Textures/Enemy/snail_red.png" id="1_56wei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drvxg"]
+atlas = ExtResource("1_56wei")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4odql"]
+atlas = ExtResource("1_56wei")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drvxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4odql")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

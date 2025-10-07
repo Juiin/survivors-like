@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://dohu5077wltwm"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_hcatj"]
+[ext_resource type="SpriteFrames" uid="uid://cxe0e5c2de0mp" path="res://Textures/Enemy/fire_blue.tres" id="2_uj8ju"]
+
+[resource]
+script = ExtResource("1_hcatj")
+max_health = 175.0
+sprite = ExtResource("2_uj8ju")
+type = 0
+spd = 50.0
+knockback_recovery = 3.5
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

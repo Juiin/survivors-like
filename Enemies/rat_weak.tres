@@ -8,7 +8,6 @@ script = ExtResource("1_jkkpy")
 max_health = 25.0
 sprite = ExtResource("2_7u4vf")
 type = 0
-drop_value = 10
 spd = 50.0
 knockback_recovery = 2.5
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var spd := 100.0
+var spd := 70.0
 
 @onready var anim := $AnimatedSprite2D
 @onready var attack_timer := $AttackTimer

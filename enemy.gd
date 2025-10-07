@@ -11,7 +11,6 @@ var burning := false
 var burning_timer := 0.0
 
 const FREEZE_DURATION := 5.0
-const BURN_DURATION := 3.0
 
 var anti_burn_tween: Tween
 var anti_freeze_tween: Tween
@@ -33,7 +32,9 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
-	var dir = global_position.direction_to(player.global_position)
+	var dist = global_position.distance_to(player.global_position)
+	var offset = remap(dist, 0, 500, 0, 100)
+	var dir = global_position.direction_to(player.global_position + Vector2(randf_range(-offset, offset), randf_range(-offset, offset)))
 	velocity = dir * spd
 
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
@@ -60,7 +61,6 @@ func _physics_process(delta):
 
 func get_knockbacked(dir: Vector2, amount: float) -> void:
 	knockback = dir * amount
-	print("knockback: ", knockback)
 
 func die() -> void:
 	var inst = preload("res://money_pickup.tscn").instantiate()
@@ -77,7 +77,6 @@ func die() -> void:
 	death_inst.play()
 
 	var death_sfx_path = "res://Audio/sndEnemyDeath%s.mp3" % str(randi_range(1, 3))
-	print("death_sfx_path: ", death_sfx_path)
 	Utils.play_audio(load(death_sfx_path), 0.9, 1.1, 0.1)
 
 	if randf() <= Game.burn_nova_on_kill && burning:
@@ -112,4 +111,4 @@ func burn() -> void:
 	if anti_burn_tween && anti_burn_tween.is_running():
 		anti_burn_tween.kill()
 	anti_burn_tween = create_tween()
-	anti_burn_tween.tween_callback(func(): burning = false).set_delay(BURN_DURATION)
+	anti_burn_tween.tween_callback(func(): burning = false).set_delay(Game.burn_duration)

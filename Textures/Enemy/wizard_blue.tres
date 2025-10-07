@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c5s50s21wxwo6"]
+
+[ext_resource type="Texture2D" uid="uid://b5cl3wpflckqv" path="res://Textures/Enemy/wizard_blue.png" id="1_2a35n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twhas"]
+atlas = ExtResource("1_2a35n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wemrm"]
+atlas = ExtResource("1_2a35n")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twhas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wemrm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

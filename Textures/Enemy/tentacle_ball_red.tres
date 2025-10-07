@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cvaxsvkk7c5g8"]
+
+[ext_resource type="Texture2D" uid="uid://bjy3quhb15asf" path="res://Textures/Enemy/tentacle_ball_red.png" id="1_icdmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6k70"]
+atlas = ExtResource("1_icdmw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta28s"]
+atlas = ExtResource("1_icdmw")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6k70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta28s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
