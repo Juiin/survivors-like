@@ -7,6 +7,7 @@ var spd := 70.0
 @onready var attack_timer := $AttackTimer
 var base_atk_spd := 1.5
 var atk_spd_increase := 0.0
+var global_percent_dmg_increase := 0.0
 @onready var health_component := $HealthComponent
 @onready var pickup_radius: Area2D = $PickupRadius
 var pickup_radius_increase := 0.0
@@ -92,6 +93,7 @@ func attack():
 					var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
 					for upgrade in upgrade_array.size():
 						upgrade_array[upgrade].apply_upgrade(inst)
+					inst.hitbox_component.percent_dmg += global_percent_dmg_increase
 					if current_form == form.AOE:
 						inst.adjust_position()
 					).set_delay(i * (0.2 - i * 0.01))

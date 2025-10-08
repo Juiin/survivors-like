@@ -35,7 +35,7 @@ func _set_spawn_chargers(_value: bool) -> void:
 				if too_close:
 					continue
 				var inst = spawner.instantiate()
-				var possible_upgrades = [GlobalAtkSpdUpgrade.new(), GlobalMovSpdUpgrade.new(), GlobalPickupRadius.new()]
+				var possible_upgrades = [GlobalAtkSpdUpgrade.new(), GlobalMovSpdUpgrade.new(), GlobalPickupRadius.new(), GlobalPercentDamageUpgrade.new()]
 				inst.upgrade = possible_upgrades[randi() % possible_upgrades.size()]
 				add_child(inst)
 				inst.global_position = Vector2(START_X + i, START_Y + j)
