@@ -134,8 +134,11 @@ func freeze() -> void:
 
 func burn() -> void:
 	burning = true
-
+	anim.material.set_shader_parameter("blink_time_scale", 4.0)
 	if anti_burn_tween && anti_burn_tween.is_running():
 		anti_burn_tween.kill()
 	anti_burn_tween = create_tween()
-	anti_burn_tween.tween_callback(func(): burning = false).set_delay(Game.burn_duration)
+	anti_burn_tween.tween_callback(func():
+		burning=false
+		anim.material.set_shader_parameter("blink_time_scale", 0.0)
+		).set_delay(Game.burn_duration)

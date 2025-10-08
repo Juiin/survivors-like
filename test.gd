@@ -1,4 +1,4 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = str(IceSpearPickup.instances.size())
+	text = str(Game.active_enemies)

@@ -46,7 +46,7 @@ func _ready() -> void:
 		side_multiplier = ((batch_number + 1) / 2) * (1 if batch_number % 2 == 1 else -1)
 
 	var offset = perpendicular * offset_distance * side_multiplier
-	position += offset
+	global_position += offset
 	#retarget again so they all converge on the mouse position
 	rotation = global_position.angle_to_point(get_global_mouse_position())
 	start_die_tween()

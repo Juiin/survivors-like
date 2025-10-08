@@ -22,7 +22,8 @@ var ice_spear_upgrades: Array[Upgrade] = []
 var explosion_upgrades: Array[Upgrade] = []
 var global_upgrades: Array[Upgrade] = []
 
-var ice_spear_projectiles := 8
+var ice_spear_projectiles := 1
+var explosion_count := 1
 
 enum form {
 	ST,
@@ -73,22 +74,26 @@ func attack():
 	if current_form == form.ST && ice_spear_stored > 0:
 		atk_count = ice_spear_stored + 1
 		ice_spear_stored = 0
+	elif current_form == form.AOE:
+		atk_count = explosion_count
 
+	var starting_pos = get_global_mouse_position() if current_form == form.AOE else global_position
+	var attack_count = 1
+	if current_form == form.ST:
+		attack_count = ice_spear_projectiles
 	for i in atk_count:
 		create_tween().tween_callback(
 			func():
-				var attack_count=1
-				if current_form == form.ST:
-					attack_count=ice_spear_projectiles
 				for j in attack_count:
 					var inst=get_attack_scene().instantiate()
-					if current_form == form.ST:
-						inst.batch_number=j
-					add_child(inst)
-					
+					inst.batch_number=i if current_form == form.AOE else j
+					inst.global_position=starting_pos
+					get_tree().current_scene.add_child(inst)
 					var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
 					for upgrade in upgrade_array.size():
 						upgrade_array[upgrade].apply_upgrade(inst)
+					if current_form == form.AOE:
+						inst.adjust_position()
 					).set_delay(i * (0.2 - i * 0.01))
 
 	

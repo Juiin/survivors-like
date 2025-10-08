@@ -13,8 +13,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ltt"]
 resource_local_to_scene = true
 shader = ExtResource("2_wujgv")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/blink_color = Color(1, 0, 0, 1)
 shader_parameter/blink_time_scale = 0.0
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false

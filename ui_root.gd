@@ -10,7 +10,8 @@ var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
 var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
 var ice_spear_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
-	PercentDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
+	# PercentDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
+	IceSpearProjectilesUpgrade.new(),
 	ProjSpdUpgrade.new(),
 	PierceUpgrade.new(),
 	ReturnUpgrade.new(),
@@ -24,7 +25,8 @@ var ice_spear_upgrades: Array[Upgrade] = [
 var burn_nova_on_kill: Upgrade = BurnNovaOnKillUpgrade.new()
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
-	PercentDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
+	# PercentDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
+	ExplosionCountUpgrade.new(),
 	AoeUpgrade.new(),
 	BurnDamageUpgrade.new(),
 	BurnDurationUpgrade.new(),
