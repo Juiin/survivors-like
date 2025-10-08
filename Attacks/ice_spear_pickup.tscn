@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dof70rjknoom5"]
+[gd_scene load_steps=4 format=3 uid="uid://dof70rjknoom5"]
 
+[ext_resource type="Script" uid="uid://dv6b8dcbcuj53" path="res://Attacks/ice_spear_pickup.gd" id="1_nhcem"]
 [ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="1_wg41q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhcem"]
 radius = 20.0
 
 [node name="IceSpearPickup" type="Area2D" groups=["ice_spear_pickup"]]
+script = ExtResource("1_nhcem")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -2.33874

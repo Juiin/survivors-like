@@ -97,7 +97,7 @@ func die() -> void:
 
 	var death_anim = preload("res://Effects/death_animation.tscn")
 	var death_inst = death_anim.instantiate()
-	death_inst.position = global_position - Vector2(0, 8)
+	death_inst.global_position = global_position
 	death_inst.scale = scale
 	get_tree().current_scene.get_node("%YSort").add_child(death_inst)
 	death_inst.set_sprite(stats.sprite)
