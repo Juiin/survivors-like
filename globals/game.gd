@@ -5,6 +5,8 @@ var spawn_path_follow: Node
 signal ice_spear_money_changed
 signal explosion_money_changed
 
+const BOSS_FIRE = preload("res://boss/fire.tscn")
+
 const SLIME_BLUE_STATS = preload("res://Enemies/slime_blue.tres")
 const SLIME_RED_STATS = preload("res://Enemies/slime_red.tres")
 const FROG_RED_STATS = preload("res://Enemies/frog_red.tres")
@@ -58,54 +60,52 @@ const CHEST_BLUE_STATS = preload("res://Enemies/chest_blue.tres")
 const CHEST_RED_STATS = preload("res://Enemies/chest_red.tres")
 
 const POSSIBLE_ENEMY_STATS = [
-	SLIME_BLUE_STATS,
-	SLIME_RED_STATS,
-	FROG_RED_STATS,
-	FROG_BLUE_STATS,
-	EYE_BLUE_STATS,
-	EYE_RED_STATS,
-	RAT_WEAK_STATS,
-	RAT_RED_STATS,
-	TREE_STUMP_RED_STATS,
-	TREE_STUMP_BLUE_STATS,
-	SNAIL_RED_STATS,
-	SNAIL_BLUE_STATS,
-	SHROOM_RED_STATS,
-	SHROOM_BLUE_STATS,
-	WORM_RED_STATS,
-	WORM_BLUE_STATS,
-	PLANT_RED_STATS,
-	PLANT_BLUE_STATS,
-	HORNET_BLUE_STATS,
-	HORNET_RED_STATS,
-	JUGGERNAUT_STATS,
-	CYCLOPS_STATS,
-	TORNADO_RED_STATS,
-	TORNADO_BLUE_STATS,
-	CRAB_RED_STATS,
-	CRAB_BLUE_STATS,
-	TENTACLE_BALL_RED_STATS,
-	TENTACLE_BALL_BLUE_STATS,
-	GHOST_BLUE_STATS,
-	GHOST_RED_STATS,
-	FIRE_RED_STATS,
-	FIRE_BLUE_STATS,
-	CYCLOPS_SMALL_RED_STATS,
-	CYCLOPS_SMALL_BLUE_STATS,
-	CRYSTAL_RED_STATS,
-	CRYSTAL_BLUE_STATS,
-	ZOMBIE_BLUE_STATS,
-	ZOMBIE_RED_STATS,
-	WRAITH_RED_STATS,
-	WRAITH_BLUE_STATS,
-	STONE_RED_STATS,
-	STONE_BLUE_STATS,
-	AMEBA_STATS,
-	AMEBA_RED_STATS,
-	ARMOUR_RED_STATS,
-	ARMOUR_BLUE_STATS,
-	WIZARD_BLUE_STATS,
-	WIZARD_RED_STATS
+	[SLIME_BLUE_STATS,
+	SLIME_RED_STATS],
+	[FROG_RED_STATS,
+	FROG_BLUE_STATS],
+	[EYE_BLUE_STATS,
+	EYE_RED_STATS],
+	[RAT_WEAK_STATS,
+	RAT_RED_STATS],
+	[TREE_STUMP_RED_STATS,
+	TREE_STUMP_BLUE_STATS],
+	[SNAIL_RED_STATS,
+	SNAIL_BLUE_STATS],
+	[SHROOM_RED_STATS,
+	SHROOM_BLUE_STATS],
+	[WORM_RED_STATS,
+	WORM_BLUE_STATS],
+	[PLANT_RED_STATS,
+	PLANT_BLUE_STATS],
+	[HORNET_BLUE_STATS,
+	HORNET_RED_STATS],
+	[TORNADO_RED_STATS,
+	TORNADO_BLUE_STATS],
+	[CRAB_RED_STATS,
+	CRAB_BLUE_STATS],
+	[TENTACLE_BALL_RED_STATS,
+	TENTACLE_BALL_BLUE_STATS],
+	[GHOST_BLUE_STATS,
+	GHOST_RED_STATS],
+	[FIRE_RED_STATS,
+	FIRE_BLUE_STATS],
+	[CYCLOPS_SMALL_RED_STATS,
+	CYCLOPS_SMALL_BLUE_STATS],
+	[CRYSTAL_RED_STATS,
+	CRYSTAL_BLUE_STATS],
+	[ZOMBIE_BLUE_STATS,
+	ZOMBIE_RED_STATS],
+	[WRAITH_RED_STATS,
+	WRAITH_BLUE_STATS],
+	[STONE_RED_STATS,
+	STONE_BLUE_STATS],
+	[AMEBA_STATS,
+	AMEBA_RED_STATS],
+	[ARMOUR_RED_STATS,
+	ARMOUR_BLUE_STATS],
+	[WIZARD_BLUE_STATS,
+	WIZARD_RED_STATS]
 ]
 
 
@@ -125,11 +125,14 @@ var freeze_nova_on_kill = 0.0
 
 var spawn_timer = Timer
 var health_enemy_spawn_timer = Timer
+var swarm_timer = Timer
+var next_spawn_is_swarm = false
 var to_spawn_enemies: Array[Stats] = [SLIME_RED_STATS]
 
 var total_currency_collected := 0
 
 var active_enemies := 0
+var boss_is_active := false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -142,10 +145,16 @@ func _ready() -> void:
 	health_enemy_spawn_timer.connect("timeout", spawn_health_enemy)
 	health_enemy_spawn_timer.set_wait_time(90)
 
+	swarm_timer = Timer.new()
+	swarm_timer.connect("timeout", func(): next_spawn_is_swarm = true)
+	swarm_timer.set_wait_time(60)
+
 	get_tree().current_scene.add_child(spawn_timer)
 	get_tree().current_scene.add_child(health_enemy_spawn_timer)
+	get_tree().current_scene.add_child(swarm_timer)
 	spawn_timer.start()
 	health_enemy_spawn_timer.start()
+	swarm_timer.start()
 
 func _process(delta: float) -> void:
 	if not get_tree().paused:
@@ -158,6 +167,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_give_money_alot"):
 		ice_spear_money += 10000
 		explosion_money += 10000
+	if event.is_action_pressed("debug_spawn_boss"):
+		Game.boss_is_active = true
+		var fire_ring = preload("res://boss/fire_ring_spawner.tscn").instantiate()
+		player.get_tree().current_scene.add_child(fire_ring)
+		fire_ring.global_position = player.global_position
 
 var ice_spear_money: int = 0:
 	set(new_value):
@@ -202,26 +216,29 @@ func add_upgrade_to_player(type: Enums.UpgradeType, upgrade: Upgrade):
 	upgrade.apply_player_upgrade(player)
 
 func spawn_enemy():
+	if boss_is_active:
+		return
+
 	var enemy_stats: Stats
-	const MAX_CURRENCY = 30000
+	const MAX_CURRENCY = 20000
 	if to_spawn_enemies.size() > 0:
 		enemy_stats = to_spawn_enemies.pop_front()
 	
 	if enemy_stats:
 		var enemy_hp = remap(total_currency_collected, 0, MAX_CURRENCY, 50, 3000)
-		enemy_hp *= randf_range(0.7, 1.3)
+		enemy_hp *= randf_range(0.9, 1.1)
 		var at_once_enemies = ceili(enemy_hp / enemy_stats.max_health)
 		at_once_enemies = clamp(at_once_enemies, 1, 100)
 		print("at_once_enemies: ", at_once_enemies)
 
 		# var swarm_chance = remap(total_currency_collected, 0, MAX_CURRENCY, 0.001, 0.005)
-		var swarm_chance = 0
-		if randf() <= swarm_chance:
-			at_once_enemies *= 3
+		if next_spawn_is_swarm:
+			at_once_enemies = max(at_once_enemies, 100)
+			next_spawn_is_swarm = false
 			print("Swarm!")
 		for i in at_once_enemies:
 			var enemy = preload("res://enemy.tscn").instantiate()
-			var new_scale = randf_range(1.3, 2.0)
+			var new_scale = randf_range(1.3, 1.8)
 			spawn_path_follow.get_parent().scale = Vector2(new_scale, new_scale)
 			spawn_path_follow.progress_ratio = randf()
 			enemy.global_position = spawn_path_follow.global_position
@@ -232,17 +249,19 @@ func spawn_enemy():
 
 	# if spawn list is empty try to add a new one
 	if to_spawn_enemies.size() == 0:
-		const MAX_ENEMY_SPAWN_REQ_MONEY = 8000
-		var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 2, (POSSIBLE_ENEMY_STATS.size() - 1) / 2))
-		max_index *= 2
+		const MAX_ENEMY_SPAWN_REQ_MONEY = 6000
+		var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 2, (POSSIBLE_ENEMY_STATS.size() - 1)))
 		max_index = clamp(max_index, 0, POSSIBLE_ENEMY_STATS.size() - 1)
-
-		var possible_enemy_stats = POSSIBLE_ENEMY_STATS.slice(max(0, max_index + 2 - 20), max_index + 2)
+		print(POSSIBLE_ENEMY_STATS.size())
+		var possible_enemy_stats = POSSIBLE_ENEMY_STATS.slice(max(0, max_index + 1 - 10), max_index + 1)
 
 		# dont allow same stats twice in a row
 		possible_enemy_stats = possible_enemy_stats.filter(
-			func(s): return s != enemy_stats
+			func(s): return s[0] != enemy_stats && s[1] != enemy_stats
 		)
+
+		for stats in possible_enemy_stats:
+			print(stats[0].sprite.resource_path)
 
 		var enemy_index = randi_range(0, possible_enemy_stats.size() - 1)
 		
@@ -251,22 +270,21 @@ func spawn_enemy():
 		# var to_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 11, 3)
 		# var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
 
-		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 20, 100)
-		min_enemy_count = clamp(min_enemy_count, 20, 100)
-		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 150, 300)
+		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 30, 120)
+		min_enemy_count = clamp(min_enemy_count, 30, 120)
+		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 100, 300)
 		max_enemy_count = clamp(max_enemy_count, 150, 300)
 
-		const BASE_SPAWN_TIME = 6
+		const BASE_SPAWN_TIME = 5
 		var new_spawn_time = BASE_SPAWN_TIME
 		if active_enemies < min_enemy_count:
-			new_spawn_time = remap(active_enemies, 0, min_enemy_count, 0, BASE_SPAWN_TIME)
+			new_spawn_time = remap(active_enemies, 0, min_enemy_count, 0, BASE_SPAWN_TIME / 2)
 
 		new_spawn_time = max(new_spawn_time, 1)
 		spawn_timer.set_wait_time(new_spawn_time)
 
 		if active_enemies < max_enemy_count:
-			print(active_enemies)
-			to_spawn_enemies.append(possible_enemy_stats[enemy_index])
+			to_spawn_enemies.append(possible_enemy_stats[enemy_index][randi_range(0, 1)])
 
 func spawn_health_enemy():
 	var enemy = preload("res://enemy.tscn").instantiate()
@@ -274,5 +292,19 @@ func spawn_health_enemy():
 	enemy.global_position = spawn_path_follow.global_position
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
 	enemy.scale *= 2
+	enemy.despawn_immune = true
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
-	print(active_enemies)
+
+func spawn_boss():
+	var jugg = preload("res://enemy.tscn").instantiate()
+	jugg.global_position = player.global_position + Vector2(0, -200)
+	jugg.stats = JUGGERNAUT_STATS
+	get_tree().current_scene.get_node("%YSort").add_child(jugg)
+	jugg.make_boss()
+
+	for i in range(2):
+		var cyclops = preload("res://enemy.tscn").instantiate()
+		cyclops.global_position = player.global_position + Vector2(100 if i == 0 else -100, -100)
+		cyclops.stats = CYCLOPS_STATS
+		get_tree().current_scene.get_node("%YSort").add_child(cyclops)
+		cyclops.make_boss()

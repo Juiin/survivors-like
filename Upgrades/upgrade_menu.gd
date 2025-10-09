@@ -31,7 +31,7 @@ func open(upgrades: Array[Upgrade]):
         child.queue_free()
 
     for i in upgrades.size():
-        if upgrades[i].level > upgrades[i].cost.size() - 1:
+        if !upgrades[i].endless && upgrades[i].times_upgraded > upgrades[i].level:
             continue
 
         var _inst = upgrade_entry.instantiate();

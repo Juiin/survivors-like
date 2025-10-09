@@ -5,10 +5,11 @@
 
 [resource]
 script = ExtResource("1_0aw0q")
-max_health = 100.0
+max_health = 10000.0
 sprite = ExtResource("2_1yqti")
 type = 1
-drop_value = 15
-spd = 60.0
-knockback_recovery = 5.5
+drop_value = 35
+spd = 15.0
+knockback_recovery = 1000.0
+health_drop_chance = 0
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

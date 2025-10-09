@@ -5,8 +5,7 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mm7xq"]
 noise_type = 3
-seed = 519842045
-frequency = 0.0071
+seed = 1623179269
 metadata/_preview_in_3d_space_ = true
 
 [node name="ChargeSpawner" type="Node2D"]

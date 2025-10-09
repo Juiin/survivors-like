@@ -57,6 +57,8 @@ func _physics_process(delta):
 	velocity = move_dir * spd
 	move_and_slide()
 
+	global_position = global_position.clamp(Vector2(-640 * 5, -360 * 5), Vector2(640 * 5, 360 * 5))
+
 	if velocity.length() > 0:
 		anim.play("default")
 	else:
@@ -120,14 +122,5 @@ func flash() -> void:
 	create_tween().tween_callback(func(): anim.material.set_shader_parameter("hit_flash_on", false)).set_delay(0.2)
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
-	if area.is_in_group("money"):
+	if area.is_in_group("money") || area.is_in_group("ice_spear_pickup"):
 		area.target = self
-	
-	if area.is_in_group("ice_spear_pickup"):
-		Utils.play_audio(preload("res://Audio/ice_spear_pickup.ogg"), 0.9, 1.1)
-		ice_spear_stored += 1
-		if freeze_nova_on_pickup:
-			var nova = freeze_nova_scene.instantiate()
-			nova.position = area.global_position
-			get_tree().current_scene.call_deferred("add_child", nova)
-		area.queue_free()

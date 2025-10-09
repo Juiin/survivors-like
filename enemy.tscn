@@ -55,6 +55,7 @@ metadata/_custom_type_script = "uid://dot06i76bu1x0"
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
+monitoring = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -15)
@@ -69,7 +70,8 @@ metadata/_custom_type_script = "uid://cxkixd4an1ym"
 [node name="Timer" type="Timer" parent="Hurtbox"]
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
+monitorable = false
 
 [node name="HitboxComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("area_2d")]
 script = ExtResource("6_3yqyl")
@@ -89,3 +91,10 @@ offset_right = 12.0
 offset_bottom = -32.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_hb8ge")
 health_component = NodePath("../HealthComponent")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.249999, -12.75)
+scale = Vector2(2.275, 2.375)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

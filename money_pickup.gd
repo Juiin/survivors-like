@@ -33,4 +33,4 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 func enable_shine():
-	sprite_2d.material.set_shader_parameter("shine_color", Color(1, 1, 1, 0.25))
+	sprite_2d.material.set_shader_parameter("shine_color", Color(1, 1, 1, 1))

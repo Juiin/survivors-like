@@ -8,6 +8,7 @@ script = ExtResource("1_eb3vx")
 max_health = 150.0
 sprite = ExtResource("2_l0s8n")
 type = 1
+drop_value = 50
 spd = 35.0
 knockback_recovery = 8.0
 health_drop_chance = 1

@@ -1,14 +1,14 @@
 class_name GlobalLootUpgrade
 extends Upgrade
 
-var loot_multi_increase := 0.5
-var enemy_multi_increase := 0.3
+var loot_multi_increase := 0.1
+var enemy_multi_increase := 0.1
 
 
 func _init():
-	upgrade_name = "Risky Loot"
-	upgrade_description = "Monsters have 30% more Health and drop 50% more Gems"
-	cost = [10, 100, 150, 200, 250, 300, 350, 400, 500]
+	upgrade_name = "Difficulty Up"
+	upgrade_description = "Monsters have 10% more Health and drop 10% more Gems"
+	cost = [10, 25, 50, 75, 100, 125, 150, 175, 200]
 	type = Enums.UpgradeType.GLOBAL
 
 func apply_player_upgrade(player: Player) -> void:

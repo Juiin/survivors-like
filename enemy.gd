@@ -19,6 +19,13 @@ var knockback = Vector2.ZERO
 var knockback_recovery := 3.5
 
 var is_elite = false
+var is_boss = false
+var freeze_immune = false
+
+const MAX_OFFSCREEN_TIME := 10.0
+var offscreen_time := 0.0
+var is_offscreen := true
+var despawn_immune = false
 
 func _ready() -> void:
 	stats = stats.create_instance()
@@ -44,17 +51,32 @@ func make_elite():
 	scale *= 2
 	is_elite = true
 
+func make_boss():
+	hitbox_component.percent_dmg += 2
+	scale *= 3.5
+	is_boss = true
+	freeze_immune = true
 
 func _physics_process(delta):
+	if !despawn_immune && is_offscreen:
+		offscreen_time += delta
+		if offscreen_time > MAX_OFFSCREEN_TIME:
+			queue_free()
+			print("despawned enemy")
+			return
+	else:
+		offscreen_time = 0
+
+
 	var player = get_tree().get_first_node_in_group("player")
 	var dist = global_position.distance_to(player.global_position)
 	var offset = remap(dist, 0, 500, 0, 100)
 	var dir = global_position.direction_to(player.global_position + Vector2(randf_range(-offset, offset), randf_range(-offset, offset)))
 	velocity = dir * spd
 
-	if dist > 1000:
-		print("despawned enemy")
-		queue_free()
+	# if dist > 1000:
+	# 	print("despawned enemy")
+	# 	queue_free()
 
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
 	if knockback.length() > 0.0:
@@ -123,6 +145,9 @@ func flash() -> void:
 	create_tween().tween_callback(func(): anim.material.set_shader_parameter("hit_flash_on", false)).set_delay(0.2)
 
 func freeze() -> void:
+	if freeze_immune:
+		return
+
 	frozen = true
 	if anti_freeze_tween && anti_freeze_tween.is_running():
 		anti_freeze_tween.kill()
@@ -142,3 +167,11 @@ func burn() -> void:
 		burning=false
 		anim.material.set_shader_parameter("blink_time_scale", 0.0)
 		).set_delay(Game.burn_duration)
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	is_offscreen = false
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	is_offscreen = true

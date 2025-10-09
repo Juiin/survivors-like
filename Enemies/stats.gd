@@ -4,7 +4,7 @@ extends Resource
 @export var max_health := 100.0
 @export var sprite: SpriteFrames
 @export var type: Enums.UpgradeType
-var drop_value: int
+@export var drop_value: int
 @export var spd: float = 50
 @export var knockback_recovery := 3.5
 @export var health_drop_chance := 0
@@ -16,5 +16,5 @@ func create_instance() -> Resource:
     instance.health = max_health
     instance.sprite = sprite
     instance.type = type
-    instance.drop_value = ceili(max_health / 2)
+    instance.drop_value = drop_value
     return instance

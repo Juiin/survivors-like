@@ -28,7 +28,7 @@ var offset_distance := 20.0
 var sfx = preload("res://Audio/new_ice_spear.mp3")
 
 func _ready() -> void:
-	Utils.play_audio(sfx, 0.7, 0.9)
+	Utils.play_audio(sfx, 0.7, 0.7)
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 
 	player = get_tree().get_first_node_in_group("player")

@@ -17,7 +17,7 @@ var offset_distance := 32.0
 
 func _ready() -> void:
 	aoe_increase = -0.6
-	Utils.play_audio(sfx, 0.9, 1.1, max(0, 1 - batch_number * 0.1))
+	Utils.play_audio(sfx, 0.9, 1.1, max(0, 0.7 - batch_number * 0.1))
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 	sprite.animation_finished.connect(die)
 	
