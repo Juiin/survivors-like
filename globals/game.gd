@@ -108,7 +108,6 @@ const POSSIBLE_ENEMY_STATS = [
 	WIZARD_RED_STATS]
 ]
 
-
 const ENEMY_TYPES = [RAT_WEAK_STATS, RAT_RED_STATS, CYCLOPS_STATS, JUGGERNAUT_STATS, AMEBA_STATS]
 
 var elapsed_time: float = 0.0
@@ -172,6 +171,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		var fire_ring = preload("res://boss/fire_ring_spawner.tscn").instantiate()
 		player.get_tree().current_scene.add_child(fire_ring)
 		fire_ring.global_position = player.global_position
+		# var marker = preload("res://boss/rock.tscn").instantiate()
+		# marker.target = player.get_global_mouse_position()
+		# player.get_tree().current_scene.add_child(marker)
+
 
 var ice_spear_money: int = 0:
 	set(new_value):
@@ -263,9 +266,10 @@ func spawn_enemy():
 		for stats in possible_enemy_stats:
 			print(stats[0].sprite.resource_path)
 
-		var enemy_index = randi_range(0, possible_enemy_stats.size() - 1)
-		
-		
+		var curve = preload("res://enemy_weighted_curve.tres")
+		var t = randf()
+		var weighted_t = curve.sample(t)
+		var enemy_index = int(remap(weighted_t, 0, 1, 0, possible_enemy_stats.size() - 1))
 		# var from_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 7, 1)
 		# var to_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 11, 3)
 		# var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
@@ -301,6 +305,9 @@ func spawn_boss():
 	jugg.stats = JUGGERNAUT_STATS
 	get_tree().current_scene.get_node("%YSort").add_child(jugg)
 	jugg.make_boss()
+
+	var rock_thrower = preload("res://boss/rock_thrower.tscn").instantiate()
+	jugg.add_child(rock_thrower)
 
 	for i in range(2):
 		var cyclops = preload("res://enemy.tscn").instantiate()

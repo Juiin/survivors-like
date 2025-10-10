@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjbulx1gfubed"]
+
+[ext_resource type="Texture2D" uid="uid://cod5y6jwnxr3u" path="res://Textures/rock.png" id="1_7nec1"]
+[ext_resource type="Script" uid="uid://qinw3ftsf7nm" path="res://boss/rock.gd" id="1_5087u"]
+
+[node name="Rock" type="Node2D"]
+z_index = 1
+script = ExtResource("1_5087u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_7nec1")

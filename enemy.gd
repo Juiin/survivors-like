@@ -56,6 +56,7 @@ func make_boss():
 	scale *= 3.5
 	is_boss = true
 	freeze_immune = true
+	despawn_immune = true
 
 func _physics_process(delta):
 	if !despawn_immune && is_offscreen:

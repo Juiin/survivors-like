@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4f2o34agfdga"]
+
+[ext_resource type="Script" uid="uid://byrt8xl1a8il3" path="res://rock_thrower.gd" id="1_yos5v"]
+
+[node name="RockThrower" type="Node2D"]
+script = ExtResource("1_yos5v")
