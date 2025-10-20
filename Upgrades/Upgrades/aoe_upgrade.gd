@@ -1,7 +1,7 @@
 class_name AoeUpgrade
 extends Upgrade
 
-@export var aoe_increase := 0.1
+@export var aoe_increase := 0.15
 
 
 func _init():

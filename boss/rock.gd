@@ -30,6 +30,7 @@ func _ready() -> void:
 	marker.duration = fly_duration
 	marker.on_finished = func():
 		marker.check_damage()
+		Utils.play_audio(land_rock_snd, 0.8, 0.9)
 	get_tree().current_scene.add_child(marker)
 
 func _process(delta: float) -> void:

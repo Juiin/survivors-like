@@ -28,6 +28,7 @@ const PLANT_BLUE_STATS = preload("res://Enemies/plant_blue.tres")
 const HORNET_BLUE_STATS = preload("res://Enemies/hornet_blue.tres")
 const HORNET_RED_STATS = preload("res://Enemies/hornet_red.tres")
 const JUGGERNAUT_STATS = preload("res://Enemies/juggernaut.tres")
+const JUGGERNAUT_SMALL_STATS = preload("res://Enemies/juggernaut_small.tres")
 const CYCLOPS_STATS = preload("res://Enemies/cyclops.tres")
 const TORNADO_RED_STATS = preload("res://Enemies/tornado_red.tres")
 const TORNADO_BLUE_STATS = preload("res://Enemies/tornado_blue.tres")
@@ -123,7 +124,8 @@ var burn_nova_scale_multi := 1.0
 var freeze_nova_on_kill = 0.0
 
 var spawn_timer = Timer
-var health_enemy_spawn_timer = Timer
+var health_enemy_spawn_timer: Timer
+var throw_enemy_spawn_timer: Timer
 var swarm_timer = Timer
 var next_spawn_is_swarm = false
 var to_spawn_enemies: Array[Stats] = [SLIME_RED_STATS]
@@ -142,18 +144,24 @@ func _ready() -> void:
 
 	health_enemy_spawn_timer = Timer.new()
 	health_enemy_spawn_timer.connect("timeout", spawn_health_enemy)
-	health_enemy_spawn_timer.set_wait_time(90)
+	health_enemy_spawn_timer.set_wait_time(75)
+
+	throw_enemy_spawn_timer = Timer.new()
+	throw_enemy_spawn_timer.connect("timeout", spawn_throw_enemy)
+	throw_enemy_spawn_timer.set_wait_time(50)
 
 	swarm_timer = Timer.new()
 	swarm_timer.connect("timeout", func(): next_spawn_is_swarm = true)
-	swarm_timer.set_wait_time(60)
+	swarm_timer.set_wait_time(180)
 
 	get_tree().current_scene.add_child(spawn_timer)
 	get_tree().current_scene.add_child(health_enemy_spawn_timer)
 	get_tree().current_scene.add_child(swarm_timer)
+	get_tree().current_scene.add_child(throw_enemy_spawn_timer)
 	spawn_timer.start()
 	health_enemy_spawn_timer.start()
 	swarm_timer.start()
+	throw_enemy_spawn_timer.start()
 
 func _process(delta: float) -> void:
 	if not get_tree().paused:
@@ -178,12 +186,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 var ice_spear_money: int = 0:
 	set(new_value):
-		total_currency_collected += new_value - ice_spear_money
+		if new_value > ice_spear_money:
+			total_currency_collected += new_value - ice_spear_money
 		ice_spear_money = max(new_value, 0)
 		ice_spear_money_changed.emit()
 var explosion_money: int = 0:
 	set(new_value):
-		total_currency_collected += new_value - explosion_money
+		if new_value > explosion_money:
+			total_currency_collected += new_value - explosion_money
 		explosion_money = max(new_value, 0)
 		explosion_money_changed.emit()
 
@@ -236,7 +246,7 @@ func spawn_enemy():
 
 		# var swarm_chance = remap(total_currency_collected, 0, MAX_CURRENCY, 0.001, 0.005)
 		if next_spawn_is_swarm:
-			at_once_enemies = max(at_once_enemies, 100)
+			at_once_enemies = min(at_once_enemies * 5, 75)
 			next_spawn_is_swarm = false
 			print("Swarm!")
 		for i in at_once_enemies:
@@ -252,10 +262,11 @@ func spawn_enemy():
 
 	# if spawn list is empty try to add a new one
 	if to_spawn_enemies.size() == 0:
-		const MAX_ENEMY_SPAWN_REQ_MONEY = 6000
+		const MAX_ENEMY_SPAWN_REQ_MONEY = 7000
 		var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 2, (POSSIBLE_ENEMY_STATS.size() - 1)))
+		print("total_currency_collected: ", total_currency_collected)
 		max_index = clamp(max_index, 0, POSSIBLE_ENEMY_STATS.size() - 1)
-		print(POSSIBLE_ENEMY_STATS.size())
+		print("max_index: ", max_index)
 		var possible_enemy_stats = POSSIBLE_ENEMY_STATS.slice(max(0, max_index + 1 - 10), max_index + 1)
 
 		# dont allow same stats twice in a row
@@ -291,12 +302,33 @@ func spawn_enemy():
 			to_spawn_enemies.append(possible_enemy_stats[enemy_index][randi_range(0, 1)])
 
 func spawn_health_enemy():
+	if boss_is_active:
+		return
+
 	var enemy = preload("res://enemy.tscn").instantiate()
 	spawn_path_follow.progress_ratio = randf()
 	enemy.global_position = spawn_path_follow.global_position
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
 	enemy.scale *= 2
 	enemy.despawn_immune = true
+	get_tree().current_scene.get_node("%YSort").add_child(enemy)
+
+func spawn_throw_enemy():
+	if boss_is_active:
+		return
+
+	var enemy = preload("res://enemy.tscn").instantiate()
+	spawn_path_follow.progress_ratio = randf()
+	enemy.global_position = spawn_path_follow.global_position
+	enemy.stats = JUGGERNAUT_SMALL_STATS
+
+	var rock_thrower = preload("res://boss/rock_thrower.tscn").instantiate()
+	rock_thrower.at_player_interval = 30
+	rock_thrower.at_random_interval = 5
+	enemy.add_child(rock_thrower)
+	enemy.scale *= 2
+	enemy.is_elite = true
+
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
 
 func spawn_boss():

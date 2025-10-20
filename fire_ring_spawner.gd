@@ -30,7 +30,7 @@ func _ready():
 		for fire in fires:
 			fire.get_node("Hitbox").queue_free()
 		Game.spawn_boss())
-	shrink_tween.tween_property(self, "current_radius", min_radius, 120).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	shrink_tween.tween_property(self, "current_radius", min_radius, 100).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 
 	# Precompute max number of fires needed at start radius
 	var circumference = TAU * max_radius

@@ -7,8 +7,8 @@ extends Node
 
 var spawned_instances := []
 
-const WIDTH = 640 * 10
-const HEIGHT = 360 * 10
+const WIDTH = 640 * 20
+const HEIGHT = 360 * 20
 
 func _set_spawn_chargers(_value: bool) -> void:
 	spawn_chargers = false

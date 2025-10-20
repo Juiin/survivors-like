@@ -57,7 +57,7 @@ func _physics_process(delta):
 	velocity = move_dir * spd
 	move_and_slide()
 
-	global_position = global_position.clamp(Vector2(-640 * 5, -360 * 5), Vector2(640 * 5, 360 * 5))
+	global_position = global_position.clamp(Vector2(-640 * 10, -360 * 10), Vector2(640 * 10, 360 * 10))
 
 	if velocity.length() > 0:
 		anim.play("default")
@@ -74,9 +74,10 @@ func _physics_process(delta):
 
 func attack():
 	var atk_count = 1;
-	if current_form == form.ST && ice_spear_stored > 0:
-		atk_count = ice_spear_stored + 1
-		ice_spear_stored = 0
+	if current_form == form.ST:
+		if ice_spear_stored > 0:
+			atk_count = ice_spear_stored + 1
+			ice_spear_stored = 0
 	elif current_form == form.AOE:
 		atk_count = explosion_count
 

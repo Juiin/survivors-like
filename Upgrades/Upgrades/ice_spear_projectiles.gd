@@ -6,7 +6,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Additional Projectiles"
     upgrade_description = "Ice Spear fires an additional projectile"
-    cost = [500, 1000, 2000, 3000, 5000, 7500, 10000, 12500, 15000]
+    cost = [500, 2000, 5000, 10000, 15000, 20000, 20000, 20000, 20000]
     type = Enums.UpgradeType.ICE_SPEAR
 
 func apply_player_upgrade(player: Player) -> void:

@@ -7,6 +7,7 @@ var target: CharacterBody2D
 
 var ice_spear_sprite := preload("res://Textures/Items/Gems/Gem_blue.png")
 var explosion_sprite := preload("res://Textures/Items/Gems/Gem_red.png")
+var global_sprite := preload("uid://h5dy21n64hm6")
 
 var value := 1
 var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
@@ -15,11 +16,15 @@ var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
 
 func _ready() -> void:
 	scale *= 1.5
+	if type == Enums.UpgradeType.GLOBAL:
+		scale *= 1.4
 	match type:
 		Enums.UpgradeType.ICE_SPEAR:
 			sprite_2d.texture = ice_spear_sprite
 		Enums.UpgradeType.EXPLOSION:
 			sprite_2d.texture = explosion_sprite
+		Enums.UpgradeType.GLOBAL:
+			sprite_2d.texture = global_sprite
 
 func _physics_process(delta: float) -> void:
 	if target:

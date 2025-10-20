@@ -6,7 +6,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Burn Duration"
     upgrade_description = "+1 Second to Burn Duration"
-    cost = [100, 250, 375, 500, 750, 1000]
+    cost = [100, 200, 300, 400, 500]
     type = Enums.UpgradeType.EXPLOSION
     endless = true
 

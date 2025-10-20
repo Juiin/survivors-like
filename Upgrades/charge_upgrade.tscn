@@ -20,3 +20,7 @@ texture = ExtResource("2_dfilu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dfilu")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(8.25, 7)

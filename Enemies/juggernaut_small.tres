@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://ja4pvmufffb7"]
+
+[ext_resource type="Script" uid="uid://cjgxfrywc1xmp" path="res://Enemies/stats.gd" id="1_3rw64"]
+[ext_resource type="SpriteFrames" uid="uid://c1na8kbtwxe38" path="res://Textures/Enemy/juggernaut.tres" id="2_h6mpf"]
+
+[resource]
+script = ExtResource("1_3rw64")
+max_health = 100.0
+sprite = ExtResource("2_h6mpf")
+type = 2
+drop_value = 200
+spd = 45.0
+knockback_recovery = 1000.0
+health_drop_chance = 0
+metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

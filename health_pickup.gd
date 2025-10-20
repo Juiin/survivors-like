@@ -8,7 +8,7 @@ var target: CharacterBody2D
 var green_apple := preload("res://Textures/Items/apple_green.png")
 var red_apple := preload("res://Textures/Items/apple_red.png")
 
-var value := 30
+var value := 40
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
