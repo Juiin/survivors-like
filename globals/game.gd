@@ -140,7 +140,7 @@ func _ready() -> void:
 	spawn_path_follow = player.get_node("%SpawnPathFollow")
 	spawn_timer = Timer.new()
 	spawn_timer.connect("timeout", spawn_enemy)
-	spawn_timer.set_wait_time(1)
+	spawn_timer.set_wait_time(2)
 
 	health_enemy_spawn_timer = Timer.new()
 	health_enemy_spawn_timer.connect("timeout", spawn_health_enemy)
@@ -285,10 +285,10 @@ func spawn_enemy():
 		# var to_spawn_time = remap(total_currency_collected, 0, MAX_CURRENCY, 11, 3)
 		# var new_spawn_time = randf_range(from_spawn_time, to_spawn_time)
 
-		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 30, 120)
-		min_enemy_count = clamp(min_enemy_count, 30, 120)
-		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 100, 300)
-		max_enemy_count = clamp(max_enemy_count, 150, 300)
+		var min_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 10, 120)
+		min_enemy_count = clamp(min_enemy_count, 10, 120)
+		var max_enemy_count = remap(total_currency_collected, 0, MAX_CURRENCY, 50, 300)
+		max_enemy_count = clamp(max_enemy_count, 50, 300)
 
 		const BASE_SPAWN_TIME = 5
 		var new_spawn_time = BASE_SPAWN_TIME
@@ -309,7 +309,7 @@ func spawn_health_enemy():
 	spawn_path_follow.progress_ratio = randf()
 	enemy.global_position = spawn_path_follow.global_position
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
-	enemy.scale *= 2
+	enemy.scale *= 2.5
 	enemy.despawn_immune = true
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
 

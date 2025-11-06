@@ -50,8 +50,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			ice_spear_upgrade_menu.close()
 			explosion_upgrade_menu.close()
 			global_upgrade_menu.close()
-			elapsed_game_timer.close()
-			get_tree().paused = false
+			elapsed_game_timer.close(func (): get_tree().paused = false)
+			
 		else:
 			ice_spear_upgrade_menu.open(ice_spear_upgrades)
 			explosion_upgrade_menu.open(explosion_upgrades)

@@ -36,4 +36,3 @@ func throw_rock(_target: Vector2):
 
 	rock.global_position = throw_marker.global_position
 	get_tree().current_scene.add_child(rock)
-	print(throw_marker.global_position)
