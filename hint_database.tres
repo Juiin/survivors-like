@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HintDatabase" load_steps=2 format=3 uid="uid://df3j84f285td7"]
+
+[ext_resource type="Script" uid="uid://bweg3v0gbsajg" path="res://hint_database.gd" id="1_7g2rg"]
+
+[resource]
+script = ExtResource("1_7g2rg")
+hints = Array[String](["Stone Throwers drop a signficant amount of Gems for both Spells", "Chest Enemies always drop an Apple which heals you on pickup", "Remember to frequently change your Spell depending on the situation"])
+metadata/_custom_type_script = "uid://bweg3v0gbsajg"

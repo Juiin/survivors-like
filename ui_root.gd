@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var explosion_upgrade_menu: UpgradeMenu = %UpgradeMenuExplosion
 @onready var global_upgrade_menu: UpgradeMenu = %UpgradeMenuGlobal
 @onready var elapsed_game_timer: ElapsedGameTimer = %ElapsedGameTimer
+@onready var hints: Hints = %Hints
 @onready var upgrade_icon := %NewUpgradeIcon
 
 var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
@@ -50,13 +51,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			ice_spear_upgrade_menu.close()
 			explosion_upgrade_menu.close()
 			global_upgrade_menu.close()
-			elapsed_game_timer.close(func (): get_tree().paused = false)
+			hints.close()
+			elapsed_game_timer.close(func(): get_tree().paused=false)
 			
 		else:
 			ice_spear_upgrade_menu.open(ice_spear_upgrades)
 			explosion_upgrade_menu.open(explosion_upgrades)
 			global_upgrade_menu.open(global_upgrades)
 			elapsed_game_timer.open()
+			hints.open()
 			get_tree().paused = true
 
 func _ready() -> void:

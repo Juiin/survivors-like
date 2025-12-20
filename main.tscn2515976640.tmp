@@ -1,4 +1,4 @@
-[gd_scene load_steps=727 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=726 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://b8ddjnmac4byl" path="res://Audio/music_1.mp3" id="1_2cqfq"]
@@ -20,7 +20,6 @@
 [ext_resource type="Script" uid="uid://c2soyw4l6by2f" path="res://test.gd" id="17_yaehf"]
 [ext_resource type="Script" uid="uid://dkmuld8h8rtg1" path="res://elapsed_game_timer.gd" id="19_cegan"]
 [ext_resource type="Script" uid="uid://dmo052asui5gq" path="res://hints.gd" id="20_82xsv"]
-[ext_resource type="Resource" uid="uid://df3j84f285td7" path="res://hint_database.tres" id="21_getpj"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
@@ -5667,9 +5666,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -29.0
-offset_top = 54.0
+offset_top = 43.0
 offset_right = 29.0
-offset_bottom = 73.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("19_cegan")
@@ -5697,29 +5696,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -199.0
-offset_top = 28.0
-offset_right = 46.0
-offset_bottom = 49.0
+offset_left = -165.0
+offset_top = -64.0
+offset_right = 161.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_horizontal = 6
-size_flags_vertical = 6
 script = ExtResource("20_82xsv")
-hint_database = ExtResource("21_getpj")
 
-[node name="MarginContainer" type="MarginContainer" parent="UIRoot/Hints"]
+[node name="Label" type="Label" parent="UIRoot/Hints"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HintLabel" type="Label" parent="UIRoot/Hints/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-text = "If "
+text = "If you play better you have better chances at winning"
 horizontal_alignment = 1
-vertical_alignment = 1
