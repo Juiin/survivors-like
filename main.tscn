@@ -2667,7 +2667,6 @@ increase = 5
 process_mode = 3
 stream = ExtResource("1_2cqfq")
 volume_db = -15.0
-autoplay = true
 parameters/looping = true
 
 [node name="Background" type="Sprite2D" parent="."]

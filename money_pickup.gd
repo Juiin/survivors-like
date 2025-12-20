@@ -13,11 +13,12 @@ var value := 1
 var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var final_scale: Vector2 = scale
 
 func _ready() -> void:
-	scale *= 1.5
+	final_scale *= 1.5
 	if type == Enums.UpgradeType.GLOBAL:
-		scale *= 1.6
+		final_scale *= 1.6
 	match type:
 		Enums.UpgradeType.ICE_SPEAR:
 			sprite_2d.texture = ice_spear_sprite
@@ -25,7 +26,12 @@ func _ready() -> void:
 			sprite_2d.texture = explosion_sprite
 		Enums.UpgradeType.GLOBAL:
 			sprite_2d.texture = global_sprite
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", final_scale*2, 0.3)
+	tween.tween_property(self, "scale", final_scale, 0.3)
 
+	
 func _physics_process(delta: float) -> void:
 	if target:
 		global_position = global_position.move_toward(target.global_position, spd)
@@ -35,6 +41,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Utils.play_audio(pickup_snd, 0.9, 1.1, 0.35)
 		Game.adjust_money(type, value)
+
 		queue_free()
 
 func enable_shine():
