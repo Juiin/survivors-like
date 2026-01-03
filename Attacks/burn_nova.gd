@@ -1,9 +1,18 @@
-extends Area2D
+extends Attack
 
 @onready var cpuparticles_2d: CPUParticles2D = $CPUParticles2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+var player: Player
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	for upgrade in player.explosion_upgrades.size():
+		if player.explosion_upgrades[upgrade] is FlatDamageUpgrade:
+			player.explosion_upgrades[upgrade].apply_upgrade(self)
+	for upgrade in player.global_upgrades.size():
+		if player.global_upgrades[upgrade] is GlobalPercentDamageUpgrade:
+			player.global_upgrades[upgrade].apply_upgrade(self)
+
 	cpuparticles_2d.emitting = true
 	var timer = Timer.new()
 	timer.set_wait_time(cpuparticles_2d.lifetime)

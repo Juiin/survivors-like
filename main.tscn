@@ -24,140 +24,140 @@
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_82xsv"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_getpj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ryguw"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_d13ii"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0odxb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lswn8"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_a6jrf"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_xuqvo"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_qsp4k"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_kq58d"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_seu75"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_htxhm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_jq2sk"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4k2k6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_0rl1p"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ok6jj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_facbu"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_b1qrp"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_come4"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_h8e4i"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4lmeg"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_0cp0l"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_d2t1y"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_gngh3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0n3wm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_qnost"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wnkbs"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_f6a44"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0cbny"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_hrvbo"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_uypp3"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_blkrb"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_abqjc"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_6iyjs"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4w656"]
 script = ExtResource("7_82xsv")
@@ -167,75 +167,75 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_rnkwl"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_vke2r"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_uit24"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ruth0"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_rm4vd"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_pjyto"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_sm6fg"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_b17eg"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ntx8l"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_uatky"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1vm84"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_wu3dr"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_cyx1q"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0dhbp"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_jx0wj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_kkkcx"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_34ol3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_c2n8d"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_wy5fy"]
 script = ExtResource("7_82xsv")
@@ -245,73 +245,73 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5dllo"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_phcyf"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_birbe"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_f1p13"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4obbf"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ovcoh"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ppx11"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_1yv1y"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_5yh34"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_pjuso"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_23xmf"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_swlj1"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_yysqy"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_n5t1e"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_h6isl"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_53bls"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_lwnsi"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_41lik"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_jbvwl"]
 script = ExtResource("7_82xsv")
@@ -321,84 +321,84 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_yvsr8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_vieuh"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_yjja3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_l0gw7"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_inymm"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jcxqu"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0arob"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_dij0e"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_k1udn"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_wat4s"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ywjan"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_m74q3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_tko6h"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_am8a1"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_8dc3g"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_htgcl"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_smeu8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_f3y11"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_cpm2s"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_u81y6"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_rt5wr"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mnw77"]
 script = ExtResource("7_82xsv")
@@ -408,31 +408,31 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_d5iia"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_asu84"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qwt6e"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_off2o"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_tttfs"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_1iygd"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_g5xqc"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_s4o1y"]
 script = ExtResource("7_82xsv")
@@ -445,7 +445,7 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5aa3q"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_bmvma"]
 script = ExtResource("7_82xsv")
@@ -455,176 +455,176 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_2n44k"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_86lig"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ldnlw"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_qe8ju"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_bnk2o"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_oosfy"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_nf4f2"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_xkvoa"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_t5kpo"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_pw0td"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_37eu1"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0wkqm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ve5sr"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_5s44m"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ibca3"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_g3y5b"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_1slqb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_uo83y"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_y0aao"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wm5rm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ekl5k"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_fdpg8"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_rpys8"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_6gr3f"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6seew"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_3ox4t"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4fmho"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_aivy6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_bil4k"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_hnquj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_0h8y2"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_nycv6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_x4ftd"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_arf1h"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_s0om5"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_gkfde"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4qxq8"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ryg4g"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_oy6td"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_fe76k"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_p5pln"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_oiuw5"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_mldrc"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1tiwm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xxpw2"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_wghq8"]
 script = ExtResource("7_82xsv")
@@ -634,71 +634,71 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_hp4ct"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_suf1q"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_lxb2r"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ceu5l"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_lv1ug"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mofpq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_6kttw"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_oqmj5"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_uor2d"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_bdw5g"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_j6smb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_xp7cv"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_6ff2c"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ly5pk"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_s0u5n"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8lrju"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5kegx"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_afgqn"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jvn2n"]
 script = ExtResource("7_82xsv")
@@ -708,48 +708,48 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_rx6mv"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_31js7"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0a4i0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_i0xsp"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_kll2q"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ft875"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_6hmxt"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_rhlye"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_pqvsh"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_3qj4k"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mo8hc"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_gbg58"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_le5wj"]
 script = ExtResource("7_82xsv")
@@ -765,11 +765,11 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_3gvdc"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_h0sjo"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_uqsbb"]
 script = ExtResource("7_82xsv")
@@ -779,122 +779,122 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_12204"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_trkoe"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_bvlej"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ycw8e"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_2gd4m"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_61bol"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_lix4w"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_kmrid"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_c6fgv"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_fd6dt"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gttkg"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_hiwvf"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ed5de"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_e31mi"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mq14a"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_yf6j3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_e4ynb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_a1n43"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_dfxmq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_kcoi7"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_rkju4"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_um25j"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_7dysq"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_0abf2"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_7b48j"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8tqy7"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_faa31"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_acld0"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_kc3cm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_utcts"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_2pm5r"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_38n85"]
 script = ExtResource("7_82xsv")
@@ -904,56 +904,56 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_4b624"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0li47"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_idhsh"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_piefl"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_asb44"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_v4ssx"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ec14y"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_q0hco"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_g65e0"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_yjv7m"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_xaqn1"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_etly8"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ctf6b"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_va5bq"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_pwkyu"]
 script = ExtResource("7_82xsv")
@@ -966,23 +966,23 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_8kc55"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4ok4n"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6ti3u"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_hb81y"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_5xfp2"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1usxw"]
 script = ExtResource("7_82xsv")
@@ -992,26 +992,26 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_e31dh"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_tcxth"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_22udi"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4v3l6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xj0gb"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_2xbl0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ohsdn"]
 script = ExtResource("7_82xsv")
@@ -1021,38 +1021,38 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_d635n"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4fms3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_7bx05"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_fkmie"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_t3ss8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_g6ptb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0bk8h"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_xuh84"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_egrga"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_tfaor"]
 script = ExtResource("7_82xsv")
@@ -1062,26 +1062,26 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_j3ofb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_m5f57"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_oirqo"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_moxjo"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_130bj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_xa7an"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_dk42n"]
 script = ExtResource("7_82xsv")
@@ -1094,22 +1094,22 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_8v027"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_me1c1"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_skfll"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_l0ugm"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_dfd08"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_fxdwr"]
 script = ExtResource("7_82xsv")
@@ -1119,22 +1119,22 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ip2l3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_s14wm"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_q4gy1"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_cnw22"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_8e868"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_2vmp2"]
 script = ExtResource("7_82xsv")
@@ -1144,15 +1144,15 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_us00v"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_nc1xb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wm7i3"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_d1vw0"]
 script = ExtResource("7_82xsv")
@@ -1165,11 +1165,11 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_8ldsf"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_f4177"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_nckbc"]
 script = ExtResource("7_82xsv")
@@ -1179,43 +1179,43 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_r4j87"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_mwre3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_qwf4s"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_m5kst"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_d8xcs"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_2ixj2"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_t6w6j"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_itvpi"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4jpym"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_j4mna"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_pnym5"]
 script = ExtResource("7_82xsv")
@@ -1225,109 +1225,109 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ybd4b"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3pnxd"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wr7jj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1h7wj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_p03h6"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ypkft"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_tdfff"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_l0fe1"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_tmofn"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xf6cw"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_abbrq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_omtq3"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_8k3hj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qfrw5"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_nrh2l"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_cuixb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_bwis2"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_lyu6w"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_prs1d"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_klk0y"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_a2565"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_bty7c"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_twex2"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3try8"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_3c47a"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_wvadq"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_g3g33"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_o86rh"]
 script = ExtResource("7_82xsv")
@@ -1337,7 +1337,7 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5i5n0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_yeist"]
 script = ExtResource("7_82xsv")
@@ -1350,62 +1350,62 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_6ttiy"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_2cfd8"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_64ppg"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_scdfc"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jyvw0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_23ygw"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mj5jr"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_gdxi3"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_u1kx1"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wdkeg"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_47htb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_a6nd4"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_xi5el"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_4eobe"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_6tt5h"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_hc6gi"]
 script = ExtResource("7_82xsv")
@@ -1415,118 +1415,118 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_4nm45"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_bpvq0"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_afxfb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lm578"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_4pmsh"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4cib8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_r0mqx"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gdyyp"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_n7cjp"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jh8xk"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_y2duv"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_g1dm8"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ewf3w"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jlis6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_22wjk"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_einc0"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_38yr6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_kgg5j"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_u2kg7"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_mfcn2"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_kcnd4"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_fgks3"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_cit2p"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_46ndd"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3cabt"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_swcop"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_r8clq"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ico27"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_k6qn3"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_oodit"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lwqyd"]
 script = ExtResource("7_82xsv")
@@ -1536,31 +1536,31 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_b52uf"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_hwprm"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_d0xhy"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lw0ge"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_1e7qx"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_6kqjg"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ydhsu"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_p3rrp"]
 script = ExtResource("7_82xsv")
@@ -1570,18 +1570,18 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5jugy"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_320fk"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_5cdne"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_cdf73"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qeqs3"]
 script = ExtResource("7_82xsv")
@@ -1591,7 +1591,7 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_fgj2h"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_33vkc"]
 script = ExtResource("7_82xsv")
@@ -1601,57 +1601,57 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ct655"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_k508x"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lt7rr"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_wv2wi"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_7wskh"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_we7ek"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_4t3jq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wibxs"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_tk4ml"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_giqsh"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_8bsdr"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_sa5b4"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_6h8os"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_dpk1y"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_s2e5t"]
 script = ExtResource("7_82xsv")
@@ -1664,102 +1664,102 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_163gt"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_sfu8n"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_7ljty"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_nmlsr"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_87vht"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_2fit5"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_gk3yn"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_lmlah"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_sxhyu"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_iu23i"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_t4ssb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_snw3v"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_avbtm"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_s11hv"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_k4n35"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0fjwg"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_hh8eq"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_u8gjg"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4eule"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_8igct"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_xnvgk"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_b3d73"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_8h177"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_i7ics"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_m58yd"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_0l6uf"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8nef1"]
 script = ExtResource("7_82xsv")
@@ -1769,45 +1769,45 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_aprrs"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_oy7di"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_pt3va"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_cxdol"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_r5dif"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_pgpps"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_mlki8"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_qadea"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_fn3tu"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_vevns"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_5w7i7"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_wy6px"]
 script = ExtResource("7_82xsv")
@@ -1817,29 +1817,29 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ff6pb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_mbcnp"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_bwc2y"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_an72e"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_6kgd8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_lsr6y"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ovfx3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xlq0g"]
 script = ExtResource("7_82xsv")
@@ -1855,126 +1855,126 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_itk5a"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6kay4"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_e06bn"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_pb33p"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_1teer"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_kajqd"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_fyan7"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_xdtur"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_d0eyq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_l14ib"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ctxsq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_hxd2u"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_dbrv6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_e4p22"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_mud2v"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wtu2d"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_58oct"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gncs7"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_wdxfs"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_cno1m"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_vhwx0"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_tbmjv"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_u42q1"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_5e1yt"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_c5cs3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_bd44h"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_cwnmj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_s8vnu"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_lnsqw"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_6y03b"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_b5r8i"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_yix8p"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_k6osc"]
 script = ExtResource("7_82xsv")
@@ -1984,26 +1984,26 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_3aoqv"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jrd83"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_pu0t5"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_2e1d3"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ligq0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_4yu3b"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_5rb40"]
 script = ExtResource("7_82xsv")
@@ -2019,266 +2019,266 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_jssgk"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_x02ym"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xlvj7"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xmwoi"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_r4no2"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_iqvo6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_p4sje"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gv4xp"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1d77j"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_7ssh3"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_on70b"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_nr8l8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_mhh5e"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_rywk6"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4twoi"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_aj5ld"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_x8xw8"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_1tvrs"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_7sb4c"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8rsy7"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_fxgs4"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ktnmh"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_sk8d5"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_jtpdi"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_jrfwr"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ip88w"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_tfej1"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_oql54"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_dvfvp"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_fdtjl"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_365pm"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_x0b8w"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_c5sv4"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_3wpod"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_5iarx"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_r6i2u"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_pfca8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_wthfa"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_2nvhj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_dxbxp"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_iv7tu"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_7mgxe"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_s2api"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_j7rmu"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_plxe6"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_3vg2i"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_p1kba"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ip7dn"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_7s5k1"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_07r3u"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_x1cyb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_evox0"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6f71k"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_gd4fv"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_1djxn"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6h67g"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8b1le"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6mlmn"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ppi83"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ndm7p"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4m2gg"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_xntwl"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3vftl"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6emss"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_qkqit"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_fxy45"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_iqqg1"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_gkhjj"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_wfxk3"]
 script = ExtResource("7_82xsv")
@@ -2288,33 +2288,33 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_hht36"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_gadrn"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ri3dd"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_21hfw"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_2ftjc"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_gma31"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_5eihh"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ymi3n"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_cokvt"]
 script = ExtResource("7_82xsv")
@@ -2324,97 +2324,97 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_ckkqg"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_1a0b5"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wlyf5"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_owjmr"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_g45ji"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_spoja"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_2w7am"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_ev0in"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_u8ium"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_v60sk"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ull4v"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_p1y0x"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_fp30k"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_fvf72"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ujhtg"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_gqrqa"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3ses1"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_3n3fp"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_lk3lg"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_ipftk"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_63abm"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_jw8ml"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_bdbd8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_tygcj"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_vpbta"]
 script = ExtResource("7_82xsv")
@@ -2427,135 +2427,135 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_0y51o"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_8e0hq"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_otlqr"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_iuffr"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_bt0dd"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_dstfl"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_n5vdb"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_1jj3l"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_sr7kt"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_eurfk"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_wlrai"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_g4rdo"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_6mnx8"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ox583"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_6xb87"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_aj28j"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_u6r82"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_ru7up"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_anijl"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_uqkmt"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_wr8tf"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_rnnoi"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_beobk"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_giart"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_4smyw"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_16i4j"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_4h2yh"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_62j6i"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_7e000"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_gd7c4"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_031ik"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_48jan"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_qaxtg"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_210f5"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_jlatl"]
 script = ExtResource("7_82xsv")
@@ -2565,103 +2565,103 @@ script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_aalqi"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_yvoe2"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_lh225"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_bwl8u"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_4jns6"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_uu6bb"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_6oawl"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8bekc"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_3ke63"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_w1pjv"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_hq42m"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_5nd8a"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_5usdb"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_h43fr"]
 script = ExtResource("5_2cqfq")
-increase_percent = 0.4
+increase_percent = 0.5
 
 [sub_resource type="Resource" id="Resource_hfcfq"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_vs3vq"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_w1ij6"]
 script = ExtResource("7_82xsv")
 
 [sub_resource type="Resource" id="Resource_aalu1"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_p4wxq"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_i7c8n"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_0lhj7"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_7rfhp"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_vsbcf"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_8t0wr"]
 script = ExtResource("3_dg77c")
-atk_spd_increase_percent = 0.05
+atk_spd_increase_percent = 0.1
 
 [sub_resource type="Resource" id="Resource_qm1f0"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [sub_resource type="Resource" id="Resource_4ieun"]
 script = ExtResource("6_yaehf")
-increase = 5
+increase = 0.1
 
 [node name="Main" type="Node2D"]
 
@@ -2669,10 +2669,12 @@ increase = 5
 process_mode = 3
 stream = ExtResource("1_2cqfq")
 volume_db = -15.0
+autoplay = true
 parameters/looping = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.772951, 0.772951, 0.772951, 1)
+z_index = -10
 texture_repeat = 2
 position = Vector2(0, -1)
 texture = ExtResource("1_0xm2m")

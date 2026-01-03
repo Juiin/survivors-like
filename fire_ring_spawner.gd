@@ -2,7 +2,7 @@ extends Node2D
 
 var start_radius: float
 var max_radius := 700
-@export var shrink_speed: float = 50.0
+@export var shrink_speed: float = 75.0
 @export var fire_width: float = 32.0 # width in pixels of one fire sprite
 @export var min_radius: float = 325.0 # stop shrinking at this point
 @export var damage_per_second_outside: float = 15.0

@@ -28,8 +28,8 @@ func _ready() -> void:
 			sprite_2d.texture = global_sprite
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", final_scale*2, 0.3)
-	tween.tween_property(self, "scale", final_scale, 0.3)
+	tween.tween_property(self, "scale", final_scale * 2, 0.2)
+	tween.tween_property(self, "scale", final_scale, 0.2)
 
 	
 func _physics_process(delta: float) -> void:

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_7g2rg")
-hints = Array[String](["Stone Throwers drop a signficant amount of Gems for both Spells", "Chest Enemies always drop an Apple which heals you on pickup", "Remember to frequently change your Spell depending on the situation"])
+hints = Array[String](["Stone Throwers drop a signficant amount of Gems for both Spells", "Chest Enemies always drop an Apple which heals you on pickup", "Remember to frequently change your Spell depending on the situation", "The Red Spell always applies a Damage over Time Burn", "You can store up Ice Spears and release them all at once", "The Red Spell is good at targeting down far away enemies"])
 metadata/_custom_type_script = "uid://bweg3v0gbsajg"

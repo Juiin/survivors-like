@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ijdvjfombjj8"]
+
+[ext_resource type="Texture2D" uid="uid://c65t54b7uhwlx" path="res://Textures/Particles/red circle.png" id="1_rnnml"]
+[ext_resource type="Script" uid="uid://ce0570oe77iqx" path="res://blood.gd" id="2_8a77i"]
+
+[node name="Blood" type="CPUParticles2D"]
+z_index = -7
+amount = 100
+texture = ExtResource("1_rnnml")
+lifetime = 0.5
+explosiveness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(270, 0)
+gravity = Vector2(0, 0)
+initial_velocity_max = 467.67
+scale_amount_min = 0.02
+scale_amount_max = 0.1
+script = ExtResource("2_8a77i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

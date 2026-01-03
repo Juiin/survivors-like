@@ -47,7 +47,7 @@ func has_charged_up() -> void:
 	charged_up = true
 	if audio_charge_player:
 		audio_charge_player.queue_free()
-	Effects.spawn_floating_text(upgrade.upgrade_description, global_position)
+	Effects.spawn_floating_text(upgrade.upgrade_description, global_position, Color.WHITE, 6.0)
 	Utils.play_audio(preload("res://Audio/purchase.ogg"), 0.9, 1.1)
 	var player = get_tree().get_first_node_in_group("player")
 	upgrade.apply_player_upgrade(player)

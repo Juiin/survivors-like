@@ -59,6 +59,10 @@ func _process(delta: float) -> void:
 				get_tree().get_first_node_in_group("camera").screen_shake(10, 0.5)
 				Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
 				dmg_color = Color.RED
+				var blood = preload("res://Effects/blood.tscn").instantiate()
+				blood.global_position = area.global_position
+				blood.rotation = area_2d.global_position.angle_to_point(area.global_position)
+				get_tree().current_scene.add_child(blood)
 			hurtbox_child.take_damage(damage)
 			if hurtbox_child.owner.has_method("get_knockbacked"):
 				hurtbox_child.owner.get_knockbacked(area_2d.global_position.direction_to(area.global_position), knockback_amount)

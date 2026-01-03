@@ -22,7 +22,7 @@ shader_parameter/hit_flash_on = false
 [sub_resource type="CircleShape2D" id="CircleShape2D_hb8ge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
-radius = 19.0263
+radius = 17.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8ge"]
 bg_color = Color(0.79, 0.2765, 0.1975, 1)
@@ -81,7 +81,7 @@ area_2d = NodePath("..")
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -13)
+position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_3yqyl")
 
 [node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_wujgv")]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bafb2ixsn63vg"]
+[gd_scene load_steps=7 format=3 uid="uid://bafb2ixsn63vg"]
 
 [ext_resource type="Script" uid="uid://biidj34344o85" path="res://Attacks/burn_nova.gd" id="1_u2pxw"]
 [ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="2_b6xwr"]
+[ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="3_b6xwr"]
 
 [sub_resource type="Curve" id="Curve_japkh"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -34,5 +35,12 @@ color_ramp = SubResource("Gradient_ng6dq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_japkh")
+
+[node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
+unique_name_in_owner = true
+script = ExtResource("3_b6xwr")
+base_damage = 5.0
+area_2d = NodePath("..")
+metadata/_custom_type_script = "uid://bey62ij0i7l6l"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
