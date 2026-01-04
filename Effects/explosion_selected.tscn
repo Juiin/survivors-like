@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://6v7okt38ydk7"]
+
+[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="1_0xsg3"]
+[ext_resource type="Texture2D" uid="uid://bgxtaqtu1ymiw" path="res://Textures/Enemy/explosion_single.png" id="2_t8jnu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d67ea"]
+resource_local_to_scene = true
+shader = ExtResource("1_0xsg3")
+shader_parameter/sample = ExtResource("2_t8jnu")
+shader_parameter/speed = 2.285
+shader_parameter/max_zoom = 2.0
+shader_parameter/layer_count = 3
+shader_parameter/color_count = 3
+shader_parameter/pivot = Vector2(0.5, 0.5)
+shader_parameter/is_only_bigger = false
+shader_parameter/is_show_original = false
+shader_parameter/is_use_colors = false
+shader_parameter/boarder_zoom = 2.0
+shader_parameter/contrast_offset = 0.1
+shader_parameter/color_array = PackedVector3Array(1, 0, 0, 1, 0.48, 0.485, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/alpha_multiplier = 1.0
+
+[node name="Control" type="Sprite2D"]
+material = SubResource("ShaderMaterial_d67ea")
+texture = ExtResource("2_t8jnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_t8jnu")

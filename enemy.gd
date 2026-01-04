@@ -95,8 +95,15 @@ func _physics_process(delta):
 		anim.stop()
 
 	if burning && burning_timer <= 0.0:
-		health_component.take_damage(Game.burn_damage)
-		Effects.spawn_damage_text(Game.burn_damage, global_position, Color.ORANGE)
+		var final_damage = Game.burn_damage
+		if frozen:
+			var damage_against_frozen := 0.0
+			for upgrade in player.explosion_upgrades:
+				if upgrade is DamageAgainstFrozen:
+					damage_against_frozen += upgrade.increase
+			final_damage *= 1 + damage_against_frozen
+		health_component.take_damage(final_damage)
+		Effects.spawn_damage_text(final_damage, global_position, Color.ORANGE)
 		burning_timer = 1.0
 	else:
 		burning_timer -= delta
@@ -155,7 +162,7 @@ func freeze() -> void:
 
 	anim.modulate = Color(0, 0, 1, 1)
 	anti_freeze_tween = create_tween()
-	anti_freeze_tween.tween_property(anim, "modulate", Color(1, 1, 1, 1), FREEZE_DURATION)
+	anti_freeze_tween.tween_property(anim, "modulate", Color(1, 1, 1, 1), FREEZE_DURATION).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 	anti_freeze_tween.tween_callback(func(): frozen = false)
 
 func burn() -> void:

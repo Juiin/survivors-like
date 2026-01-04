@@ -69,16 +69,46 @@ func _physics_process(delta):
 	## Form Changing
 	if Input.is_action_just_pressed("1"):
 		current_form = form.ST
+		play_swap_sfx()
 	if Input.is_action_just_pressed("2"):
 		current_form = form.AOE
+		play_swap_sfx()
 	if Input.is_action_just_pressed("swap_weapon"):
 		current_form = form.ST if current_form == form.AOE else form.AOE
+		play_swap_sfx()
+
+	
+func play_swap_sfx():
+	var ice_spear_selected = preload("res://Effects/ice_spear_selected.tscn")
+	var explosion_selected = preload("res://Effects/explosion_selected.tscn")
+	if current_form == form.ST:
+		var ice_spear_inst = ice_spear_selected.instantiate()
+		ice_spear_inst.position = Vector2(0, -70)
+		add_child(ice_spear_inst)
+		var destroy_tween = create_tween()
+		destroy_tween.tween_property(ice_spear_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.tween_callback(func(): ice_spear_inst.queue_free())
+		Utils.play_audio(preload("res://Audio/swap_to_ice.mp3"), 0.8, 0.9, 0.4)
+	elif current_form == form.AOE:
+		var explosion_inst = explosion_selected.instantiate()
+		explosion_inst.position = Vector2(0, -70)
+		add_child(explosion_inst)
+		var destroy_tween = create_tween()
+		destroy_tween.tween_property(explosion_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(explosion_inst.get_node("Sprite2D"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.tween_callback(func(): explosion_inst.queue_free())
+		Utils.play_audio(preload("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
 
 func attack():
 	var atk_count = 1;
 	if current_form == form.ST:
 		if ice_spear_stored > 0:
 			atk_count = ice_spear_stored + 1
+			if ice_spear_stored >= 3:
+				var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
+				nova.position = global_position
+				nova.scale += Vector2(2.5, 2.5)
+				get_tree().current_scene.add_child(nova)
 			ice_spear_stored = 0
 	elif current_form == form.AOE:
 		atk_count = explosion_count

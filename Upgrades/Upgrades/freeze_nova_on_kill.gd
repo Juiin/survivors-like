@@ -8,7 +8,7 @@ func _init(_req_upgrade: Upgrade):
     upgrade_description = "20% chance to erupt a freezing Nova when killing a frozen enemy"
     cost = [500, 700, 1000, 1500, 2000]
     type = Enums.UpgradeType.ICE_SPEAR
-    req_upgrade = _req_upgrade
+    #req_upgrade = _req_upgrade
 
 func apply_player_upgrade(player: Player) -> void:
     Game.freeze_nova_on_kill += increase

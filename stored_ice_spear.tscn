@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmbpfep3t6c1y"]
+
+[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="1_40jxu"]
+[ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="2_b3jw0"]
+[ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="2_gh7ty"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13ii"]
+shader = ExtResource("1_40jxu")
+shader_parameter/sample = ExtResource("2_gh7ty")
+shader_parameter/speed = 1.0
+shader_parameter/max_zoom = 3.0
+shader_parameter/layer_count = 0
+shader_parameter/color_count = 3
+shader_parameter/pivot = Vector2(0.5, 0.5)
+shader_parameter/is_only_bigger = true
+shader_parameter/is_show_original = true
+shader_parameter/is_use_colors = true
+shader_parameter/boarder_zoom = 2.0
+shader_parameter/contrast_offset = 0.8
+shader_parameter/color_array = PackedVector3Array(0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/alpha_multiplier = 1.0
+
+[node name="StoredIceSpear" type="TextureRect"]
+material = SubResource("ShaderMaterial_d13ii")
+texture = ExtResource("2_b3jw0")
+stretch_mode = 2

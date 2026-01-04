@@ -16,6 +16,9 @@ var percent_dmg := 0.0:
 		percent_dmg = value
 		recalc_dmg()
 
+var damage_against_burning := 0.0
+var damage_against_frozen := 0.0
+
 var damage: float
 
 var hit_count := 0
@@ -63,10 +66,16 @@ func _process(delta: float) -> void:
 				blood.global_position = area.global_position
 				blood.rotation = area_2d.global_position.angle_to_point(area.global_position)
 				get_tree().current_scene.add_child(blood)
-			hurtbox_child.take_damage(damage)
+			var final_damage = damage
+			if "burning" in hurtbox_child.owner and hurtbox_child.owner.burning:
+				final_damage *= 1 + damage_against_burning
+			if "frozen" in hurtbox_child.owner and hurtbox_child.owner.frozen:
+				final_damage *= 1 + damage_against_frozen
+
+			hurtbox_child.take_damage(final_damage)
 			if hurtbox_child.owner.has_method("get_knockbacked"):
 				hurtbox_child.owner.get_knockbacked(area_2d.global_position.direction_to(area.global_position), knockback_amount)
-			Effects.spawn_damage_text(damage, area.global_position, dmg_color)
+			Effects.spawn_damage_text(final_damage, area.global_position, dmg_color)
 			hit_list.append({"area": area, "time": Time.get_ticks_msec() / 1000.0})
 			hit_count += 1
 			if hit_limit != -1 && hit_count >= hit_limit:

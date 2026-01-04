@@ -21,6 +21,7 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	ice_spear_drop_pickup,
 	freeze_nova_on_pickup,
 	FreezeNovaOnKillUpgrade.new(freeze_nova_on_pickup),
+	DamageAgainstBurning.new(),
 	KnockbackUpgrade.new(Enums.UpgradeType.ICE_SPEAR)
 ]
 
@@ -34,6 +35,7 @@ var explosion_upgrades: Array[Upgrade] = [
 	BurnDurationUpgrade.new(),
 	burn_nova_on_kill,
 	BurnNovaAoEUpgrade.new(burn_nova_on_kill),
+	DamageAgainstFrozen.new(),
 	KnockbackUpgrade.new(Enums.UpgradeType.EXPLOSION)
 ]
 var global_loot: Upgrade = GlobalLootUpgrade.new()
