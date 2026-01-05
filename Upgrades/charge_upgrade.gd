@@ -30,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	audio_charge_player = Utils.play_audio_return(audio_charge, 0.9, 1.1, 0.7)
 
 	charge_up_tween = create_tween()
-	charge_up_tween.tween_property(self, "charge", 1.0, 4.0)
+	charge_up_tween.tween_property(self, "charge", 1.0, 5.5)
 	charge_up_tween.tween_callback(has_charged_up)
 
 

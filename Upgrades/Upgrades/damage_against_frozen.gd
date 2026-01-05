@@ -1,12 +1,12 @@
 class_name DamageAgainstFrozen
 extends Upgrade
 
-@export var increase := 0.2
+@export var increase := 0.25
 
 
 func _init():
 	upgrade_name = "Against Frozen"
-	upgrade_description = "20% increased damage against frozen enemies"
+	upgrade_description = "25% increased damage against frozen enemies"
 	cost = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250]
 	type = Enums.UpgradeType.EXPLOSION
 	endless = true

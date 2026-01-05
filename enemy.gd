@@ -46,8 +46,8 @@ func make_elite():
 	knockback_recovery *= 2
 	spd *= 0.8
 	health_component.max_health *= 5
-	hitbox_component.percent_dmg += 1
-	stats.drop_value *= 8
+	#hitbox_component.percent_dmg += 1
+	stats.drop_value *= 7
 	scale *= 2
 	is_elite = true
 

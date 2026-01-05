@@ -1,12 +1,12 @@
 class_name GlobalPickupRadius
 extends Upgrade
 
-@export var increase_percent := 0.5
+@export var increase_percent := 0.3
 
 
 func _init():
 	upgrade_name = "Pickup Radius"
-	upgrade_description = "Increases Pickup Radius by 50%"
+	upgrade_description = "Increases Pickup Radius by 30%"
 	cost = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
 	type = Enums.UpgradeType.GLOBAL
 	endless = true

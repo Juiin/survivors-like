@@ -88,7 +88,7 @@ func play_swap_sfx():
 		var destroy_tween = create_tween()
 		destroy_tween.tween_property(ice_spear_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.tween_callback(func(): ice_spear_inst.queue_free())
-		Utils.play_audio(preload("res://Audio/swap_to_ice.mp3"), 0.8, 0.9, 0.4)
+		Utils.play_audio(preload("res://Audio/swap_to_ice.mp3"), 0.8, 0.86, 0.3)
 	elif current_form == form.AOE:
 		var explosion_inst = explosion_selected.instantiate()
 		explosion_inst.position = Vector2(0, -70)

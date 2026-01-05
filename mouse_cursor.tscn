@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxlppbny8r8nh"]
+
+[ext_resource type="Texture2D" uid="uid://bbc4frq8an3t6" path="res://Textures/mouse_cursor.png" id="1_gwtus"]
+[ext_resource type="Texture2D" uid="uid://ccm7ewrt1q4c3" path="res://Textures/Particles/white_square.png" id="2_pwj4x"]
+[ext_resource type="Script" uid="uid://c0sw4jh28nlb5" path="res://mouse_cursor.gd" id="2_uqhu5"]
+
+[sub_resource type="Gradient" id="Gradient_a2vgd"]
+offsets = PackedFloat32Array(0, 0.504525, 1)
+colors = PackedColorArray(0.858824, 0.0431373, 0, 1, 0.458824, 0.894118, 0.992157, 1, 0.458824, 0.894118, 0.992157, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2vgd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_uqhu5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3.92845, 8.82594)
+rotation = 0.183675
+scale = Vector2(0.0229578, 0.03)
+amount = 70
+texture = ExtResource("2_pwj4x")
+lifetime = 0.87
+direction = Vector2(1, 1)
+spread = 78.45
+gravity = Vector2(0, 0)
+initial_velocity_min = 92.93
+initial_velocity_max = 457.25
+linear_accel_min = 14.13
+linear_accel_max = 14.13
+angle_min = -90.3
+angle_max = 494.8
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+color_ramp = SubResource("Gradient_a2vgd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a2vgd")
+position = Vector2(3.92845, 8.82594)
+rotation = 0.183675
+scale = Vector2(0.0229578, 0.03)
+texture = ExtResource("1_gwtus")

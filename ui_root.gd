@@ -12,6 +12,7 @@ var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
 var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
 var ice_spear_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
+	DamageAgainstBurning.new(),
 	# PercentDamageUpgrade.new(Enums.UpgradeType.ICE_SPEAR),
 	IceSpearProjectilesUpgrade.new(),
 	ProjSpdUpgrade.new(),
@@ -21,13 +22,13 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	ice_spear_drop_pickup,
 	freeze_nova_on_pickup,
 	FreezeNovaOnKillUpgrade.new(freeze_nova_on_pickup),
-	DamageAgainstBurning.new(),
 	KnockbackUpgrade.new(Enums.UpgradeType.ICE_SPEAR)
 ]
 
 var burn_nova_on_kill: Upgrade = BurnNovaOnKillUpgrade.new()
 var explosion_upgrades: Array[Upgrade] = [
 	FlatDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
+	DamageAgainstFrozen.new(),
 	# PercentDamageUpgrade.new(Enums.UpgradeType.EXPLOSION),
 	ExplosionCountUpgrade.new(),
 	AoeUpgrade.new(),
@@ -35,7 +36,6 @@ var explosion_upgrades: Array[Upgrade] = [
 	BurnDurationUpgrade.new(),
 	burn_nova_on_kill,
 	BurnNovaAoEUpgrade.new(burn_nova_on_kill),
-	DamageAgainstFrozen.new(),
 	KnockbackUpgrade.new(Enums.UpgradeType.EXPLOSION)
 ]
 var global_loot: Upgrade = GlobalLootUpgrade.new()

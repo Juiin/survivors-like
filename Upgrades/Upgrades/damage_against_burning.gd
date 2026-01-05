@@ -1,12 +1,12 @@
 class_name DamageAgainstBurning
 extends Upgrade
 
-@export var increase := 0.2
+@export var increase := 0.15
 
 
 func _init():
 	upgrade_name = "Against Burning"
-	upgrade_description = "20% increased damage against burning enemies"
+	upgrade_description = "15% increased damage against burning enemies"
 	cost = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
 	type = Enums.UpgradeType.ICE_SPEAR
 	endless = true
