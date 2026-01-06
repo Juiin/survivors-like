@@ -10,7 +10,7 @@ var red_apple := preload("res://Textures/Items/apple_red.png")
 
 var value := 40
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D2
 
 func _ready() -> void:
 	sprite_2d.texture = [green_apple, red_apple].pick_random()

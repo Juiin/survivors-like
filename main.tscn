@@ -1,4 +1,4 @@
-[gd_scene load_steps=728 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=730 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://b8ddjnmac4byl" path="res://Audio/music_1.mp3" id="1_2cqfq"]
@@ -18,10 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://dcx4jexy4vhgv" path="res://Upgrades/charge_upgrade.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b3khnv2vu7bh4" path="res://tools/charge_spawner.tscn" id="13_ycdy4"]
 [ext_resource type="Script" uid="uid://c2soyw4l6by2f" path="res://test.gd" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://dapat0arqnpp8" path="res://Textures/tab.png" id="19_1u8w0"]
 [ext_resource type="Script" uid="uid://dkmuld8h8rtg1" path="res://elapsed_game_timer.gd" id="19_cegan"]
 [ext_resource type="Script" uid="uid://dmo052asui5gq" path="res://hints.gd" id="20_82xsv"]
 [ext_resource type="Resource" uid="uid://df3j84f285td7" path="res://hint_database.tres" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://cxlppbny8r8nh" path="res://mouse_cursor.tscn" id="22_ryguw"]
+[ext_resource type="Texture2D" uid="uid://hsgg3podjgnx" path="res://Textures/controls.png" id="23_d13ii"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
@@ -2665,6 +2667,31 @@ script = ExtResource("6_yaehf")
 increase = 0.05
 
 [node name="Main" type="Node2D"]
+
+[node name="Controls" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(5.99998, -61)
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("23_d13ii")
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -510.345
+offset_top = 62.0691
+offset_right = -229.345
+offset_bottom = 166.069
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 33
+theme_override_font_sizes/font_size = 150
+text = "Move"
+
+[node name="Label2" type="Label" parent="Controls"]
+offset_left = -48.2757
+offset_top = 68.9656
+offset_right = 766.724
+offset_bottom = 172.966
+theme_override_constants/outline_size = 33
+theme_override_font_sizes/font_size = 150
+text = "Switch Weapon"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -5654,6 +5681,15 @@ offset_bottom = 1024.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("10_dg77c")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="UIRoot/NewUpgradeIcon"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 39.0
+offset_right = 524.0
+offset_bottom = 304.0
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("19_1u8w0")
 
 [node name="Label" type="Label" parent="UIRoot"]
 offset_left = 81.0

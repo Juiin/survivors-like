@@ -14,6 +14,7 @@ var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var final_scale: Vector2 = scale
+@onready var behind_zoom:= $BehindZoom
 
 func _ready() -> void:
 	final_scale *= 1.5
@@ -46,3 +47,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func enable_shine():
 	sprite_2d.material.set_shader_parameter("shine_color", Color(1, 1, 1, 1))
+	behind_zoom.visible = true
+	behind_zoom.material.set_shader_parameter("sample", sprite_2d.texture)
