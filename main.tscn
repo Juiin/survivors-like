@@ -1,7 +1,7 @@
-[gd_scene load_steps=730 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=731 format=3 uid="uid://c176l7d8g3owa"]
 
+[ext_resource type="Script" uid="uid://lp8e4duc4ynk" path="res://main.gd" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
-[ext_resource type="AudioStream" uid="uid://b8ddjnmac4byl" path="res://Audio/music_1.mp3" id="1_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://clpgcnfbjrsnu" path="res://player.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://be672s7exy72f" path="res://Upgrades/Upgrades/Global/global_atk_spd.gd" id="3_dg77c"]
 [ext_resource type="PackedScene" uid="uid://ctg8irc8cdaya" path="res://Upgrades/upgrade_menu.tscn" id="4_1bvp3"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://df3j84f285td7" path="res://hint_database.tres" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://cxlppbny8r8nh" path="res://mouse_cursor.tscn" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://hsgg3podjgnx" path="res://Textures/controls.png" id="23_d13ii"]
+[ext_resource type="Script" uid="uid://vtd14q378rgj" path="res://main_menu_button.gd" id="25_0odxb"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
@@ -2667,6 +2668,7 @@ script = ExtResource("6_yaehf")
 increase = 0.05
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_0odxb")
 
 [node name="Controls" type="Sprite2D" parent="."]
 z_index = -9
@@ -2685,20 +2687,13 @@ theme_override_font_sizes/font_size = 150
 text = "Move"
 
 [node name="Label2" type="Label" parent="Controls"]
-offset_left = -48.2757
-offset_top = 68.9656
-offset_right = 766.724
+offset_left = 20.6898
+offset_top = 68.9655
+offset_right = 835.69
 offset_bottom = 172.966
 theme_override_constants/outline_size = 33
 theme_override_font_sizes/font_size = 150
-text = "Switch Weapon"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("1_2cqfq")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true
+text = "Switch Spell"
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.772951, 0.772951, 0.772951, 1)
@@ -5767,3 +5762,12 @@ vertical_alignment = 1
 [node name="MouseCursor" parent="UIRoot" instance=ExtResource("22_ryguw")]
 unique_name_in_owner = true
 z_index = 4096
+
+[node name="MainMenuButton" type="Button" parent="UIRoot"]
+unique_name_in_owner = true
+offset_left = 472.0
+offset_top = -148.0
+offset_right = 567.0
+offset_bottom = -108.0
+text = " Main Menu "
+script = ExtResource("25_0odxb")

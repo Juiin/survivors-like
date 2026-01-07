@@ -47,6 +47,9 @@ func _ready():
 		fires.append(fire)
 
 func _process(delta):
+	if Game.bosses_remaining <= 0:
+		queue_free()
+
 	_update_fire_ring()
 	
 func _update_fire_ring():

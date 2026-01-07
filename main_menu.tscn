@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqyikqgt4l5gx"]
+
+[ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://gy202ax8opf2" path="res://Textures/logo.png" id="2_nlkkf"]
+[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="2_qe12f"]
+[ext_resource type="Script" uid="uid://dpc8tcw8hxk3f" path="res://play_button.gd" id="3_qe12f"]
+[ext_resource type="PackedScene" uid="uid://cxlppbny8r8nh" path="res://mouse_cursor.tscn" id="4_8qtwp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qtwp"]
+shader = ExtResource("2_qe12f")
+shader_parameter/sample = ExtResource("2_nlkkf")
+shader_parameter/speed = 0.745
+shader_parameter/max_zoom = 1.64
+shader_parameter/layer_count = 2
+shader_parameter/color_count = 2
+shader_parameter/pivot = Vector2(0.5, 0.5)
+shader_parameter/is_only_bigger = true
+shader_parameter/is_show_original = true
+shader_parameter/is_use_colors = true
+shader_parameter/boarder_zoom = 2.0
+shader_parameter/contrast_offset = 0.1
+shader_parameter/color_array = PackedVector3Array(1.385, 0.505, 0, 0, 1.22, 1.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/alpha_multiplier = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.772951, 0.772951, 0.772951, 1)
+z_index = -10
+texture_repeat = 2
+position = Vector2(-28, -16)
+texture = ExtResource("1_glbon")
+region_enabled = true
+region_rect = Rect2(0, 0, 12800, 7200)
+
+[node name="Logo" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8qtwp")
+position = Vector2(319, 118)
+scale = Vector2(0.285156, 0.285156)
+texture = ExtResource("2_nlkkf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 243.0
+offset_top = 242.0
+offset_right = 396.0
+offset_bottom = 292.0
+text = "Play!"
+script = ExtResource("3_qe12f")
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource("4_8qtwp")]
+z_index = 4096
+
+[node name="PlayerNameInput" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Player Name"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

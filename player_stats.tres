@@ -5,5 +5,9 @@
 [resource]
 script = ExtResource("1_l3p20")
 max_health = 100.0
-health = 0.0
+type = 0
+drop_value = 0
+spd = 50.0
+knockback_recovery = 3.5
+health_drop_chance = 0
 metadata/_custom_type_script = "uid://cjgxfrywc1xmp"

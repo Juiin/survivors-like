@@ -29,6 +29,9 @@ func color_with_alpha(c: Color, a: float) -> Color:
 # ---------------------------------------------
 
 func _process(delta: float):
+	if Game.player_is_dead:
+		queue_free()
+
 	if not ended:
 		progress = clamp(progress + delta / duration, 0.0, 1.0)
 		if progress >= 1.0:
@@ -140,7 +143,11 @@ func check_damage():
 				if collider.is_in_group("player"):
 					collider.health_component.take_damage(dmg) # or your custom damage logic
 					get_tree().get_first_node_in_group("camera").screen_shake(10, 0.5)
-					Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
+					#Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
+					var blood = preload("res://Effects/blood.tscn").instantiate()
+					blood.global_position = collider.global_position
+					blood.rotation = global_position.angle_to_point(collider.global_position)
+					get_tree().current_scene.add_child(blood)
 					var dmg_color = Color.RED
 					Effects.spawn_damage_text(dmg, collider.global_position, dmg_color)
 

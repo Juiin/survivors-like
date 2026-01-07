@@ -35,6 +35,9 @@ func recalc_dmg() -> void:
 
 	
 func _process(delta: float) -> void:
+	if Game.player_is_dead:
+		return
+
 	if "frozen" in owner and owner.frozen:
 		return
 
@@ -60,7 +63,7 @@ func _process(delta: float) -> void:
 					continue
 				player_in_area_timer = 0
 				get_tree().get_first_node_in_group("camera").screen_shake(10, 0.5)
-				Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
+				#Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
 				dmg_color = Color.RED
 				var blood = preload("res://Effects/blood.tscn").instantiate()
 				blood.global_position = area.global_position

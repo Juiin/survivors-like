@@ -40,6 +40,7 @@ var ice_spear_stored := 0: set = update_ice_spear_stored
 var max_ice_spear_stored := 3
 var ice_spear_store_time := 3.0
 
+
 func _ready() -> void:
 	attack_timer.wait_time = base_atk_spd / (1 + atk_spd_increase)
 	attack_timer.start()
@@ -54,6 +55,9 @@ func _ready() -> void:
 	health_component.connect("took_damage", flash)
 
 func _physics_process(delta):
+	if Game.player_is_dead:
+		return
+
 	## Moving
 	var move_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = move_dir * spd
@@ -100,6 +104,9 @@ func play_swap_sfx():
 		Utils.play_audio(preload("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
 
 func attack():
+	if Game.player_is_dead:
+		return
+
 	var atk_count = 1;
 	if current_form == form.ST:
 		if ice_spear_stored > 0:
@@ -107,7 +114,7 @@ func attack():
 			if ice_spear_stored >= 3:
 				var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
 				nova.position = global_position
-				nova.scale += Vector2(2.5, 2.5)
+				nova.scale += Vector2(2, 2)
 				get_tree().current_scene.add_child(nova)
 			ice_spear_stored = 0
 	elif current_form == form.AOE:
@@ -139,7 +146,28 @@ func update_ice_spear_stored(amount: int) -> void:
 	%StoredIceSpears.update_count(ice_spear_stored)
 
 func died() -> void:
-	print("player died")
+	#get_tree().paused = true
+	#process_mode = Node.PROCESS_MODE_ALWAYS
+	Utils.play_audio(load("res://Audio/SoundEffect/PlayerDeath.mp3"))
+	Game.player_is_dead = true
+	get_node("Camera2D").drag_horizontal_enabled = false
+	get_node("Camera2D").drag_vertical_enabled = false
+	for i in 30:
+		create_tween().tween_callback(
+			func():
+				
+				var blood=preload("res://Effects/blood.tscn").instantiate()
+				blood.global_position=global_position
+				blood.rotation=randf_range(0, PI * 2)
+				get_tree().current_scene.add_child(blood)
+		).set_delay(i * 0.1)
+	
+
+	var die_tween = create_tween()
+	die_tween.tween_callback(die_transition).set_delay(3)
+
+func die_transition() -> void:
+	Transition.change_scene_to("res://main_menu.tscn")
 
 func get_attack_scene() -> PackedScene:
 	match current_form:

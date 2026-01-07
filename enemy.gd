@@ -59,6 +59,10 @@ func make_boss():
 	despawn_immune = true
 
 func _physics_process(delta):
+	if Game.player_is_dead:
+		if !is_boss: die()
+		else: return
+
 	if !despawn_immune && is_offscreen:
 		offscreen_time += delta
 		if offscreen_time > MAX_OFFSCREEN_TIME:
@@ -112,6 +116,10 @@ func get_knockbacked(dir: Vector2, amount: float) -> void:
 	knockback = dir * amount
 
 func die() -> void:
+	if is_boss:
+		Game.boss_died()
+
+
 	var inst = preload("res://money_pickup.tscn").instantiate()
 	inst.global_position = global_position
 	inst.value = ceili(stats.drop_value * Game.money_multi)

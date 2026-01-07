@@ -134,8 +134,44 @@ var total_currency_collected := 0
 
 var active_enemies := 0
 var boss_is_active := false
+var bosses_remaining := 3
+
+var player_is_dead := false
+
+var player_name := "Anonymous Player"
 
 func _ready() -> void:
+	SilentWolf.configure({
+	"api_key": "UIBaV8j0Ej1U4ZzMeT4s48KT8QJTwplx8ZUv4QCd",
+	"game_id": "shatterburn",
+	"log_level": 1
+	})
+
+	# SilentWolf.configure_scores({
+	# "open_scene_on_close": "res://scenes/MainPage.tscn"
+	# })
+
+func start_game() -> void:
+	# Init values
+	player_is_dead = false
+	boss_is_active = false
+	active_enemies = 0
+	total_currency_collected = 0
+	to_spawn_enemies = [SLIME_RED_STATS]
+	next_spawn_is_swarm = false
+	elapsed_time = 0.0
+	money_multi = 1.0
+	enemy_health_multi = 1.0
+	burn_damage = 1.0
+	burn_duration = 3.0
+	burn_nova_on_kill = 0.0
+	burn_nova_scale_multi = 1.0
+	freeze_nova_on_kill = 0.0
+	ice_spear_money = 0
+	explosion_money = 0
+	bosses_remaining = 3
+
+
 	player = get_tree().get_first_node_in_group("player")
 	spawn_path_follow = player.get_node("%SpawnPathFollow")
 	spawn_timer = Timer.new()
@@ -174,14 +210,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_give_money_alot"):
 		ice_spear_money += 10000
 		explosion_money += 10000
-	if event.is_action_pressed("debug_spawn_boss"):
-		Game.boss_is_active = true
-		var fire_ring = preload("res://boss/fire_ring_spawner.tscn").instantiate()
-		player.get_tree().current_scene.add_child(fire_ring)
-		fire_ring.global_position = player.global_position
-		# var marker = preload("res://boss/rock.tscn").instantiate()
-		# marker.target = player.get_global_mouse_position()
-		# player.get_tree().current_scene.add_child(marker)
 
 
 var ice_spear_money: int = 0:
@@ -348,3 +376,9 @@ func spawn_boss():
 		cyclops.stats = CYCLOPS_STATS
 		get_tree().current_scene.get_node("%YSort").add_child(cyclops)
 		cyclops.make_boss()
+
+func boss_died():
+	bosses_remaining -= 1
+	if bosses_remaining <= 0:
+		var win_screen = load("res://win_screen.tscn").instantiate()
+		get_tree().current_scene.add_child(win_screen)

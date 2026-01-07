@@ -24,7 +24,7 @@ resources_spreadsheet_view/freeze_first_column=true
 [application]
 
 config/name="Survivors like"
-run/main_scene="uid://c176l7d8g3owa"
+run/main_scene="uid://bqyikqgt4l5gx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
@@ -33,6 +33,9 @@ Effects="*res://globals/effects.gd"
 Game="*res://globals/game.gd"
 Enums="*res://globals/enums.gd"
 SfxDeconflicter="*res://globals/sfx-deconflicter.gd"
+Transition="*res://transition.tscn"
+Music="*res://Audio/music.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -45,7 +48,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/resources_spreadsheet_view/plugin.cfg")
+enabled=PackedStringArray("res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [gui]
 

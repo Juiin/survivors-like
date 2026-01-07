@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var elapsed_game_timer: ElapsedGameTimer = %ElapsedGameTimer
 @onready var hints: Hints = %Hints
 @onready var upgrade_icon := %NewUpgradeIcon
+@onready var main_menu_button := %MainMenuButton
 
 var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
 var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
@@ -48,12 +49,16 @@ var global_upgrades: Array[Upgrade] = [
 ]
 
 func _unhandled_input(event: InputEvent) -> void:
+	if Game.player_is_dead || (Game.boss_is_active && Game.bosses_remaining == 0):
+		return
+
 	if event.is_action_pressed("menu"):
 		if ice_spear_upgrade_menu.visible:
 			ice_spear_upgrade_menu.close()
 			explosion_upgrade_menu.close()
 			global_upgrade_menu.close()
 			hints.close()
+			main_menu_button.close()
 			elapsed_game_timer.close(func(): get_tree().paused=false)
 			
 		else:
@@ -62,6 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			global_upgrade_menu.open(global_upgrades)
 			elapsed_game_timer.open()
 			hints.open()
+			main_menu_button.open()
 			get_tree().paused = true
 
 func _ready() -> void:
