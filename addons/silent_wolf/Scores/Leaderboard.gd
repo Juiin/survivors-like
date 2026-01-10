@@ -7,8 +7,14 @@ const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 var list_index = 0
 # Replace the leaderboard name if you're not using the default leaderboard
 var ld_name = "main"
-var max_scores = 10
+var max_scores = 100
 
+func reload_itself():
+	var new_leaderboards = load("res://addons/silent_wolf/Scores/Leaderboard.tscn").instantiate()
+	new_leaderboards.position = position
+	new_leaderboards.scale = scale
+	owner.add_child(new_leaderboards)
+	queue_free()
 
 func _ready():
 	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
@@ -22,9 +28,9 @@ func _ready():
 	if len(scores) > 0:
 		render_board(scores, local_scores)
 	else:
-		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
+	# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()
-		var sw_result = await SilentWolf.Scores.get_scores().sw_get_scores_complete
+		var sw_result = await SilentWolf.Scores.get_scores(max_scores).sw_get_scores_complete
 		scores = sw_result.scores
 		hide_message()
 		render_board(scores, local_scores)
@@ -53,7 +59,7 @@ func is_default_leaderboard(ld_config: Dictionary) -> bool:
 	return default_insert_opt and not_time_based
 
 
-func merge_scores_with_local_scores(scores: Array, local_scores: Array, max_scores: int = 10) -> Array:
+func merge_scores_with_local_scores(scores: Array, local_scores: Array, max_scores: int = 100) -> Array:
 	if local_scores:
 		for score in local_scores:
 			var in_array = score_in_score_array(scores, score)
@@ -91,7 +97,7 @@ func add_item(player_name: String, score_value: String) -> void:
 	var final_score = format_time(float(score_value))
 	item.get_node("Score").text = final_score
 	item.offset_top = list_index * 100
-	$"Board/HighScores/ScoreItemContainer".add_child(item)
+	%ScoreItemContainer.add_child(item)
 
 func format_time(seconds: float) -> String:
 	var total_seconds = int(seconds)
@@ -120,7 +126,8 @@ func hide_message() -> void:
 
 
 func clear_leaderboard() -> void:
-	var score_item_container = $"Board/HighScores/ScoreItemContainer"
+	list_index = 0
+	var score_item_container = %ScoreItemContainer
 	if score_item_container.get_child_count() > 0:
 		var children = score_item_container.get_children()
 		for c in children:

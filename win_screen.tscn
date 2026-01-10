@@ -1,50 +1,92 @@
-[gd_scene load_steps=4 format=3 uid="uid://beavpvbjuraad"]
+[gd_scene load_steps=10 format=3 uid="uid://beavpvbjuraad"]
 
 [ext_resource type="Script" uid="uid://b5ibfsd175i1g" path="res://win_screen.gd" id="1_l2arl"]
+[ext_resource type="PackedScene" uid="uid://4ctrtdt61xaq" path="res://leaderboard_submit.tscn" id="2_5hoe6"]
 [ext_resource type="Script" uid="uid://cvwgcau6oyf04" path="res://endless_mode.gd" id="2_l5t5q"]
 [ext_resource type="Script" uid="uid://dla1icg5wypt4" path="res://main_menu.gd" id="2_wmwda"]
+[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="4_26557"]
+[ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="4_g6jvr"]
+[ext_resource type="Texture2D" uid="uid://ogmueoishfcf" path="res://Textures/victory.png" id="5_luvg0"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="6_luvg0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hoe6"]
+shader = ExtResource("4_26557")
+shader_parameter/sample = ExtResource("5_luvg0")
+shader_parameter/speed = 0.805
+shader_parameter/max_zoom = 1.355
+shader_parameter/layer_count = 2
+shader_parameter/color_count = 2
+shader_parameter/pivot = Vector2(0.5, 0.5)
+shader_parameter/is_only_bigger = true
+shader_parameter/is_show_original = true
+shader_parameter/is_use_colors = true
+shader_parameter/boarder_zoom = 2.0
+shader_parameter/contrast_offset = 0.1
+shader_parameter/color_array = PackedVector3Array(1.335, 0.43, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/alpha_multiplier = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
 layer = 0
 script = ExtResource("1_l2arl")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="MiscButtons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -126.0
-offset_right = 75.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/normal_font_size = 41
-text = " You Won
-    GG!"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = -27.0
-offset_right = 108.0
-offset_bottom = 27.0
+offset_left = 81.0
+offset_top = 84.0
+offset_right = 286.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndlessMode" type="Button" parent="VBoxContainer"]
+[node name="EndlessMode" type="Button" parent="MiscButtons"]
 layout_mode = 2
 text = " Continue in Endless Mode "
 script = ExtResource("2_l5t5q")
 
-[node name="MainMenu" type="Button" parent="VBoxContainer"]
+[node name="MainMenu" type="Button" parent="MiscButtons"]
 layout_mode = 2
 text = "Main Menu"
 script = ExtResource("2_wmwda")
+
+[node name="Mover" type="Node2D" parent="MiscButtons"]
+position = Vector2(470, 0)
+script = ExtResource("4_g6jvr")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="LeaderboardSubmit" parent="." instance=ExtResource("2_5hoe6")]
+unique_name_in_owner = true
+position = Vector2(406, 186)
+
+[node name="Mover" type="Node2D" parent="LeaderboardSubmit"]
+position = Vector2(465, 78)
+script = ExtResource("4_g6jvr")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="Victory" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_5hoe6")
+use_parent_material = true
+position = Vector2(324, 67)
+scale = Vector2(0.131755, 0.13501)
+texture = ExtResource("5_luvg0")
+
+[node name="Mover" type="Node2D" parent="Victory"]
+position = Vector2(0, -1622.1)
+script = ExtResource("4_g6jvr")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="Leaderboard" parent="." instance=ExtResource("6_luvg0")]
+unique_name_in_owner = true
+position = Vector2(-333, -50)
+scale = Vector2(0.5, 0.5)
+
+[node name="Mover" type="Node2D" parent="Leaderboard"]
+position = Vector2(-808, 0)
+script = ExtResource("4_g6jvr")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"

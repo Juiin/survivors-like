@@ -9,7 +9,7 @@ var close_tween: Tween
 var starting_position: Vector2
 func _ready() -> void:
 	starting_position = global_position
-	
+	label.text = format_time(Game.elapsed_time)
 
 func open():
 	if open_tween && open_tween.is_running():

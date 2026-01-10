@@ -2671,6 +2671,7 @@ increase = 0.05
 script = ExtResource("1_0odxb")
 
 [node name="Controls" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.835294)
 z_index = -9
 position = Vector2(5.99998, -61)
 scale = Vector2(0.145, 0.145)
