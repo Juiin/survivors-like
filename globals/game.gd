@@ -120,6 +120,7 @@ var burn_damage := 1.0
 var burn_duration := 3.0
 var burn_nova_on_kill = 0.0
 var burn_nova_scale_multi := 1.0
+var freeze_nova_scale_multi := 1.0
 
 var freeze_nova_on_kill = 0.0
 
@@ -256,12 +257,13 @@ func add_upgrade_to_player(type: Enums.UpgradeType, upgrade: Upgrade):
 			player.global_upgrades.append(upgrade)
 	upgrade.apply_player_upgrade(player)
 
+
+const MAX_CURRENCY = 30000
 func spawn_enemy():
 	if boss_is_active:
 		return
 
 	var enemy_stats: Stats
-	const MAX_CURRENCY = 20000
 	if to_spawn_enemies.size() > 0:
 		enemy_stats = to_spawn_enemies.pop_front()
 	
@@ -291,7 +293,7 @@ func spawn_enemy():
 
 	# if spawn list is empty try to add a new one
 	if to_spawn_enemies.size() == 0:
-		const MAX_ENEMY_SPAWN_REQ_MONEY = 7000
+		const MAX_ENEMY_SPAWN_REQ_MONEY = 15000
 		var max_index = int(remap(total_currency_collected, 0, MAX_ENEMY_SPAWN_REQ_MONEY, 2, (POSSIBLE_ENEMY_STATS.size() - 1)))
 		print("total_currency_collected: ", total_currency_collected)
 		max_index = clamp(max_index, 0, POSSIBLE_ENEMY_STATS.size() - 1)
@@ -340,6 +342,7 @@ func spawn_health_enemy():
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
 	enemy.scale *= 2.5
 	enemy.despawn_immune = true
+	enemy.death_sfx_path = "res://Audio/SoundEffect/Chest_Close.wav"
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
 
 func spawn_throw_enemy():
@@ -360,6 +363,9 @@ func spawn_throw_enemy():
 
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
 
+	var next_throw_enemy_interval = remap(total_currency_collected, 0, MAX_CURRENCY, 80, 40)
+	throw_enemy_spawn_timer.set_wait_time(next_throw_enemy_interval)
+
 func spawn_boss():
 	var jugg = preload("res://enemy.tscn").instantiate()
 	jugg.global_position = player.global_position + Vector2(0, -200)
@@ -378,6 +384,7 @@ func spawn_boss():
 		cyclops.make_boss()
 
 func boss_died():
+	print("one boss died")
 	bosses_remaining -= 1
 	if bosses_remaining <= 0:
 		var win_screen = load("res://win_screen.tscn").instantiate()

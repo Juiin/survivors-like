@@ -27,6 +27,8 @@ var offscreen_time := 0.0
 var is_offscreen := true
 var despawn_immune = false
 
+var death_sfx_path = "res://Audio/sndEnemyDeath%s.mp3" % str(randi_range(1, 3))
+
 func _ready() -> void:
 	stats = stats.create_instance()
 	health_component.max_health = stats.max_health * Game.enemy_health_multi
@@ -55,7 +57,7 @@ func make_boss():
 	hitbox_component.percent_dmg += 2
 	scale *= 3.5
 	is_boss = true
-	freeze_immune = true
+	#freeze_immune = true
 	despawn_immune = true
 
 func _physics_process(delta):
@@ -88,7 +90,7 @@ func _physics_process(delta):
 		velocity = knockback
 	
 
-	if frozen:
+	if frozen && !is_boss:
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
@@ -141,7 +143,7 @@ func die() -> void:
 	death_inst.set_sprite(stats.sprite)
 	death_inst.play()
 
-	var death_sfx_path = "res://Audio/sndEnemyDeath%s.mp3" % str(randi_range(1, 3))
+	
 	Utils.play_audio(load(death_sfx_path), 0.9, 1.1, 0.1)
 
 	if randf() <= Game.burn_nova_on_kill && burning:
@@ -153,6 +155,7 @@ func die() -> void:
 	if randf() <= Game.freeze_nova_on_kill && frozen:
 		var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
 		nova.position = global_position
+		nova.scale *= Game.freeze_nova_scale_multi
 		get_tree().current_scene.add_child(nova)
 	queue_free()
 
@@ -161,9 +164,8 @@ func flash() -> void:
 	create_tween().tween_callback(func(): anim.material.set_shader_parameter("hit_flash_on", false)).set_delay(0.2)
 
 func freeze() -> void:
-	if freeze_immune:
-		return
-
+	# if freeze_immune:
+	# 	return
 	frozen = true
 	if anti_freeze_tween && anti_freeze_tween.is_running():
 		anti_freeze_tween.kill()

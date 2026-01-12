@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=21 format=3 uid="uid://clpgcnfbjrsnu"]
 
-[ext_resource type="Texture2D" uid="uid://nfvegxqw3veh" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Resource" uid="uid://b06iv7m0juebf" path="res://player_stats.tres" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://cqdkhs6c67bqp" path="res://camera_2d.tscn" id="3_1jxqw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="5_1jxqw"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bn38vq25ak27o" path="res://Textures/Player/player_sprite_ice.png" id="6_n7ghd"]
 [ext_resource type="Script" uid="uid://bqnbt5t6qnae0" path="res://stored_ice_spears.gd" id="9_b26j0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
@@ -24,25 +25,44 @@ shader = ExtResource("4_dw050")
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("1_4flbx")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
 atlas = ExtResource("1_4flbx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("6_n7ghd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("6_n7ghd")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onrkg")
+"texture": SubResource("AtlasTexture_n7ghd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i3pqv")
+"texture": SubResource("AtlasTexture_urp6f")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}],
+"loop": true,
+"name": &"ice",
 "speed": 5.0
 }]
 
@@ -77,7 +97,7 @@ rotation = -0.176767
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b26j0")
 sprite_frames = SubResource("SpriteFrames_hqtel")
-frame_progress = 0.283952
+animation = &"ice"
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 3.78

@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_3rw64")
-max_health = 120.0
+max_health = 300.0
 sprite = ExtResource("2_h6mpf")
 type = 2
-drop_value = 200
+drop_value = 250
 spd = 45.0
 knockback_recovery = 1000.0
 health_drop_chance = 0

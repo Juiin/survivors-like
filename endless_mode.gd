@@ -6,7 +6,8 @@ func _ready() -> void:
 
 func start_endless_mode_animation():
 	%MiscButtons.get_node("Mover").close(start_endless_mode)
-	%LeaderboardSubmit.get_node("Mover").close()
+	if %LeaderboardSubmit:
+		%LeaderboardSubmit.get_node("Mover").close()
 	%Victory.get_node("Mover").close()
 	%Leaderboard.get_node("Mover").close()
 

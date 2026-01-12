@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqyikqgt4l5gx"]
+[gd_scene load_steps=15 format=3 uid="uid://bqyikqgt4l5gx"]
 
+[ext_resource type="Shader" uid="uid://cbsntb1evrjmv" path="res://scroll.gdshader" id="1_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://gy202ax8opf2" path="res://Textures/logo.png" id="2_nlkkf"]
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="2_qe12f"]
@@ -8,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://ddpvnib6mhscm" path="res://Textures/play_button.png" id="4_qe12f"]
 [ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="6_8qtwp"]
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="6_nlkkf"]
+[ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="10_0o4t1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
+shader = ExtResource("1_dy7ct")
+shader_parameter/speed = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8qtwp"]
 shader = ExtResource("2_qe12f")
@@ -63,6 +69,7 @@ shader_parameter/alpha_multiplier = 1.0
 modulate = Color(0.772951, 0.772951, 0.772951, 1)
 z_index = -10
 texture_repeat = 2
+material = SubResource("ShaderMaterial_0k4wn")
 position = Vector2(-24, -25)
 texture = ExtResource("1_glbon")
 region_enabled = true
@@ -84,9 +91,9 @@ metadata/_custom_type_script = "uid://cyeao5vh7aux1"
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_dy7ct")
 offset_left = 360.0
-offset_top = 223.0
+offset_top = 185.0
 offset_right = 1639.0
-offset_bottom = 805.0
+offset_bottom = 767.0
 scale = Vector2(0.165, 0.165)
 script = ExtResource("3_qe12f")
 
@@ -129,5 +136,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-860, -26)
 script = ExtResource("6_8qtwp")
 metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="AudioVolume" parent="." instance=ExtResource("10_0o4t1")]
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="CanvasLayer/PlayButton" method="_on_pressed"]

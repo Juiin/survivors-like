@@ -19,7 +19,6 @@ texture = ExtResource("1_5x8l0")
 [node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
 unique_name_in_owner = true
 script = ExtResource("3_fhspa")
-base_damage = 12.0
 area_2d = NodePath("..")
 hit_limit = 1
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"

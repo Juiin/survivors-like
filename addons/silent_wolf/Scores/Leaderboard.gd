@@ -93,9 +93,9 @@ func score_in_score_array(scores: Array, new_score: Dictionary) -> bool:
 func add_item(player_name: String, score_value: String) -> void:
 	var item = ScoreItem.instantiate()
 	list_index += 1
-	item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
+	item.get_node("%PlayerName").text = str(list_index) + str(". ") + player_name
 	var final_score = format_time(float(score_value))
-	item.get_node("Score").text = final_score
+	item.get_node("%Score").text = final_score
 	item.offset_top = list_index * 100
 	%ScoreItemContainer.add_child(item)
 

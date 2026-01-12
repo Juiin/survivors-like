@@ -5,21 +5,30 @@ custom_minimum_size = Vector2(500, 50)
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="PlayerName" type="RichTextLabel" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PlayerName" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 25)
-layout_mode = 0
-offset_left = 8.0
-offset_right = 359.0
-offset_bottom = 50.0
+layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
 text = "1. Godzilla"
+vertical_alignment = 1
 
-[node name="Score" type="Label" parent="."]
-layout_mode = 0
-offset_left = 359.0
-offset_top = 1.0
-offset_right = 485.0
-offset_bottom = 49.0
+[node name="Score" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "13"
 horizontal_alignment = 2
+vertical_alignment = 1

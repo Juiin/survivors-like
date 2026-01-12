@@ -1,11 +1,11 @@
 class_name BurnNovaAoEUpgrade
 extends Upgrade
 
-@export var increase := 0.25
+@export var increase := 0.15
 
 func _init(_req_upgrade: Upgrade):
     upgrade_name = "Burn Nova AoE"
-    upgrade_description = "25% increased Burn Nova AoE"
+    upgrade_description = "15% increased Burn Nova AoE"
     cost = [100, 200, 350, 500, 750, 1000]
     type = Enums.UpgradeType.EXPLOSION
     req_upgrade = _req_upgrade

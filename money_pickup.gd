@@ -11,10 +11,11 @@ var global_sprite := preload("uid://h5dy21n64hm6")
 
 var value := 1
 var type: Enums.UpgradeType = Enums.UpgradeType.EXPLOSION
+var pickup_volume := 0.35
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var final_scale: Vector2 = scale
-@onready var behind_zoom:= $BehindZoom
+@onready var behind_zoom := $BehindZoom
 
 func _ready() -> void:
 	final_scale *= 1.5
@@ -40,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		Utils.play_audio(pickup_snd, 0.9, 1.1, 0.35)
+		Utils.play_audio(pickup_snd, 0.9, 1.1, pickup_volume)
 		Game.adjust_money(type, value)
 
 		queue_free()
@@ -49,3 +50,5 @@ func enable_shine():
 	sprite_2d.material.set_shader_parameter("shine_color", Color(1, 1, 1, 1))
 	behind_zoom.visible = true
 	behind_zoom.material.set_shader_parameter("sample", sprite_2d.texture)
+	pickup_snd = load("res://Audio/SoundEffect/collect_valuable_gem.mp3")
+	pickup_volume = 0.8

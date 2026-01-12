@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://baeotlmv6lrmp"]
+
+[ext_resource type="Script" uid="uid://bq74tay6vi6on" path="res://audio_slider.gd" id="1_18mv3"]
+[ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="2_gomrb"]
+
+[node name="AudioVolume" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 536.0
+offset_right = 617.0
+offset_bottom = 39.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "♫"
+
+[node name="AudioSlider" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_18mv3")
+
+[node name="Mover" type="Node2D" parent="."]
+position = Vector2(187, 0)
+script = ExtResource("2_gomrb")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"

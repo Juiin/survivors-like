@@ -7,7 +7,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Projectile Return"
     upgrade_description = "+10% Chance for Ice Spears to return to you"
-    cost = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    cost = [100, 150, 200, 250, 300, 350, 400, 450, 500, 600]
     type = Enums.UpgradeType.ICE_SPEAR
 
 func apply_upgrade(attack: Attack) -> void:

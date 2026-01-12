@@ -31,6 +31,9 @@ func _ready() -> void:
 	random_timer.start()
 
 func throw_rock(_target: Vector2):
+	if get_parent().frozen && !get_parent().is_boss:
+		return
+
 	var rock = rock_scene.instantiate()
 	rock.target = _target
 

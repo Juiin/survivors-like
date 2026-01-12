@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_eb3vx")
-max_health = 100.0
+max_health = 150.0
 sprite = ExtResource("2_l0s8n")
 type = 1
 drop_value = 50

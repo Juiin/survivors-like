@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var hints: Hints = %Hints
 @onready var upgrade_icon := %NewUpgradeIcon
 @onready var main_menu_button := %MainMenuButton
+@onready var audio_volume := %AudioVolume
 
 var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
 var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
@@ -19,10 +20,12 @@ var ice_spear_upgrades: Array[Upgrade] = [
 	ProjSpdUpgrade.new(),
 	PierceUpgrade.new(),
 	ReturnUpgrade.new(),
+	StoreIceSpearTimeUpgrade.new(),
 	MaxStoredIceSpearsUpgrade.new(),
 	ice_spear_drop_pickup,
 	freeze_nova_on_pickup,
 	FreezeNovaOnKillUpgrade.new(freeze_nova_on_pickup),
+	FreezeNovaAoEUpgrade.new(),
 	KnockbackUpgrade.new(Enums.UpgradeType.ICE_SPEAR)
 ]
 
@@ -51,7 +54,6 @@ var global_upgrades: Array[Upgrade] = [
 func _unhandled_input(event: InputEvent) -> void:
 	if Game.player_is_dead || (Game.boss_is_active && Game.bosses_remaining == 0):
 		return
-
 	if event.is_action_pressed("menu"):
 		if ice_spear_upgrade_menu.visible:
 			ice_spear_upgrade_menu.close()
@@ -59,6 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			global_upgrade_menu.close()
 			hints.close()
 			main_menu_button.close()
+			audio_volume.get_node("Mover").close()
 			elapsed_game_timer.close(func(): get_tree().paused=false)
 			
 		else:
@@ -68,9 +71,20 @@ func _unhandled_input(event: InputEvent) -> void:
 			elapsed_game_timer.open()
 			hints.open()
 			main_menu_button.open()
+			audio_volume.get_node("Mover").open()
 			get_tree().paused = true
 
+
+func _on_node_added(node):
+	if node is Button:
+		node.mouse_entered.connect(_on_button_hover)
+
+func _on_button_hover():
+	Utils.play_audio(load("res://Audio/GUI/hover.wav"))
+
+		
 func _ready() -> void:
+	get_tree().node_added.connect(_on_node_added)
 	Game.ice_spear_money_changed.connect(update_upgrade_icon)
 	Game.explosion_money_changed.connect(update_upgrade_icon)
 

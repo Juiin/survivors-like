@@ -9,12 +9,16 @@ var start_pos: Vector2
 var open_tween: Tween
 var close_tween: Tween
 
+@export var auto_open := true
+
 func _ready():
 	start_pos = global_position
 	final_pos = to_move_node.global_position
 	to_move_node.global_position = start_pos
-
-	open()
+	if auto_open:
+		open()
+	else:
+		close()
 
 func open():
 	if open_tween && open_tween.is_running():

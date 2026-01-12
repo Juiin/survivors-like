@@ -30,5 +30,6 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.freeze_nova_on_pickup:
 			var nova = freeze_nova_scene.instantiate()
 			nova.position = global_position
+			nova.scale *= Game.freeze_nova_scale_multi
 			get_tree().current_scene.call_deferred("add_child", nova)
 		queue_free()

@@ -1,12 +1,12 @@
 class_name GlobalPercentDamageUpgrade
 extends Upgrade
 
-var damage_increase := 0.15
+var damage_increase := 0.2
 
 
 func _init():
     upgrade_name = "% Damage"
-    upgrade_description = "Increases Damage by 15%"
+    upgrade_description = "Increases Damage by 20%"
     cost = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500]
     type = Enums.UpgradeType.GLOBAL
     endless = true

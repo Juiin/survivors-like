@@ -62,7 +62,7 @@ func die() -> void:
 		has_returned = true
 		rotation = global_position.angle_to_point(player.global_position)
 		start_die_tween()
-		# hitbox_component.hit_list.clear()
+		hitbox_component.hit_list.clear()
 		hitbox_component.hit_count = 0
 	else:
 		if randf() <= drop_percent:
