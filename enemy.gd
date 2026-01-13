@@ -113,7 +113,7 @@ func _physics_process(delta):
 		final_damage *= 1 + increased_damage
 		health_component.take_damage(final_damage)
 		Effects.spawn_damage_text(final_damage, global_position, Color.ORANGE)
-		burning_timer = 1.0
+		burning_timer = 1.0 / (1 + Game.faster_burn_rate)
 	else:
 		burning_timer -= delta
 
@@ -160,6 +160,16 @@ func die() -> void:
 		nova.position = global_position
 		nova.scale *= Game.freeze_nova_scale_multi
 		get_tree().current_scene.add_child(nova)
+
+	if randf() <= Game.shatter_on_kill && frozen:
+		var ice_shard_scene = preload("res://ice_shard.tscn")
+		Utils.play_audio(load("res://Audio/SoundEffect/shatter.mp3"), 0.9, 1.1)
+		for i in range(5):
+			var shard = ice_shard_scene.instantiate()
+			shard.position = global_position
+			# shard.base_scale /= 2
+			get_tree().current_scene.add_child(shard)
+			shard.rotation = deg_to_rad(60 * i)
 	queue_free()
 
 func flash() -> void:

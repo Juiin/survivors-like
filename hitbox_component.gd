@@ -55,7 +55,11 @@ func _process(delta: float) -> void:
 		
 		
 		var hurtbox_child = Utils.get_child_by_class(area, HurtboxComponent)
+		
+
 		if hurtbox_child:
+			if hurtbox_child.health_component.health <= 0:
+				continue
 			var dmg_color = Color.WHITE
 			if hurtbox_child.owner is Player:
 				player_in_area_timer += delta

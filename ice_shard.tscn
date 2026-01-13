@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1cnkjr77vlmv"]
+
+[ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="1_trkdg"]
+[ext_resource type="Script" uid="uid://hkcimy4nb4f5" path="res://ice_shard.gd" id="1_xpthv"]
+[ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="2_xpthv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trypy"]
+size = Vector2(31.6944, 6.57019)
+
+[node name="Shard" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_xpthv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.37191
+texture = ExtResource("1_trkdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.152782, 1)
+shape = SubResource("RectangleShape2D_trypy")
+
+[node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
+script = ExtResource("2_xpthv")
+base_damage = 3.0
+area_2d = NodePath("..")
+hit_limit = 1
+knockback_amount = 50.0
+metadata/_custom_type_script = "uid://bey62ij0i7l6l"

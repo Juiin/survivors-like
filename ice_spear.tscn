@@ -10,6 +10,7 @@ size = Vector2(5.77756, 30.1853)
 [node name="IceSpear" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_vloot")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

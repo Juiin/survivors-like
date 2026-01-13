@@ -9,6 +9,8 @@ func _ready() -> void:
 	for upgrade in player.explosion_upgrades.size():
 		if player.explosion_upgrades[upgrade] is FlatDamageUpgrade:
 			player.explosion_upgrades[upgrade].apply_upgrade(self)
+		if player.explosion_upgrades[upgrade] is DamageAgainstFrozen:
+			hitbox_component.damage_against_frozen += player.explosion_upgrades[upgrade].increase
 	for upgrade in player.global_upgrades.size():
 		if player.global_upgrades[upgrade] is GlobalPercentDamageUpgrade:
 			hitbox_component.percent_dmg += player.global_upgrades[upgrade].damage_increase

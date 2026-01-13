@@ -27,6 +27,8 @@ var batch_number: int
 var offset_distance := 20.0
 var sfx = preload("res://Audio/new_ice_spear.mp3")
 
+var base_scale = 1.0
+
 func _ready() -> void:
 	Utils.play_audio(sfx, 0.7, 0.7)
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
@@ -53,8 +55,8 @@ func _ready() -> void:
 
 	
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2(1.5, 1.5), 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(1, 1), 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(base_scale * 1.5, base_scale * 1.5), 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(base_scale, base_scale), 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
 	
 func die() -> void:

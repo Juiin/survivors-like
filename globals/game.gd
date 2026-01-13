@@ -117,12 +117,14 @@ var money_multi := 1.0
 var enemy_health_multi := 1.0
 
 var burn_damage := 1.0
-var burn_duration := 3.0
+var faster_burn_rate := 0.0
+var burn_duration := 3.0 / (1.0 + faster_burn_rate)
 var burn_nova_on_kill = 0.0
 var burn_nova_scale_multi := 1.0
 var freeze_nova_scale_multi := 1.0
 
 var freeze_nova_on_kill = 0.0
+var shatter_on_kill = 0.0
 
 var spawn_timer = Timer
 var health_enemy_spawn_timer: Timer
@@ -164,10 +166,12 @@ func start_game() -> void:
 	money_multi = 1.0
 	enemy_health_multi = 1.0
 	burn_damage = 1.0
-	burn_duration = 3.0
+	faster_burn_rate = 0.0
+	burn_duration = 3.0 / (1.0 + faster_burn_rate)
 	burn_nova_on_kill = 0.0
 	burn_nova_scale_multi = 1.0
 	freeze_nova_on_kill = 0.0
+	shatter_on_kill = 0.0
 	ice_spear_money = 0
 	explosion_money = 0
 	bosses_remaining = 3
