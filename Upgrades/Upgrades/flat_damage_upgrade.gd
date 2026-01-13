@@ -6,7 +6,13 @@ var damage_increase := 1
 
 func _init(_type: Enums.UpgradeType):
     upgrade_name = "Flat Damage"
-    upgrade_description = "Increases Damage by 1"
+    var str = ""
+    match _type:
+        Enums.UpgradeType.ICE_SPEAR:
+            str = "of ice abilities"
+        Enums.UpgradeType.EXPLOSION:
+            str = "of fire abilities"
+    upgrade_description = "Increases Damage " + str + " by 1"
     cost = [25, 50, 75, 100, 125, 150]
     type = _type
     endless = true

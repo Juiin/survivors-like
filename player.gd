@@ -68,6 +68,7 @@ func _ready() -> void:
 	ice_spear_store_tween.set_loops().tween_callback(
 		func():
 			update_ice_spear_stored(ice_spear_stored + 1)
+			print(global_upgrades)
 	).set_delay(ice_spear_store_time)
 	
 	health_component.connect("died", died)

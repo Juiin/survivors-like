@@ -7,7 +7,7 @@ var travel_distance: Vector2 = Vector2(15, -20)
 var pos: Vector2
 var text: String
 var color = Color.WHITE
-var dur: float = 2
+var dur: float = 2.5
 
 func _ready() -> void:
     global_position = pos

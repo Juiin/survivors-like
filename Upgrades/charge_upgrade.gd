@@ -51,3 +51,4 @@ func has_charged_up() -> void:
 	Utils.play_audio(preload("res://Audio/SoundEffect/charge_upgrade.mp3"), 0.9, 1, 0.8)
 	var player = get_tree().get_first_node_in_group("player")
 	upgrade.apply_player_upgrade(player)
+	player.global_upgrades.append(upgrade)

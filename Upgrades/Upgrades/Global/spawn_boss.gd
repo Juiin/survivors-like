@@ -7,7 +7,7 @@ func _init(_req_upgrade: Upgrade):
 	upgrade_description = "Do or die!"
 	cost = [1000]
 	type = Enums.UpgradeType.GLOBAL
-	req_upgrade_level = 9
+	req_upgrade_level = 5
 	req_upgrade = _req_upgrade
 
 func apply_player_upgrade(player: Player) -> void:

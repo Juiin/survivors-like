@@ -102,12 +102,15 @@ func _physics_process(delta):
 
 	if burning && burning_timer <= 0.0:
 		var final_damage = Game.burn_damage
+		var increased_damage := 0.0
+		for upgrade in player.global_upgrades:
+			if upgrade is GlobalPercentDamageUpgrade:
+				increased_damage += upgrade.damage_increase
 		if frozen:
-			var damage_against_frozen := 0.0
 			for upgrade in player.explosion_upgrades:
 				if upgrade is DamageAgainstFrozen:
-					damage_against_frozen += upgrade.increase
-			final_damage *= 1 + damage_against_frozen
+					increased_damage += upgrade.increase
+		final_damage *= 1 + increased_damage
 		health_component.take_damage(final_damage)
 		Effects.spawn_damage_text(final_damage, global_position, Color.ORANGE)
 		burning_timer = 1.0

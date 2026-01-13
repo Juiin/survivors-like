@@ -11,7 +11,7 @@ func _ready() -> void:
 			player.explosion_upgrades[upgrade].apply_upgrade(self)
 	for upgrade in player.global_upgrades.size():
 		if player.global_upgrades[upgrade] is GlobalPercentDamageUpgrade:
-			player.global_upgrades[upgrade].apply_upgrade(self)
+			hitbox_component.percent_dmg += player.global_upgrades[upgrade].damage_increase
 
 	cpuparticles_2d.emitting = true
 	var timer = Timer.new()

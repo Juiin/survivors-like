@@ -6,7 +6,7 @@ extends Upgrade
 
 func _init():
     upgrade_name = "Faster Store Time"
-    upgrade_description = "Store a new ice spear 10% faster"
+    upgrade_description = "Store a new Ice Spear 10% faster"
     cost = [150, 300, 450, 600, 750, 1000]
     type = Enums.UpgradeType.ICE_SPEAR
 

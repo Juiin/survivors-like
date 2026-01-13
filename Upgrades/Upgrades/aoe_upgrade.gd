@@ -5,8 +5,8 @@ extends Upgrade
 
 
 func _init():
-	upgrade_name = "AoE Increase"
-	upgrade_description = "Increased Area of Effect"
+	upgrade_name = "Explosion AoE"
+	upgrade_description = "Explosion Area of Effect increased by 15%"
 	cost = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
 	type = Enums.UpgradeType.EXPLOSION
 	endless = true

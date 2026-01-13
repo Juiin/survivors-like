@@ -3,7 +3,7 @@ extends Resource
 
 var upgrade_name: String = "Upgrade Name"
 var upgrade_description: String = "Upgrade Description %s"
-var locked_description: String = "Get other Upgrades to unlock this one"
+var locked_description: String = "Unlock by upgrading the upgrade directly above"
 var cost: Array[int] = [10]
 var level := 0:
 	get: return min(level, cost.size() - 1)

@@ -7,16 +7,25 @@ extends PanelContainer
 var open_tween: Tween
 var close_tween: Tween
 
+var local_hints := []
+
 var starting_position: Vector2
 func _ready() -> void:
 	starting_position = global_position
-	
+	local_hints = hint_database.hints.duplicate()
 
 func open():
 	if open_tween && open_tween.is_running():
 		return
 	show()
-	label.text = hint_database.hints[randi_range(0, hint_database.hints.size() - 1)]
+
+	var chosen_hint = local_hints.pick_random()
+	local_hints.erase(chosen_hint)
+	label.text = chosen_hint
+
+	if local_hints.size() == 0:
+		local_hints = hint_database.hints.duplicate()
+
 	#reset_size()
 	open_tween = create_tween()
 	open_tween.tween_property(self, "global_position", global_position - Vector2(0, 75), 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

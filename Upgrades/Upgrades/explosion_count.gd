@@ -6,7 +6,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Additional Explosion"
     upgrade_description = "Explode an additional time"
-    cost = [300, 400, 500, 700, 1000, 1500, 2000, 2250, 2500]
+    cost = [300, 500, 1000, 2000, 4000, 6000, 8000, 10000]
     type = Enums.UpgradeType.EXPLOSION
 
 func apply_player_upgrade(player: Player) -> void:
