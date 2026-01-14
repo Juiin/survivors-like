@@ -120,7 +120,7 @@ var burn_damage := 1.0
 var faster_burn_rate := 0.0
 var burn_duration := 3.0 / (1.0 + faster_burn_rate)
 var burn_nova_on_kill = 0.0
-var burn_nova_scale_multi := 1.0
+var burn_nova_scale_multi := 0.8
 var freeze_nova_scale_multi := 1.0
 
 var freeze_nova_on_kill = 0.0
@@ -142,6 +142,7 @@ var bosses_remaining := 3
 var player_is_dead := false
 
 var player_name := "Anonymous Player"
+var volume := 0.5
 
 func _ready() -> void:
 	SilentWolf.configure({
@@ -169,7 +170,7 @@ func start_game() -> void:
 	faster_burn_rate = 0.0
 	burn_duration = 3.0 / (1.0 + faster_burn_rate)
 	burn_nova_on_kill = 0.0
-	burn_nova_scale_multi = 1.0
+	burn_nova_scale_multi = 0.8
 	freeze_nova_on_kill = 0.0
 	shatter_on_kill = 0.0
 	ice_spear_money = 0
@@ -189,7 +190,9 @@ func start_game() -> void:
 
 	throw_enemy_spawn_timer = Timer.new()
 	throw_enemy_spawn_timer.connect("timeout", spawn_throw_enemy)
-	throw_enemy_spawn_timer.set_wait_time(50)
+	throw_enemy_spawn_timer.set_wait_time(60)
+	print(throw_enemy_spawn_timer.wait_time)
+	print(throw_enemy_spawn_timer.time_left)
 
 	swarm_timer = Timer.new()
 	swarm_timer.connect("timeout", func(): next_spawn_is_swarm = true)
@@ -346,29 +349,35 @@ func spawn_health_enemy():
 	enemy.stats = [CHEST_BLUE_STATS, CHEST_RED_STATS].pick_random()
 	enemy.scale *= 2.5
 	enemy.despawn_immune = true
-	enemy.death_sfx_path = "res://Audio/SoundEffect/Chest_Close.wav"
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
 
 func spawn_throw_enemy():
 	if boss_is_active:
 		return
+	var spawn_count = 1
+	if total_currency_collected > 15000 && randf() <= 0.15:
+		spawn_count = remap(total_currency_collected, 15000, MAX_CURRENCY, 5, 10)
+		spawn_count = clamp(spawn_count, 5, 10)
+	for i in range(spawn_count):
+		var enemy = preload("res://enemy.tscn").instantiate()
+		spawn_path_follow.progress_ratio = randf()
+		enemy.global_position = spawn_path_follow.global_position
+		enemy.stats = JUGGERNAUT_SMALL_STATS
 
-	var enemy = preload("res://enemy.tscn").instantiate()
-	spawn_path_follow.progress_ratio = randf()
-	enemy.global_position = spawn_path_follow.global_position
-	enemy.stats = JUGGERNAUT_SMALL_STATS
+		var rock_thrower = preload("res://boss/rock_thrower.tscn").instantiate()
+		rock_thrower.at_player_interval = 30
+		rock_thrower.at_random_interval = 5
+		enemy.add_child(rock_thrower)
+		enemy.scale *= 2
+		enemy.is_elite = true
 
-	var rock_thrower = preload("res://boss/rock_thrower.tscn").instantiate()
-	rock_thrower.at_player_interval = 30
-	rock_thrower.at_random_interval = 5
-	enemy.add_child(rock_thrower)
-	enemy.scale *= 2
-	enemy.is_elite = true
-
-	get_tree().current_scene.get_node("%YSort").add_child(enemy)
+		get_tree().current_scene.get_node("%YSort").add_child(enemy)
 
 	var next_throw_enemy_interval = remap(total_currency_collected, 0, MAX_CURRENCY, 80, 40)
+	next_throw_enemy_interval = clamp(next_throw_enemy_interval, 40, 80)
+
 	throw_enemy_spawn_timer.set_wait_time(next_throw_enemy_interval)
+	throw_enemy_spawn_timer.start()
 
 func spawn_boss():
 	var jugg = preload("res://enemy.tscn").instantiate()

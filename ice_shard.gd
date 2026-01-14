@@ -18,6 +18,8 @@ func _ready():
 			hitbox_component.flat_dmg += player.ice_spear_upgrades[upgrade].damage_increase
 		if player.ice_spear_upgrades[upgrade] is DamageAgainstBurning:
 			hitbox_component.damage_against_burning += player.ice_spear_upgrades[upgrade].increase
+		if player.ice_spear_upgrades[upgrade] is PierceUpgrade:
+			hitbox_component.hit_limit += 1
 	for upgrade in player.global_upgrades.size():
 		if player.global_upgrades[upgrade] is GlobalPercentDamageUpgrade:
 			hitbox_component.percent_dmg += player.global_upgrades[upgrade].damage_increase

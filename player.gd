@@ -68,7 +68,6 @@ func _ready() -> void:
 	ice_spear_store_tween.set_loops().tween_callback(
 		func():
 			update_ice_spear_stored(ice_spear_stored + 1)
-			print(global_upgrades)
 	).set_delay(ice_spear_store_time)
 	
 	health_component.connect("died", died)
@@ -129,8 +128,10 @@ func attack():
 	if Game.player_is_dead:
 		return
 
+	var form_snapshot = current_form
+
 	var atk_count = 1;
-	if current_form == form.ST:
+	if form_snapshot == form.ST:
 		if ice_spear_stored > 0:
 			atk_count = ice_spear_stored + 1
 			if ice_spear_stored >= 3:
@@ -141,26 +142,27 @@ func attack():
 				nova.scale += Vector2(nova_scale_bonus, nova_scale_bonus)
 				get_tree().current_scene.add_child(nova)
 			ice_spear_stored = 0
-	elif current_form == form.AOE:
+	elif form_snapshot == form.AOE:
 		atk_count = explosion_count
 
-	var starting_pos = get_global_mouse_position() if current_form == form.AOE else global_position
+	var starting_pos = get_global_mouse_position() if form_snapshot == form.AOE else global_position
 	var attack_count = 1
-	if current_form == form.ST:
+	if form_snapshot == form.ST:
 		attack_count = ice_spear_projectiles
 	for i in atk_count:
+		var i_snapshot = i
 		create_tween().tween_callback(
 			func():
 				for j in attack_count:
-					var inst=get_attack_scene().instantiate()
-					inst.batch_number=i if current_form == form.AOE else j
-					inst.global_position=starting_pos
+					var inst=get_attack_scene(form_snapshot).instantiate()
+					inst.batch_number=i_snapshot if form_snapshot == form.AOE else j
+					inst.global_position=starting_pos if form_snapshot == form.AOE else global_position
 					get_tree().current_scene.add_child(inst)
-					var upgrade_array: Array[Upgrade]=ice_spear_upgrades if current_form == form.ST else explosion_upgrades
+					var upgrade_array: Array[Upgrade]=ice_spear_upgrades if form_snapshot == form.ST else explosion_upgrades
 					for upgrade in upgrade_array.size():
 						upgrade_array[upgrade].apply_upgrade(inst)
 					inst.hitbox_component.percent_dmg += global_percent_dmg_increase
-					if current_form == form.AOE:
+					if form_snapshot == form.AOE:
 						inst.adjust_position()
 					).set_delay(i * (0.2 - i * 0.01))
 
@@ -193,8 +195,8 @@ func die_transition() -> void:
 	Transition.focus_center = true
 	Transition.change_scene_to("res://main_menu.tscn")
 
-func get_attack_scene() -> PackedScene:
-	match current_form:
+func get_attack_scene(form_snapshot: int) -> PackedScene:
+	match form_snapshot:
 		form.ST:
 			return ice_spear_scene
 		form.AOE:

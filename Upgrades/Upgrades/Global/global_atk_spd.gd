@@ -16,4 +16,3 @@ func apply_player_upgrade(player: Player) -> void:
 	player.atk_spd_increase += atk_spd_increase_percent
 	player.attack_timer.wait_time = player.base_atk_spd / (1 + player.atk_spd_increase)
 	player.attack_timer.wait_time = max(player.attack_timer.wait_time, 0.15)
-	print("player.attack_timer.wait_time: ", player.attack_timer.wait_time)

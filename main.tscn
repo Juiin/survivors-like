@@ -5691,6 +5691,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("19_1u8w0")
 
 [node name="Debug" type="Label" parent="UIRoot"]
+visible = false
 offset_left = 81.0
 offset_top = 80.0
 offset_right = 192.0

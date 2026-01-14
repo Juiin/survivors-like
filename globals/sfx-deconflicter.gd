@@ -31,6 +31,7 @@ func play(player: Node, from_position: float = 0.0) -> void:
 	
 	if not should_play(player):
 		# suppress sound effect; sound was played too recently
+		player.queue_free()
 		pass
 	else:
 		# play sound effect

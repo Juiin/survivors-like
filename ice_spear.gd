@@ -2,7 +2,7 @@ extends Attack
 
 var ice_spear_pickup := preload("uid://dof70rjknoom5")
 @onready var sprite := $Sprite2D
-const lifetime := 1
+var lifetime := 1.0
 
 var player: Player
 var die_tween: Tween
@@ -20,6 +20,8 @@ var ice_spear_proj_spd_increase := 0.0:
 
 var return_percent = 0.0
 var has_returned := false
+
+var follow_player = false
 
 var drop_percent := 0.0
 
@@ -64,6 +66,11 @@ func die() -> void:
 		has_returned = true
 		rotation = global_position.angle_to_point(player.global_position)
 		start_die_tween()
+		follow_player = true
+		var stop_follow := create_tween()
+		stop_follow.tween_callback(func():
+			follow_player=false).set_delay(0.5)
+		
 		hitbox_component.hit_list.clear()
 		hitbox_component.hit_count = 0
 	else:
@@ -84,5 +91,7 @@ func start_die_tween():
 	die_tween.tween_callback(die).set_delay(lifetime)
 
 func _physics_process(delta):
+	if follow_player:
+		rotation = global_position.angle_to_point(player.global_position)
 	var dir = Vector2.RIGHT.rotated(rotation)
 	position += dir * spd * delta

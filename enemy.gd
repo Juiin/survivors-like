@@ -146,8 +146,8 @@ func die() -> void:
 	death_inst.set_sprite(stats.sprite)
 	death_inst.play()
 
-	
-	Utils.play_audio(load(death_sfx_path), 0.9, 1.1, 0.1)
+	const death_sfxs = [preload("res://Audio/sndEnemyDeath1.mp3"), preload("res://Audio/sndEnemyDeath2.mp3"), preload("res://Audio/sndEnemyDeath3.mp3")]
+	Utils.play_audio(death_sfxs.pick_random(), 0.9, 1.1, 0.1)
 
 	if randf() <= Game.burn_nova_on_kill && burning:
 		var burn_nova = preload("res://Attacks/burn_nova.tscn").instantiate()
@@ -163,7 +163,7 @@ func die() -> void:
 
 	if randf() <= Game.shatter_on_kill && frozen:
 		var ice_shard_scene = preload("res://ice_shard.tscn")
-		Utils.play_audio(load("res://Audio/SoundEffect/shatter.mp3"), 0.9, 1.1)
+		Utils.play_audio(preload("res://Audio/SoundEffect/shatter.mp3"), 0.9, 1.1)
 		for i in range(5):
 			var shard = ice_shard_scene.instantiate()
 			shard.position = global_position

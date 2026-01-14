@@ -23,7 +23,6 @@ shape = SubResource("RectangleShape2D_trypy")
 
 [node name="HitboxComponent" type="Node" parent="." node_paths=PackedStringArray("area_2d")]
 script = ExtResource("2_xpthv")
-base_damage = 3.0
 area_2d = NodePath("..")
 hit_limit = 1
 knockback_amount = 50.0

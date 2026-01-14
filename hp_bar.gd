@@ -5,8 +5,13 @@ extends ProgressBar
 func _ready() -> void:
 	max_value = health_component.max_health
 	value = max_value
+	visible = false
 	health_component.connect("health_changed", update_value)
 
 func update_value() -> void:
 	max_value = health_component.max_health
 	value = health_component.health
+	if value < max_value:
+		visible = true
+	else:
+		visible = false

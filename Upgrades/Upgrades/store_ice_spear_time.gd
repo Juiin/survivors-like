@@ -13,4 +13,3 @@ func _init():
 func apply_player_upgrade(player: Player) -> void:
     player.increased_ice_spear_store_time += increase
     player.ice_spear_store_time = player.base_ice_spear_store_time / (1.0 + player.increased_ice_spear_store_time)
-    print("player.ice_spear_store_time: ", player.ice_spear_store_time)
