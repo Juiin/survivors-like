@@ -80,7 +80,7 @@ func toggle_menu() -> void:
 		main_menu_button.get_node("Mover").open()
 		audio_volume.get_node("Mover").open()
 		get_tree().paused = true
-		upgrade_button.set_to_close()
+		upgrade_button.set_to_resume()
 
 
 func _on_node_added(node):

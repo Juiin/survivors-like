@@ -12,8 +12,8 @@ func _ready() -> void:
 func set_to_upgrades() -> void:
 	text = "Upgrades"
 
-func set_to_close() -> void:
-	text = "Close"
+func set_to_resume() -> void:
+	text = "Resume"
 
 func _on_pressed() -> void:
 	ui_root.toggle_menu()
