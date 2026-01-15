@@ -81,6 +81,7 @@ material = SubResource("ShaderMaterial_8qtwp")
 position = Vector2(319, 86)
 scale = Vector2(0.285156, 0.285156)
 texture = ExtResource("2_nlkkf")
+region_rect = Rect2(2, 0, 1022, 1024)
 
 [node name="Mover" type="Node2D" parent="Logo"]
 position = Vector2(0, -992.439)

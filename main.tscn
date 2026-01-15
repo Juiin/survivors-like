@@ -1,4 +1,4 @@
-[gd_scene load_steps=735 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=737 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Script" uid="uid://lp8e4duc4ynk" path="res://main.gd" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="26_lswn8"]
 [ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="27_xuqvo"]
 [ext_resource type="Script" uid="uid://c281tn4veua4l" path="res://upgrades_button.gd" id="28_qsp4k"]
+[ext_resource type="TileSet" uid="uid://c4kokfk4inbnb" path="res://Textures/deco.tres" id="30_seu75"]
+[ext_resource type="Script" uid="uid://bb2t7mycs0nog" path="res://tile_map.gd" id="31_htxhm"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
@@ -2709,6 +2711,13 @@ position = Vector2(0, -1)
 texture = ExtResource("1_0xm2m")
 region_enabled = true
 region_rect = Rect2(0, 0, 12800, 7200)
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = -9
+position = Vector2(-6400, -3601)
+tile_set = ExtResource("30_seu75")
+script = ExtResource("31_htxhm")
 
 [node name="ChargeSpawner" parent="." instance=ExtResource("13_ycdy4")]
 
