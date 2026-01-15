@@ -52,7 +52,7 @@ enabled=PackedStringArray("res://addons/resources_spreadsheet_view/plugin.cfg", 
 
 [gui]
 
-theme/custom="uid://btlyj3tbwjpcd"
+theme/custom="uid://m71051m0sgdy"
 theme/default_font_multichannel_signed_distance_field=true
 
 [input]

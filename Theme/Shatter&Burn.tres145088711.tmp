@@ -1,0 +1,151 @@
+[gd_resource type="Theme" load_steps=55 format=3 uid="uid://btlyj3tbwjpcd"]
+
+[ext_resource type="FontFile" uid="uid://w403dwclxhqu" path="res://Theme/OpenSans-Regular.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://cgo42r0gx3cws" path="res://Theme/icons.svg" id="2"]
+[ext_resource type="FontFile" uid="uid://cqppik7v54jhm" path="res://Font/ByteBounce.ttf" id="3_5vrsv"]
+
+[sub_resource type="FontFile" id="21"]
+fallbacks = Array[Font]([ExtResource("1")])
+
+# -------- CORE PANELS / BUTTONS (ICE BASE) --------
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.03, 0.06, 0.1, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.08, 0.18, 0.28, 1)
+border_color = Color(0.6, 0.9, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.45, 0.18, 0.05, 1)
+border_color = Color(1.0, 0.6, 0.25, 1)
+
+# -------- SCROLL / INPUT --------
+
+[sub_resource type="StyleBoxFlat" id="35"]
+bg_color = Color(0.1, 0.2, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="36"]
+bg_color = Color(0.15, 0.3, 0.45, 1)
+border_color = Color(0.6, 0.9, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="37"]
+bg_color = Color(0.9, 0.35, 0.1, 1)
+border_color = Color(1.0, 0.75, 0.35, 1)
+
+[sub_resource type="StyleBoxFlat" id="38"]
+bg_color = Color(0.02, 0.05, 0.1, 1)
+border_color = Color(0.25, 0.55, 0.9, 1)
+
+[sub_resource type="StyleBoxFlat" id="39"]
+bg_color = Color(0.03, 0.07, 0.12, 1)
+border_color = Color(0.4, 0.7, 1.0, 1)
+
+[sub_resource type="StyleBoxLine" id="40"]
+color = Color(0.4, 0.75, 1.0, 1)
+
+# -------- SLIDERS --------
+
+[sub_resource type="StyleBoxFlat" id="12"]
+bg_color = Color(0.25, 0.55, 0.9, 1)
+
+[sub_resource type="StyleBoxFlat" id="13"]
+bg_color = Color(0.85, 0.95, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="14"]
+bg_color = Color(0.05, 0.1, 0.18, 1)
+
+# -------- INPUT BOXES --------
+
+[sub_resource type="StyleBoxFlat" id="27"]
+bg_color = Color(0.05, 0.1, 0.18, 0)
+border_color = Color(0.5, 0.85, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="28"]
+bg_color = Color(0.03, 0.06, 0.1, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="29"]
+bg_color = Color(0.06, 0.12, 0.2, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+# -------- POPUP / LIST --------
+
+[sub_resource type="StyleBoxFlat" id="30"]
+bg_color = Color(0.12, 0.25, 0.4, 1)
+
+[sub_resource type="StyleBoxLine" id="31"]
+color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="32"]
+bg_color = Color(0.02, 0.05, 0.1, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="33"]
+bg_color = Color(0.05, 0.12, 0.2, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+# -------- PROGRESS BAR --------
+
+[sub_resource type="StyleBoxFlat" id="41"]
+bg_color = Color(0.03, 0.06, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="42"]
+bg_color = Color(1.0, 0.4, 0.05, 1)
+
+# -------- TABS --------
+
+[sub_resource type="StyleBoxFlat" id="43"]
+bg_color = Color(0.05, 0.1, 0.18, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="44"]
+bg_color = Color(0.2, 0.45, 0.7, 1)
+border_color = Color(0.6, 0.9, 1.0, 1)
+
+# -------- TREE SELECTION --------
+
+[sub_resource type="StyleBoxFlat" id="45"]
+bg_color = Color(0.25, 0.5, 0.8, 1)
+
+# -------- SCROLL BARS --------
+
+[sub_resource type="StyleBoxFlat" id="46"]
+bg_color = Color(0.03, 0.06, 0.1, 1)
+border_color = Color(0.35, 0.75, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="47"]
+bg_color = Color(0.05, 0.1, 0.18, 1)
+border_color = Color(0.6, 0.9, 1.0, 1)
+
+[sub_resource type="StyleBoxLine" id="48"]
+color = Color(0.35, 0.75, 1.0, 1)
+vertical = true
+
+# -------- SLIDER AREAS --------
+
+[sub_resource type="StyleBoxFlat" id="18"]
+bg_color = Color(0.3, 0.65, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="19"]
+bg_color = Color(0.95, 0.95, 1.0, 1)
+
+[sub_resource type="StyleBoxFlat" id="20"]
+bg_color = Color(0.08, 0.16, 0.25, 1)
+
+[resource]
+default_font = ExtResource("3_5vrsv")
+
+Button/colors/font_color = Color(0.9, 0.97, 1.0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1.0, 0.85, 0.65, 1)
+
+LineEdit/colors/selection_color = Color(0.2, 0.55, 0.9, 1)
+PopupMenu/styles/hover = SubResource("30")
+ProgressBar/styles/fill = SubResource("42")
+Tree/colors/drop_position_color = Color(1.0, 0.35, 0.2, 1)

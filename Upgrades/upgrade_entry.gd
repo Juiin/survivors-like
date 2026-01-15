@@ -49,17 +49,43 @@ func update_button_status():
 func update_description():
 	%UpgradeDescription.text = upgrade.upgrade_description if upgrade.is_unlocked() else upgrade.locked_description
 
+# func update_background_color():
+# 	var default_col = Color.WEB_GREEN
+# 	default_col.a = 0.5
+# 	var disabled_color = Color.WEB_GRAY
+# 	disabled_color.a = 0.5
+# 	var locked_color = Color.WEB_GRAY
+# 	locked_color.a = 0
+
+# 	var final_col = disabled_color
+# 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]):
+# 		final_col = default_col
+# 	if !upgrade.is_unlocked():
+# 		final_col = locked_color
+# 	get_theme_stylebox("panel").bg_color = final_col
+
 func update_background_color():
-	var default_col = Color.WEB_GREEN
-	default_col.a = 0.5
-	var disabled_color = Color.WEB_GRAY
-	disabled_color.a = 0.5
-	var locked_color = Color.WEB_GRAY
-	locked_color.a = 0
+	# Ice-blue (available)
+	var default_col = Color(0.25, 0.55, 0.85) # icy blue
+	default_col.a = 0.55
+
+	if upgrade.type == Enums.UpgradeType.EXPLOSION:
+		default_col = Color(0.55, 0.22, 0.14) # hot but not neon
+
+	# Disabled (shared, neutral)
+	var disabled_color = Color(0.45, 0.45, 0.45) # neutral gray
+	disabled_color.a = 0.45
+
+	# Locked (very muted, same for both)
+	var locked_color = Color(0.12, 0.12, 0.14)
+	locked_color.a = 0.15
 
 	var final_col = disabled_color
+
 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]):
 		final_col = default_col
+
 	if !upgrade.is_unlocked():
 		final_col = locked_color
+
 	get_theme_stylebox("panel").bg_color = final_col
