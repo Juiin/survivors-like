@@ -9,6 +9,7 @@ var start_pos: Vector2
 var open_tween: Tween
 var close_tween: Tween
 
+
 @export var auto_open := true
 
 func _ready():
@@ -25,7 +26,6 @@ func open():
 		return
 
 	show()
-   
 	open_tween = create_tween()
 	open_tween.tween_property(to_move_node, "global_position", final_pos, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 

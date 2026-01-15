@@ -1,4 +1,4 @@
-[gd_scene load_steps=733 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=735 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Script" uid="uid://lp8e4duc4ynk" path="res://main.gd" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_0xm2m"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://hsgg3podjgnx" path="res://Textures/controls.png" id="23_d13ii"]
 [ext_resource type="Script" uid="uid://vtd14q378rgj" path="res://main_menu_button.gd" id="25_0odxb"]
 [ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="26_lswn8"]
+[ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="27_xuqvo"]
+[ext_resource type="Script" uid="uid://c281tn4veua4l" path="res://upgrades_button.gd" id="28_qsp4k"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
 script = ExtResource("3_dg77c")
@@ -5773,12 +5775,38 @@ z_index = 4096
 
 [node name="MainMenuButton" type="Button" parent="UIRoot"]
 unique_name_in_owner = true
-offset_left = 472.0
-offset_top = -148.0
-offset_right = 567.0
-offset_bottom = -108.0
-text = " Main Menu "
+offset_left = 417.0
+offset_top = 6.0
+offset_right = 490.0
+offset_bottom = 37.0
+text = " End Run "
 script = ExtResource("25_0odxb")
+
+[node name="Mover" type="Node2D" parent="UIRoot/MainMenuButton"]
+position = Vector2(0, -74)
+script = ExtResource("27_xuqvo")
+auto_open = false
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="UpgradesButton" type="Button" parent="UIRoot"]
+unique_name_in_owner = true
+offset_left = 491.0
+offset_top = 6.0
+offset_right = 573.0
+offset_bottom = 37.0
+text = "Upgrades"
+script = ExtResource("28_qsp4k")
+
+[node name="Mover" type="Node2D" parent="UIRoot/UpgradesButton"]
+position = Vector2(0, -74)
+script = ExtResource("27_xuqvo")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"
+
+[node name="TabSprite" type="Sprite2D" parent="UIRoot/UpgradesButton"]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(39, -1)
+scale = Vector2(0.133019, 0.133019)
+texture = ExtResource("19_1u8w0")
 
 [node name="AudioVolume" parent="UIRoot" instance=ExtResource("26_lswn8")]
 unique_name_in_owner = true

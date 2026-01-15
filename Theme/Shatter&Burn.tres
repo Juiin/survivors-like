@@ -24,7 +24,7 @@ cache/0/32/0/underline_thickness = 0.0
 cache/0/32/0/scale = 1.0
 
 [sub_resource type="StyleBoxFlat" id="1"]
-bg_color = Color(0.03, 0.04, 0.06, 1)
+bg_color = Color(0.0256523, 0.00158038, 0.00808686, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -365,7 +365,7 @@ corner_radius_bottom_left = 2
 default_font = ExtResource("3_5vrsv")
 Button/colors/font_color = Color(0.95, 0.95, 0.98, 1)
 Button/colors/font_disabled_color = Color(0.95, 0.95, 0.98, 0.2)
-Button/colors/font_hover_color = Color(0.98, 0.98, 1, 1)
+Button/colors/font_hover_color = Color(0.733333, 0.980392, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 2
 Button/fonts/font = SubResource("21")

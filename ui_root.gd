@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var hints: Hints = %Hints
 @onready var upgrade_icon := %NewUpgradeIcon
 @onready var main_menu_button := %MainMenuButton
+@onready var upgrade_button := %UpgradesButton
 @onready var audio_volume := %AudioVolume
 
 var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
@@ -57,24 +58,29 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Game.player_is_dead || (Game.boss_is_active && Game.bosses_remaining == 0):
 		return
 	if event.is_action_pressed("menu"):
-		if ice_spear_upgrade_menu.visible:
-			ice_spear_upgrade_menu.close()
-			explosion_upgrade_menu.close()
-			global_upgrade_menu.close()
-			hints.close()
-			main_menu_button.close()
-			audio_volume.get_node("Mover").close()
-			elapsed_game_timer.close(func(): get_tree().paused=false)
-			
-		else:
-			ice_spear_upgrade_menu.open(ice_spear_upgrades)
-			explosion_upgrade_menu.open(explosion_upgrades)
-			global_upgrade_menu.open(global_upgrades)
-			elapsed_game_timer.open()
-			hints.open()
-			main_menu_button.open()
-			audio_volume.get_node("Mover").open()
-			get_tree().paused = true
+		toggle_menu()
+
+func toggle_menu() -> void:
+	if ice_spear_upgrade_menu.visible:
+		ice_spear_upgrade_menu.close()
+		explosion_upgrade_menu.close()
+		global_upgrade_menu.close()
+		hints.close()
+		main_menu_button.get_node("Mover").close()
+		
+		audio_volume.get_node("Mover").close()
+		elapsed_game_timer.close(func(): get_tree().paused=false; upgrade_button.set_to_upgrades())
+		
+	else:
+		ice_spear_upgrade_menu.open(ice_spear_upgrades)
+		explosion_upgrade_menu.open(explosion_upgrades)
+		global_upgrade_menu.open(global_upgrades)
+		elapsed_game_timer.open()
+		hints.open()
+		main_menu_button.get_node("Mover").open()
+		audio_volume.get_node("Mover").open()
+		get_tree().paused = true
+		upgrade_button.set_to_close()
 
 
 func _on_node_added(node):
