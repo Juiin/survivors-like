@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://de4d70uc6t76d"]
+
+[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="1_c34eo"]
+[ext_resource type="Texture2D" uid="uid://dqrw2s7y02m7k" path="res://Textures/Player/player_one_frame.png" id="2_c00ve"]
+[ext_resource type="Script" uid="uid://cdkpp4ll65o3s" path="res://Effects/ghost_trail.gd" id="3_c00ve"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urp6f"]
+resource_local_to_scene = true
+shader = ExtResource("1_c34eo")
+shader_parameter/sample = ExtResource("2_c00ve")
+shader_parameter/speed = 2.0
+shader_parameter/max_zoom = 1.675
+shader_parameter/layer_count = 3
+shader_parameter/color_count = 1
+shader_parameter/pivot = Vector2(0.5, 0.5)
+shader_parameter/is_only_bigger = true
+shader_parameter/is_show_original = false
+shader_parameter/is_use_colors = true
+shader_parameter/boarder_zoom = 2.0
+shader_parameter/contrast_offset = 0.1
+shader_parameter/color_array = PackedVector3Array(-0.01, 0.225, 1, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/alpha_multiplier = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c34eo"]
+load_path = "res://.godot/imported/player_one_frame.png-fd549341f54cc833f440a743af396ae0.ctex"
+
+[node name="GhostTrail" type="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_urp6f")
+texture = SubResource("CompressedTexture2D_c34eo")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+script = ExtResource("3_c00ve")

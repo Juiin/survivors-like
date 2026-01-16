@@ -73,6 +73,25 @@ func _ready() -> void:
 	health_component.connect("died", died)
 	health_component.connect("took_damage", flash)
 
+	_spawn_loop()
+
+func _create_trail():
+	var trail = preload("res://Effects/ghost_trail.tscn").instantiate()
+	get_tree().current_scene.add_child(trail)
+	trail.global_position = global_position
+	var trail_color: Vector3
+	match current_form:
+		form.ST:
+			trail_color = Vector3(0.1, 0.2, 1.0)
+		form.AOE:
+			trail_color = Vector3(0.65, 0.0, 0)
+	trail.material.set_shader_parameter("color_array", [trail_color])
+
+func _spawn_loop():
+	while true:
+		await get_tree().create_timer(0.1).timeout
+		_create_trail()
+
 func _physics_process(delta):
 	if Game.player_is_dead:
 		return

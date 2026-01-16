@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=22 format=3 uid="uid://clpgcnfbjrsnu"]
 
 [ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bn38vq25ak27o" path="res://Textures/Player/player_sprite_ice.png" id="6_n7ghd"]
 [ext_resource type="Script" uid="uid://bqnbt5t6qnae0" path="res://stored_ice_spears.gd" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="11_nvl01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 11.0
@@ -150,5 +151,10 @@ script = ExtResource("9_b26j0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius"]
 shape = SubResource("CircleShape2D_b26j0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+energy = 0.28
+texture = ExtResource("11_nvl01")
 
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

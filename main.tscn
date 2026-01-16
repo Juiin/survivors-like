@@ -2703,7 +2703,7 @@ theme_override_font_sizes/font_size = 150
 text = "Switch Spell"
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.772951, 0.772951, 0.772951, 1)
+modulate = Color(0.89709, 0.89709, 0.89709, 1)
 z_index = -10
 texture_filter = 2
 texture_repeat = 2
@@ -2711,13 +2711,6 @@ position = Vector2(0, -1)
 texture = ExtResource("1_0xm2m")
 region_enabled = true
 region_rect = Rect2(0, 0, 12800, 7200)
-
-[node name="TileMap" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-z_index = -9
-position = Vector2(-6400, -3601)
-tile_set = ExtResource("30_seu75")
-script = ExtResource("31_htxhm")
 
 [node name="ChargeSpawner" parent="." instance=ExtResource("13_ycdy4")]
 
@@ -5541,6 +5534,14 @@ upgrade = SubResource("Resource_qm1f0")
 position = Vector2(6346, -1734)
 upgrade = SubResource("Resource_4ieun")
 
+[node name="TileMap" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.718381, 0.718381, 0.718381, 1)
+position = Vector2(-6400, -3601)
+scale = Vector2(2, 2)
+tile_set = ExtResource("30_seu75")
+script = ExtResource("31_htxhm")
+
 [node name="YSort" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
@@ -5784,9 +5785,9 @@ z_index = 4096
 
 [node name="MainMenuButton" type="Button" parent="UIRoot"]
 unique_name_in_owner = true
-offset_left = 417.0
+offset_left = 439.0
 offset_top = 6.0
-offset_right = 490.0
+offset_right = 501.0
 offset_bottom = 37.0
 text = " End Run "
 script = ExtResource("25_0odxb")
@@ -5799,7 +5800,7 @@ metadata/_custom_type_script = "uid://cyeao5vh7aux1"
 
 [node name="UpgradesButton" type="Button" parent="UIRoot"]
 unique_name_in_owner = true
-offset_left = 491.0
+offset_left = 504.0
 offset_top = 6.0
 offset_right = 573.0
 offset_bottom = 37.0
@@ -5813,7 +5814,7 @@ metadata/_custom_type_script = "uid://cyeao5vh7aux1"
 
 [node name="TabSprite" type="Sprite2D" parent="UIRoot/UpgradesButton"]
 modulate = Color(1, 1, 1, 0.639216)
-position = Vector2(39, -1)
+position = Vector2(34, -1)
 scale = Vector2(0.133019, 0.133019)
 texture = ExtResource("19_1u8w0")
 
@@ -5833,5 +5834,14 @@ grow_vertical = 0
 
 [node name="Mover" parent="UIRoot/AudioVolume" index="1"]
 auto_open = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.635799, 0.635799, 0.635799, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+energy = 1.3
+height = 0.03
 
 [editable path="UIRoot/AudioVolume"]
