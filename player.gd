@@ -76,7 +76,7 @@ func _ready() -> void:
 	_spawn_loop()
 
 func _create_trail():
-	var trail = preload("res://Effects/ghost_trail.tscn").instantiate()
+	var trail = load("res://Effects/ghost_trail.tscn").instantiate()
 	get_tree().current_scene.add_child(trail)
 	trail.global_position = global_position
 	var trail_color: Vector3

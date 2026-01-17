@@ -90,6 +90,9 @@ func start_die_tween():
 	die_tween = create_tween()
 	die_tween.tween_callback(die).set_delay(lifetime)
 
+	var fade_out_tween = create_tween()
+	fade_out_tween.tween_property(sprite, "modulate:a", 0, lifetime * 0.1).set_delay(lifetime * 0.9)
+
 func _physics_process(delta):
 	if follow_player:
 		rotation = global_position.angle_to_point(player.global_position)
