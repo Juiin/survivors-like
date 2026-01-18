@@ -10,10 +10,13 @@ shader_parameter/screen_width = 640.0
 shader_parameter/screen_height = 360.0
 
 [sub_resource type="Gradient" id="Gradient_pj2mc"]
-colors = PackedColorArray(0.717682, 0.483895, 0.159869, 1, 0.765611, 0.129315, 0, 1)
+offsets = PackedFloat32Array(0, 0.0703125, 0.363281)
+colors = PackedColorArray(0.93, 0.65131, 0.3534, 1, 0.64655, 0.263598, 0.144576, 1, 0.236613, 0.0163837, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_4r5tf"]
 gradient = SubResource("Gradient_pj2mc")
+width = 640
+height = 640
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)

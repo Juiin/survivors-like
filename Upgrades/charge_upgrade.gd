@@ -11,12 +11,15 @@ var charged_up := false
 var audio_charge := preload("res://Audio/charge_up.mp3")
 var audio_charge_player: AudioStreamPlayer
 
+@onready var light := %Light
+
 func _ready() -> void:
 	greyed_out.texture = upgrade.charged_sprite
 	fill.texture = upgrade.charged_sprite
 	fill.scale = Vector2.ZERO
 	connect("body_exited", _on_body_exited)
 	connect("body_entered", _on_body_entered)
+	light.modulate.a = 0
 
 func _process(delta):
 	if !charged_up:
@@ -43,7 +46,7 @@ func _on_body_exited(body: Node2D) -> void:
 func has_charged_up() -> void:
 	if charged_up:
 		return
-
+	light.modulate.a = 1
 	charged_up = true
 	if audio_charge_player:
 		audio_charge_player.queue_free()

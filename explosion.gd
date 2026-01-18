@@ -23,6 +23,8 @@ func _ready() -> void:
 	get_tree().get_first_node_in_group("camera").screen_shake(3, 0.1)
 	sprite.animation_finished.connect(die)
 	
+	var fade_out = create_tween()
+	fade_out.tween_property(self, "modulate:a", 0, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_delay(0.25)
 
 	if apply_burn:
 		var inst = burn.instantiate()

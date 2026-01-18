@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=25 format=3 uid="uid://clpgcnfbjrsnu"]
 
 [ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bn38vq25ak27o" path="res://Textures/Player/player_sprite_ice.png" id="6_n7ghd"]
 [ext_resource type="Script" uid="uid://bqnbt5t6qnae0" path="res://stored_ice_spears.gd" id="9_b26j0"]
 [ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="11_nvl01"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="12_ivps1"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="13_urp6f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 11.0
@@ -71,6 +73,15 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b26j0"]
 radius = 41.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urp6f"]
+shader = ExtResource("12_ivps1")
+shader_parameter/light_texture = ExtResource("13_urp6f")
+shader_parameter/light_color = Vector3(0, 100, 255)
+shader_parameter/brightness = 0.4
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 0.5
+shader_parameter/max_brightness = 0.4
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
@@ -156,5 +167,12 @@ shape = SubResource("CircleShape2D_b26j0")
 visible = false
 energy = 0.28
 texture = ExtResource("11_nvl01")
+
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_urp6f")
+position = Vector2(0.999996, 0.999996)
+scale = Vector2(0.321289, 0.321289)
+texture = ExtResource("13_urp6f")
 
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

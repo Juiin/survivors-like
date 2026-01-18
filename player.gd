@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var base_spd := 70.0
+var base_spd := 75.0
 var spd := base_spd
 var mov_spd_increase := 0.0
 
@@ -15,6 +15,7 @@ var global_percent_dmg_increase := 0.0
 var pickup_radius_increase := 0.0
 @export var stats: Stats
 @onready var sprite := $AnimatedSprite2D
+@onready var light := $Light
 
 var ice_spear_scene := load("res://ice_spear.tscn")
 var explosion_scene := load("res://explosion.tscn")
@@ -121,8 +122,8 @@ func _physics_process(delta):
 
 	
 func play_swap_sfx():
-	var ice_spear_selected = preload("res://Effects/ice_spear_selected.tscn")
-	var explosion_selected = preload("res://Effects/explosion_selected.tscn")
+	var ice_spear_selected = load("res://Effects/ice_spear_selected.tscn")
+	var explosion_selected = load("res://Effects/explosion_selected.tscn")
 	if current_form == form.ST:
 		var ice_spear_inst = ice_spear_selected.instantiate()
 		ice_spear_inst.position = Vector2(0, -70)
@@ -130,8 +131,9 @@ func play_swap_sfx():
 		var destroy_tween = create_tween()
 		destroy_tween.tween_property(ice_spear_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.tween_callback(func(): ice_spear_inst.queue_free())
-		Utils.play_audio(preload("res://Audio/swap_to_ice.mp3"), 0.8, 0.86, 0.3)
+		Utils.play_audio(load("res://Audio/swap_to_ice.mp3"), 0.8, 0.86, 0.3)
 		sprite.animation = "ice"
+		light.material.set_shader_parameter("light_color", Vector3(0, 100, 255))
 	elif current_form == form.AOE:
 		var explosion_inst = explosion_selected.instantiate()
 		explosion_inst.position = Vector2(0, -70)
@@ -140,8 +142,9 @@ func play_swap_sfx():
 		destroy_tween.tween_property(explosion_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.parallel().tween_property(explosion_inst.get_node("Sprite2D"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.tween_callback(func(): explosion_inst.queue_free())
-		Utils.play_audio(preload("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
+		Utils.play_audio(load("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
 		sprite.animation = "default"
+		light.material.set_shader_parameter("light_color", Vector3(255, 100, 0))
 
 func attack():
 	if Game.player_is_dead:
@@ -154,7 +157,7 @@ func attack():
 		if ice_spear_stored > 0:
 			atk_count = ice_spear_stored + 1
 			if ice_spear_stored >= 3:
-				var nova = preload("res://Attacks/freeze_nova.tscn").instantiate()
+				var nova = load("res://Attacks/freeze_nova.tscn").instantiate()
 				nova.position = global_position
 				nova.scale *= Game.freeze_nova_scale_multi
 				var nova_scale_bonus = remap(ice_spear_stored, 3, 6, 1.5, 3.0)

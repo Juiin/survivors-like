@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqyikqgt4l5gx"]
+[gd_scene load_steps=17 format=3 uid="uid://bqyikqgt4l5gx"]
 
 [ext_resource type="Shader" uid="uid://cbsntb1evrjmv" path="res://scroll.gdshader" id="1_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://caw73vsq3x6q0" path="res://Textures/dirt_full_new.png" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://c8m42qqx8v7fn" path="res://Textures/ChatGPT Image Jan 18, 2026, 01_05_26 AM.png" id="2_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://gy202ax8opf2" path="res://Textures/logo.png" id="2_nlkkf"]
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="2_qe12f"]
 [ext_resource type="Script" uid="uid://dpc8tcw8hxk3f" path="res://play_button.gd" id="3_qe12f"]
@@ -9,11 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://ddpvnib6mhscm" path="res://Textures/play_button.png" id="4_qe12f"]
 [ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="6_8qtwp"]
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="6_nlkkf"]
+[ext_resource type="Shader" uid="uid://be8e4vd3v6gpa" path="res://vignette.gdshader" id="9_0k4wn"]
 [ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="10_0o4t1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
 shader = ExtResource("1_dy7ct")
-shader_parameter/speed = 0.3
+shader_parameter/speed = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8qtwp"]
 shader = ExtResource("2_qe12f")
@@ -63,6 +64,12 @@ shader_parameter/contrast_offset = 0.1
 shader_parameter/color_array = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/alpha_multiplier = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5v2v"]
+shader = ExtResource("9_0k4wn")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -71,10 +78,11 @@ z_index = -10
 texture_filter = 2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_0k4wn")
-position = Vector2(-24, -25)
-texture = ExtResource("1_glbon")
+position = Vector2(321, 179)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0k4wn")
 region_enabled = true
-region_rect = Rect2(0, 0, 12800, 7200)
+region_rect = Rect2(0, 0, 3200, 1800)
 
 [node name="Logo" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_8qtwp")
@@ -128,6 +136,15 @@ offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Player Name"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_j5v2v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Leaderboard" parent="." instance=ExtResource("6_nlkkf")]
 unique_name_in_owner = true

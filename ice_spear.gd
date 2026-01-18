@@ -6,6 +6,7 @@ var lifetime := 1.0
 
 var player: Player
 var die_tween: Tween
+var fade_out_tween: Tween
 
 var ice_spear_pierce: int = 1:
 	set(new_value):
@@ -87,11 +88,15 @@ func start_die_tween():
 	if die_tween:
 		die_tween.kill()
 
+	if fade_out_tween:
+		fade_out_tween.kill()
+
 	die_tween = create_tween()
 	die_tween.tween_callback(die).set_delay(lifetime)
 
-	var fade_out_tween = create_tween()
-	fade_out_tween.tween_property(sprite, "modulate:a", 0, lifetime * 0.1).set_delay(lifetime * 0.9)
+	modulate.a = 1
+	fade_out_tween = create_tween()
+	fade_out_tween.tween_property(self, "modulate:a", 0, lifetime * 0.1).set_delay(lifetime * 0.9)
 
 func _physics_process(delta):
 	if follow_player:

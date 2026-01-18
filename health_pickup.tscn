@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk77flsiv3jsy"]
+[gd_scene load_steps=10 format=3 uid="uid://bk77flsiv3jsy"]
 
 [ext_resource type="Script" uid="uid://ct3wbjasx5bxa" path="res://health_pickup.gd" id="1_awyve"]
 [ext_resource type="Texture2D" uid="uid://dmipqvwfpjyxo" path="res://Textures/Items/apple_red.png" id="2_awyve"]
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="2_jk1s8"]
 [ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="3_ssuja"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="5_16jou"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="6_6dxyd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66pdi"]
 radius = 6.0
@@ -25,6 +27,15 @@ shader_parameter/contrast_offset = 0.1
 shader_parameter/color_array = PackedVector3Array(0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/alpha_multiplier = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o315m"]
+shader = ExtResource("5_16jou")
+shader_parameter/light_texture = ExtResource("6_6dxyd")
+shader_parameter/light_color = Vector3(0, 255, 0)
+shader_parameter/brightness = 0.2
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 1.0
+shader_parameter/max_brightness = 0.2
+
 [node name="HealthPickup" type="Area2D" groups=["money"]]
 script = ExtResource("1_awyve")
 
@@ -40,5 +51,12 @@ texture = ExtResource("2_awyve")
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_awyve")
+
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_o315m")
+position = Vector2(-5.96046e-08, 2.38419e-07)
+scale = Vector2(0.308879, 0.308879)
+texture = ExtResource("6_6dxyd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

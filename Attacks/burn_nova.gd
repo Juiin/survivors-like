@@ -3,6 +3,7 @@ extends Attack
 @onready var cpuparticles_2d: CPUParticles2D = $CPUParticles2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var player: Player
+@onready var light := %Light
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -22,6 +23,9 @@ func _ready() -> void:
 	timer.connect("timeout", queue_free)
 	add_child(timer)
 	timer.start()
+
+	var fade_out_tween = create_tween()
+	fade_out_tween.tween_property(light, "modulate:a", 0, cpuparticles_2d.lifetime).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	
 
 func _on_body_entered(body: Node2D) -> void:

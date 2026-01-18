@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp418s64xv6h1"]
+[gd_scene load_steps=16 format=3 uid="uid://cp418s64xv6h1"]
 
 [ext_resource type="Script" uid="uid://r6n2qnlng8q0" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Shader" uid="uid://ed0bls1n8bkc" path="res://outline.gdshader" id="2_wujgv"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="6_3yqyl"]
 [ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="7_wujgv"]
-[ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="8_hb8ge"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="8_e1ltt"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="9_dxifv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wujgv"]
 
@@ -32,6 +33,16 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwjut"]
+resource_local_to_scene = true
+shader = ExtResource("8_e1ltt")
+shader_parameter/light_texture = ExtResource("9_dxifv")
+shader_parameter/light_color = Vector3(255, 255, 255)
+shader_parameter/brightness = 0.3
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 0.4
+shader_parameter/max_brightness = 0.3
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -100,11 +111,12 @@ scale = Vector2(2.275, 2.375)
 [node name="ThrowMarker" type="Marker2D" parent="."]
 position = Vector2(0, -31)
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(-2.86102e-06, -15)
-scale = Vector2(1.20313, 1.26579)
-texture = ExtResource("8_hb8ge")
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pwjut")
+position = Vector2(0, -15)
+scale = Vector2(0.17041, 0.17041)
+texture = ExtResource("9_dxifv")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

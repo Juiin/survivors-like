@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbkrxu70p1q8c"]
+[gd_scene load_steps=8 format=3 uid="uid://cbkrxu70p1q8c"]
 
 [ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="1_5x8l0"]
 [ext_resource type="Script" uid="uid://dgkcfq5tv4w2n" path="res://ice_spear.gd" id="1_vloot"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="3_fhspa"]
-[ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="4_30pem"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="5_08dpy"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="6_hv4ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vloot"]
 size = Vector2(5.77756, 30.1853)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5kxmo"]
+resource_local_to_scene = true
+shader = ExtResource("5_08dpy")
+shader_parameter/light_texture = ExtResource("6_hv4ek")
+shader_parameter/light_color = Vector3(0, 100, 255)
+shader_parameter/brightness = 0.5
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 1.0
+shader_parameter/max_brightness = 0.5
 
 [node name="IceSpear" type="Area2D"]
 collision_layer = 4
@@ -33,10 +44,10 @@ rotation = 1.59698
 scale = Vector2(1.22, 1.22)
 shape = SubResource("RectangleShape2D_vloot")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.75, 0.359375)
-energy = 0.56
-texture = ExtResource("4_30pem")
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_5kxmo")
+scale = Vector2(0.137207, 0.137207)
+texture = ExtResource("6_hv4ek")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

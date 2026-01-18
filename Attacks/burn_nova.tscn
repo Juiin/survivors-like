@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bafb2ixsn63vg"]
+[gd_scene load_steps=10 format=3 uid="uid://bafb2ixsn63vg"]
 
 [ext_resource type="Script" uid="uid://biidj34344o85" path="res://Attacks/burn_nova.gd" id="1_u2pxw"]
 [ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="2_b6xwr"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="3_b6xwr"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="4_21yao"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="5_kbiag"]
 
 [sub_resource type="Curve" id="Curve_japkh"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -14,6 +16,15 @@ colors = PackedColorArray(0.937255, 0.458824, 0, 1, 0.937255, 0.458824, 0, 1, 0.
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_japkh"]
 radius = 48.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4m75f"]
+shader = ExtResource("4_21yao")
+shader_parameter/light_texture = ExtResource("5_kbiag")
+shader_parameter/light_color = Vector3(255, 100, 0)
+shader_parameter/brightness = 0.2
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 0.5
+shader_parameter/max_brightness = 0.2
 
 [node name="BurnNova" type="Area2D"]
 collision_layer = 0
@@ -42,5 +53,12 @@ script = ExtResource("3_b6xwr")
 base_damage = 5.0
 area_2d = NodePath("..")
 metadata/_custom_type_script = "uid://bey62ij0i7l6l"
+
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4m75f")
+position = Vector2(-5.96046e-08, 2.38419e-07)
+scale = Vector2(0.308879, 0.308879)
+texture = ExtResource("5_kbiag")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

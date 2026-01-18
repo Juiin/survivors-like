@@ -29,6 +29,8 @@ var despawn_immune = false
 
 var death_sfx_path = "res://Audio/sndEnemyDeath%s.mp3" % str(randi_range(1, 3))
 
+@onready var light := %Light
+
 func _ready() -> void:
 	stats = stats.create_instance()
 	health_component.max_health = stats.max_health * Game.enemy_health_multi
@@ -40,6 +42,12 @@ func _ready() -> void:
 	health_component.connect("died", die)
 	health_component.connect("took_damage", flash)
 	connect("tree_exiting", Callable(self, "_on_tree_exiting"))
+
+	match stats.type:
+		Enums.UpgradeType.EXPLOSION:
+			light.material.set_shader_parameter("light_color", Vector3(255, 100, 0))
+		Enums.UpgradeType.ICE_SPEAR:
+			light.material.set_shader_parameter("light_color", Vector3(0, 100, 255))
 
 func _on_tree_exiting() -> void:
 	Game.active_enemies -= 1

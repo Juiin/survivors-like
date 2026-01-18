@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://0bpjqia01nj6"]
+[gd_scene load_steps=9 format=3 uid="uid://0bpjqia01nj6"]
 
 [ext_resource type="Script" uid="uid://dl3m0qmocuh3d" path="res://Attacks/freeze_nova.gd" id="1_japkh"]
 [ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="1_ujpwk"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="3_kqsmv"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="4_0renm"]
 
 [sub_resource type="Curve" id="Curve_japkh"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -13,6 +15,16 @@ colors = PackedColorArray(0, 0, 0.654902, 1, 0.0235294, 1, 1, 1, 0.0235294, 1, 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_japkh"]
 radius = 48.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nlaw"]
+resource_local_to_scene = true
+shader = ExtResource("3_kqsmv")
+shader_parameter/light_texture = ExtResource("4_0renm")
+shader_parameter/light_color = Vector3(0, 100, 255)
+shader_parameter/brightness = 0.2
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 1.0
+shader_parameter/max_brightness = 0.2
 
 [node name="FreezeNova" type="Area2D"]
 collision_layer = 0
@@ -34,5 +46,12 @@ color_ramp = SubResource("Gradient_ng6dq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_japkh")
+
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8nlaw")
+position = Vector2(0, 1)
+scale = Vector2(0.383057, 0.383057)
+texture = ExtResource("4_0renm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

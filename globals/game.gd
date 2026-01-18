@@ -191,8 +191,6 @@ func start_game() -> void:
 	throw_enemy_spawn_timer = Timer.new()
 	throw_enemy_spawn_timer.connect("timeout", spawn_throw_enemy)
 	throw_enemy_spawn_timer.set_wait_time(60)
-	print(throw_enemy_spawn_timer.wait_time)
-	print(throw_enemy_spawn_timer.time_left)
 
 	swarm_timer = Timer.new()
 	swarm_timer.connect("timeout", func(): next_spawn_is_swarm = true)
@@ -350,6 +348,7 @@ func spawn_health_enemy():
 	enemy.scale *= 2.5
 	enemy.despawn_immune = true
 	get_tree().current_scene.get_node("%YSort").add_child(enemy)
+	enemy.light.material.set_shader_parameter("light_color", Vector3(0, 255, 0))
 
 func spawn_throw_enemy():
 	if boss_is_active:
