@@ -70,7 +70,7 @@ func toggle_menu() -> void:
 		
 		audio_volume.get_node("Mover").close()
 		elapsed_game_timer.close(func(): get_tree().paused=false; upgrade_button.set_to_upgrades())
-		
+		Utils.play_audio(load("res://Audio/menu_close.mp3"))
 	else:
 		ice_spear_upgrade_menu.open(ice_spear_upgrades)
 		explosion_upgrade_menu.open(explosion_upgrades)
@@ -81,6 +81,7 @@ func toggle_menu() -> void:
 		audio_volume.get_node("Mover").open()
 		get_tree().paused = true
 		upgrade_button.set_to_resume()
+		Utils.play_audio(load("res://Audio/menu_open.mp3"), 0.9, 1.1)
 
 
 func _on_node_added(node):
