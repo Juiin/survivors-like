@@ -37,7 +37,10 @@ func _on_buy_button_pressed() -> void:
 		Game.adjust_money(upgrade.type, -upgrade.cost[upgrade.level - 1])
 		Game.add_upgrade_to_player(upgrade.type, upgrade)
 		Utils.play_audio(preload("res://Audio/purchase.ogg"), 0.9, 1.1)
-		
+		var text = Effects.spawn_floating_text(upgrade.upgrade_name, get_global_mouse_position())
+		text.process_mode = Node.PROCESS_MODE_ALWAYS
+		text.reparent(get_tree().current_scene.get_node("%OverUI"))
+
 		if !upgrade.endless && upgrade.times_upgraded > upgrade.level:
 			queue_free()
 		else:
@@ -49,20 +52,6 @@ func update_button_status():
 func update_description():
 	%UpgradeDescription.text = upgrade.upgrade_description if upgrade.is_unlocked() else upgrade.locked_description
 
-# func update_background_color():
-# 	var default_col = Color.WEB_GREEN
-# 	default_col.a = 0.5
-# 	var disabled_color = Color.WEB_GRAY
-# 	disabled_color.a = 0.5
-# 	var locked_color = Color.WEB_GRAY
-# 	locked_color.a = 0
-
-# 	var final_col = disabled_color
-# 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]):
-# 		final_col = default_col
-# 	if !upgrade.is_unlocked():
-# 		final_col = locked_color
-# 	get_theme_stylebox("panel").bg_color = final_col
 
 func update_background_color():
 	# Ice-blue (available)

@@ -118,7 +118,7 @@ position = Vector2(618.182, 351.515)
 scale = Vector2(1.14228, 1.14228)
 texture = ExtResource("4_qe12f")
 
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource("4_8qtwp")]
+[node name="MouseCursor" parent="CanvasLayer" instance=ExtResource("4_8qtwp")]
 z_index = 4096
 
 [node name="PlayerNameInput" type="LineEdit" parent="CanvasLayer"]
