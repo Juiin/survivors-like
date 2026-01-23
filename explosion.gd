@@ -12,7 +12,7 @@ var aoe_increase := 0.0:
 var apply_burn := true
 var burn = preload("res://Attacks/burn_field.tscn")
 
-var sfx = preload("res://Audio/aoe_form_explosion.mp3")
+var sfx = load("res://Audio/aoe_form_explosion.mp3")
 
 var batch_number: int
 var offset_distance := 32.0

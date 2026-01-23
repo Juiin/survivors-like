@@ -9,4 +9,4 @@ func _ready() -> void:
 	# }
 	# SilentWolf.Scores.save_score(player_name, score, ldboard_name, metadata)
 	get_tree().paused = true
-	Utils.play_audio(preload("res://Audio/victory.mp3"))
+	Utils.play_audio(load("res://Audio/victory.mp3"))

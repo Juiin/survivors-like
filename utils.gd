@@ -8,14 +8,17 @@ static func get_child_by_class(_node: Node, _class: Variant) -> Node:
 	return null
 
 static func play_audio(audio: AudioStream, from_pitch: float = 1.0, to_pitch: float = 1.0, volume: float = 1.0) -> void:
-	var audio_player := AudioStreamPlayer.new()
-	audio_player.stream = audio
-	audio_player.volume_linear = volume * Game.volume
-	audio_player.pitch_scale = randf_range(from_pitch, to_pitch)
-	Engine.get_main_loop().root.add_child(audio_player)
-	SfxDeconflicter.play(audio_player)
-	await audio_player.finished
-	audio_player.queue_free()
+	if SfxDeconflicter.should_play_path(audio.resource_path):
+		SfxDeconflicter.play_sound(audio, from_pitch, to_pitch, volume)
+		# var audio_player := AudioStreamPlayer.new()
+		# audio_player.stream = audio
+		# audio_player.volume_linear = volume * Game.volume
+		# audio_player.pitch_scale = randf_range(from_pitch, to_pitch)
+		# Engine.get_main_loop().root.add_child(audio_player)
+		# audio_player.play()
+		# await audio_player.finished
+		# audio_player.queue_free()
+
 
 static func play_audio_return(audio: AudioStream, from_pitch: float = 1.0, to_pitch: float = 1.0, volume: float = 1.0) -> AudioStreamPlayer:
 	var audio_player := AudioStreamPlayer.new()

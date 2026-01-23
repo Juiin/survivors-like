@@ -283,7 +283,7 @@ func spawn_enemy():
 		if next_spawn_is_swarm:
 			at_once_enemies = min(at_once_enemies * 5, 75)
 			next_spawn_is_swarm = false
-			Utils.play_audio(preload("res://Audio/swarm.mp3"))
+			Utils.play_audio(load("res://Audio/swarm.mp3"))
 			print("Swarm!")
 		for i in at_once_enemies:
 			var enemy = preload("res://enemy.tscn").instantiate()

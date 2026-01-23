@@ -27,6 +27,10 @@ config/name="Survivors like"
 run/main_scene="uid://bqyikqgt4l5gx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[audio]
+
+driver/output_latency.web=100
+
 [autoload]
 
 Effects="*res://globals/effects.gd"

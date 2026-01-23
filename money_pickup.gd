@@ -1,7 +1,7 @@
 class_name MoneyPickup
 extends Area2D
 
-var pickup_snd = preload("res://Audio/SoundEffect/collectgem.mp3")
+var pickup_snd = load("res://Audio/SoundEffect/collectgem.mp3")
 var spd := -2.0
 var target: CharacterBody2D
 
@@ -51,4 +51,4 @@ func enable_shine():
 	behind_zoom.visible = true
 	behind_zoom.material.set_shader_parameter("sample", sprite_2d.texture)
 	pickup_snd = load("res://Audio/SoundEffect/collect_valuable_gem.mp3")
-	pickup_volume = 0.8
+	pickup_volume = 0.7

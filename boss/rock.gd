@@ -15,8 +15,8 @@ var rotating_direction := 1
 var marker: Node = null
 var z: float
 
-var throw_rock_snd = preload("res://Audio/throw_rock.mp3")
-var land_rock_snd = preload("res://Audio/land_rock.mp3")
+var throw_rock_snd = load("res://Audio/throw_rock.mp3")
+var land_rock_snd = load("res://Audio/land_rock.mp3")
 
 func _ready() -> void:
 	start_position = position

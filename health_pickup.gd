@@ -1,7 +1,7 @@
 class_name HealthPickup
 extends Area2D
 
-var pickup_snd = preload("res://Audio/eat.wav")
+var pickup_snd = load("res://Audio/eat.wav")
 var spd := -2.0
 var target: CharacterBody2D
 
@@ -16,6 +16,10 @@ func _ready() -> void:
 	sprite_2d.texture = [green_apple, red_apple].pick_random()
 
 func _physics_process(delta: float) -> void:
+	if Game.player_is_dead:
+		queue_free()
+		return
+
 	if target:
 		global_position = global_position.move_toward(target.global_position, spd)
 		spd += 5.2 * delta

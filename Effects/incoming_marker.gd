@@ -11,7 +11,7 @@ enum Anchor {TOP, BOTTOM, LEFT, RIGHT}
 @export var circle_radius: float = 64.0
 @export var duration: float = 2.0
 @export var color_outline: Color = Color(1, 0.03, 0.03)
-@export var color_fill: Color = Color(1, 0.31, 0.24)
+@export var color_fill: Color = Color(0.6, 0.31, 0.24)
 @export var color_glow: Color = Color(1, 0.7, 0.5)
 
 var progress := 0.0
@@ -165,6 +165,6 @@ func check_damage():
 				if collider.is_in_group("player"):
 					collider.health_component.take_damage(dmg) # or your custom damage logic
 					get_tree().get_first_node_in_group("camera").screen_shake(10, 0.5)
-					Utils.play_audio(preload("res://Audio/hurt.mp3"), 0.95, 1.05)
+					Utils.play_audio(load("res://Audio/hurt.mp3"), 0.95, 1.05)
 					var dmg_color = Color.RED
 					Effects.spawn_damage_text(dmg, collider.global_position, dmg_color)

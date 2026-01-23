@@ -4,6 +4,7 @@ extends Area2D
 const lifetime := 3
 
 var die_tween: Tween
+var fade_out_tween: Tween
 
 var spd := 150.0
 
@@ -35,6 +36,16 @@ func _ready():
 func start_die_tween():
 	if die_tween:
 		die_tween.kill()
+
+	if fade_out_tween:
+		fade_out_tween.kill()
+
+	die_tween = create_tween()
+	die_tween.tween_callback(die).set_delay(lifetime)
+
+	modulate.a = 1
+	fade_out_tween = create_tween()
+	fade_out_tween.tween_property(self, "modulate:a", 0, lifetime * 0.1).set_delay(lifetime * 0.9)
 
 	die_tween = create_tween()
 	die_tween.tween_callback(die).set_delay(lifetime)

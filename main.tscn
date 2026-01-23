@@ -5747,12 +5747,13 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect2" type="TextureRect" parent="UIRoot/NewUpgradeIcon"]
 modulate = Color(1, 1, 1, 0.745098)
 layout_mode = 0
-offset_left = -11.0
-offset_top = 39.0
-offset_right = 524.0
-offset_bottom = 304.0
+offset_left = 1.0
+offset_top = 33.0
+offset_right = 362.0
+offset_bottom = 211.0
 scale = Vector2(0.135, 0.135)
 texture = ExtResource("19_1u8w0")
+expand_mode = 1
 
 [node name="Debug" type="Label" parent="UIRoot"]
 visible = false
@@ -5885,7 +5886,7 @@ grow_vertical = 0
 [node name="Mover" parent="UIRoot/AudioVolume" index="1"]
 auto_open = false
 
-[node name="ColorRect" type="ColorRect" parent="UIRoot"]
+[node name="Vignette" type="ColorRect" parent="UIRoot"]
 material = SubResource("ShaderMaterial_jq2sk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -5896,7 +5897,7 @@ mouse_filter = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0.635799, 0.635799, 0.635799, 1)
+color = Color(0.597176, 0.597176, 0.597176, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_seu75")

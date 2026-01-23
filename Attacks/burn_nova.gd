@@ -23,7 +23,7 @@ func _ready() -> void:
 	timer.connect("timeout", queue_free)
 	add_child(timer)
 	timer.start()
-
+	#Utils.play_audio(load("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
 	var fade_out_tween = create_tween()
 	fade_out_tween.tween_property(light, "modulate:a", 0, cpuparticles_2d.lifetime).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	

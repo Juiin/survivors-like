@@ -8,7 +8,7 @@ extends Area2D
 var charge := 0.0
 var charge_up_tween: Tween
 var charged_up := false
-var audio_charge := preload("res://Audio/charge_up.mp3")
+var audio_charge := load("res://Audio/charge_up.mp3")
 var audio_charge_player: AudioStreamPlayer
 
 @onready var light := %Light
@@ -51,7 +51,7 @@ func has_charged_up() -> void:
 	if audio_charge_player:
 		audio_charge_player.queue_free()
 	Effects.spawn_floating_text(upgrade.upgrade_description, global_position, Color.WHITE, 6.0)
-	Utils.play_audio(preload("res://Audio/SoundEffect/charge_upgrade.mp3"), 0.9, 1, 0.8)
+	Utils.play_audio(load("res://Audio/SoundEffect/charge_upgrade.mp3"), 0.9, 1, 0.8)
 	var player = get_tree().get_first_node_in_group("player")
 	upgrade.apply_player_upgrade(player)
 	player.global_upgrades.append(upgrade)

@@ -4,7 +4,7 @@ var start_radius: float
 var max_radius := 700
 @export var shrink_speed: float = 75.0
 @export var fire_width: float = 32.0 # width in pixels of one fire sprite
-@export var min_radius: float = 325.0 # stop shrinking at this point
+@export var min_radius: float = 225.0 # stop shrinking at this point
 @export var damage_per_second_outside: float = 15.0
 
 var current_radius: float

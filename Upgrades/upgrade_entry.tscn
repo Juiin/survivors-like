@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb6hdn57c6afn"]
+[gd_scene load_steps=6 format=3 uid="uid://bb6hdn57c6afn"]
 
 [ext_resource type="Texture2D" uid="uid://btkg6565k5g1x" path="res://Textures/Items/Gems/Gem_red.png" id="1_8ep8s"]
 [ext_resource type="Script" uid="uid://djmnqcr52qkhw" path="res://Upgrades/upgrade_entry.gd" id="1_16uid"]
 [ext_resource type="Texture2D" uid="uid://bejoax4fff4or" path="res://Textures/Items/Gems/Gem_blue.png" id="2_s8w7n"]
+[ext_resource type="Texture2D" uid="uid://b8be2ods8jd6e" path="res://Textures/infinity_symbol.png" id="4_whbyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 resource_local_to_scene = true
@@ -45,7 +46,13 @@ dsadasdasdasdasdasdsadassd"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="BuyButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_constants/separation = 1
+
+[node name="BuyButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
@@ -58,4 +65,23 @@ text = "300"
 icon = ExtResource("2_s8w7n")
 expand_icon = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="UpgradeCount" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "3/"
+horizontal_alignment = 1
+
+[node name="Infinity" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+texture = ExtResource("4_whbyc")
+expand_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/BuyButton" to="." method="_on_buy_button_pressed"]

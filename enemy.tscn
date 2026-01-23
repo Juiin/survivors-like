@@ -39,10 +39,10 @@ resource_local_to_scene = true
 shader = ExtResource("8_e1ltt")
 shader_parameter/light_texture = ExtResource("9_dxifv")
 shader_parameter/light_color = Vector3(255, 255, 255)
-shader_parameter/brightness = 0.3
+shader_parameter/brightness = 0.25
 shader_parameter/attenuation_strength = 0.5
-shader_parameter/intensity = 0.4
-shader_parameter/max_brightness = 0.3
+shader_parameter/intensity = 0.6
+shader_parameter/max_brightness = 0.25
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2

@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_child(timer)
 	timer.start()
 	# Utils.play_audio(preload("res://Audio/sndIceNova.mp3"), 0.9, 1.1, 0.2)
-	Utils.play_audio(preload("res://Audio/SoundEffect/ice.wav"), 0.9, 1.1)
+	Utils.play_audio(load("res://Audio/SoundEffect/ice.wav"), 0.9, 1.1)
 
 	var fade_out_tween = create_tween()
 	fade_out_tween.tween_property(light, "modulate:a", 0, cpuparticles_2d.lifetime).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)

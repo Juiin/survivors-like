@@ -12,6 +12,7 @@ func _ready() -> void:
 	%UpgradeName.text = upgrade.upgrade_name
 	update_description()
 	%BuyButton.text = str(upgrade.cost[upgrade.level])
+	%UpgradeCount.text = get_upgrade_count_string()
 	match upgrade.type:
 		Enums.UpgradeType.ICE_SPEAR:
 			%BuyButton.icon = preload("res://Textures/Items/Gems/Gem_blue.png")
@@ -36,7 +37,7 @@ func _on_buy_button_pressed() -> void:
 		upgrade.level += 1
 		Game.adjust_money(upgrade.type, -upgrade.cost[upgrade.level - 1])
 		Game.add_upgrade_to_player(upgrade.type, upgrade)
-		Utils.play_audio(preload("res://Audio/purchase.ogg"), 0.9, 1.1)
+		Utils.play_audio(load("res://Audio/purchase.ogg"), 0.9, 1.1)
 		var text = Effects.spawn_floating_text(upgrade.upgrade_name, get_global_mouse_position())
 		text.process_mode = Node.PROCESS_MODE_ALWAYS
 		text.reparent(get_tree().current_scene.get_node("%OverUI"))
@@ -45,6 +46,16 @@ func _on_buy_button_pressed() -> void:
 			queue_free()
 		else:
 			%BuyButton.text = str(upgrade.cost[upgrade.level])
+			%UpgradeCount.text = get_upgrade_count_string()
+
+func get_upgrade_count_string() -> String:
+	var return_string = str(upgrade.times_upgraded) + "/"
+	if upgrade.endless:
+		%Infinity.visible = true
+	else:
+		return_string += str(upgrade.cost.size())
+		%Infinity.visible = false
+	return return_string
 
 func update_button_status():
 	%BuyButton.disabled = !Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]) || !upgrade.is_unlocked()

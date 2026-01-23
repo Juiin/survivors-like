@@ -28,7 +28,7 @@ var drop_percent := 0.0
 
 var batch_number: int
 var offset_distance := 20.0
-var sfx = preload("res://Audio/new_ice_spear.mp3")
+var sfx = load("res://Audio/new_ice_spear.mp3")
 
 var base_scale = 1.0
 
