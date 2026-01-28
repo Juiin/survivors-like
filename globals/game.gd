@@ -216,6 +216,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_give_money_alot"):
 		ice_spear_money += 10000
 		explosion_money += 10000
+	if event.is_action_pressed("fullscreen"):
+		toggle_fullscreen()
+
+func toggle_fullscreen():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 var ice_spear_money: int = 0:
@@ -340,7 +348,7 @@ func spawn_enemy():
 func spawn_health_enemy():
 	if boss_is_active:
 		return
-
+	Utils.play_audio(load("res://Audio/monster_laugh.ogg"))
 	var enemy = preload("res://enemy.tscn").instantiate()
 	spawn_path_follow.progress_ratio = randf()
 	enemy.global_position = spawn_path_follow.global_position
@@ -353,10 +361,12 @@ func spawn_health_enemy():
 func spawn_throw_enemy():
 	if boss_is_active:
 		return
-	var spawn_count = 1
-	if total_currency_collected > 15000 && randf() <= 0.15:
-		spawn_count = remap(total_currency_collected, 15000, MAX_CURRENCY, 5, 10)
-		spawn_count = clamp(spawn_count, 5, 10)
+
+	Utils.play_audio(load("res://Audio/grunt.mp3"))
+	var spawn_count := 1
+	if total_currency_collected > 15000:
+		spawn_count = remap(total_currency_collected, 15000, MAX_CURRENCY, 1, 8)
+		spawn_count = clamp(spawn_count, 1, 10)
 	for i in range(spawn_count):
 		var enemy = preload("res://enemy.tscn").instantiate()
 		spawn_path_follow.progress_ratio = randf()

@@ -15,3 +15,6 @@ func start_endless_mode():
 	get_tree().paused = false
 	Game.boss_is_active = false
 	owner.queue_free()
+	var new_upgrade = GlobalLootUpgrade.new()
+	new_upgrade.endless = true
+	get_tree().current_scene.get_node("%UIRoot").global_upgrades.append(new_upgrade)

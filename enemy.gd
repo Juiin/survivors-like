@@ -155,7 +155,7 @@ func die() -> void:
 	death_inst.play()
 
 	var death_sfxs = [load("res://Audio/sndEnemyDeath1.mp3"), load("res://Audio/sndEnemyDeath2.mp3"), load("res://Audio/sndEnemyDeath3.mp3")]
-	Utils.play_audio(death_sfxs.pick_random(), 0.9, 1.1, 0.2)
+	Utils.play_audio(death_sfxs.pick_random(), 0.9, 1.1, 0.1)
 
 	if randf() <= Game.burn_nova_on_kill && burning:
 		var burn_nova = preload("res://Attacks/burn_nova.tscn").instantiate()

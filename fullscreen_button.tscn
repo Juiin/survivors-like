@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://rd0owyrsg5iv"]
+
+[ext_resource type="Script" uid="uid://p06o88iy4jrs" path="res://fullscreen_button.gd" id="1_5l3nl"]
+[ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="2_qr108"]
+
+[node name="FullscreenButton" type="Button"]
+offset_left = 493.0
+offset_top = 312.0
+offset_right = 634.0
+offset_bottom = 352.0
+text = " F5 Toggle Fullscreen"
+script = ExtResource("1_5l3nl")
+
+[node name="Mover" type="Node2D" parent="."]
+position = Vector2(0, 96)
+script = ExtResource("2_qr108")
+metadata/_custom_type_script = "uid://cyeao5vh7aux1"

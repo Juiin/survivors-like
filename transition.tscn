@@ -22,6 +22,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
 [node name="Transition" type="CanvasLayer"]
+process_mode = 3
 layer = 128
 script = ExtResource("1_2gi1b")
 

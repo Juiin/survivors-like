@@ -6,8 +6,8 @@ var aoe_increase := 0.0:
 	set(value):
 		aoe_increase = value
 		scale = base_scale * (1 + value)
-		modulate.a = remap(value, 0, 4, 1, 0.5)
-		modulate.a = clamp(modulate.a, 0.5, 1)
+		modulate.a = remap(value, -0.5, 2, 1, 0.3)
+		modulate.a = clamp(modulate.a, 0.3, 1)
 
 var apply_burn := true
 var burn = preload("res://Attacks/burn_field.tscn")

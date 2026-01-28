@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqyikqgt4l5gx"]
+[gd_scene load_steps=18 format=3 uid="uid://bqyikqgt4l5gx"]
 
 [ext_resource type="Shader" uid="uid://cbsntb1evrjmv" path="res://scroll.gdshader" id="1_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://c8m42qqx8v7fn" path="res://Textures/ChatGPT Image Jan 18, 2026, 01_05_26 AM.png" id="2_0k4wn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="6_nlkkf"]
 [ext_resource type="Shader" uid="uid://be8e4vd3v6gpa" path="res://vignette.gdshader" id="9_0k4wn"]
 [ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="10_0o4t1"]
+[ext_resource type="PackedScene" uid="uid://rd0owyrsg5iv" path="res://fullscreen_button.tscn" id="10_j5v2v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
 shader = ExtResource("1_dy7ct")
@@ -120,6 +121,7 @@ texture = ExtResource("4_qe12f")
 
 [node name="MouseCursor" parent="CanvasLayer" instance=ExtResource("4_8qtwp")]
 z_index = 4096
+position = Vector2(-34, 0)
 
 [node name="PlayerNameInput" type="LineEdit" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -145,6 +147,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="FullscreenButton" parent="CanvasLayer" instance=ExtResource("10_j5v2v")]
+offset_left = 455.0
+offset_right = 596.0
 
 [node name="Leaderboard" parent="." instance=ExtResource("6_nlkkf")]
 unique_name_in_owner = true

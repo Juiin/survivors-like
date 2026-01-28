@@ -6,7 +6,7 @@ extends Upgrade
 func _init(_req_upgrade: Upgrade):
     upgrade_name = "Freeze Nova on Kill"
     upgrade_description = "10% chance to erupt a freezing Nova when killing a frozen enemy"
-    cost = [100, 300, 500, 750, 1000, 1500, 2300, 2600, 3000, 3500]
+    cost = [100, 250, 350, 500, 750, 1000, 1250, 1500, 2000, 2500]
     type = Enums.UpgradeType.ICE_SPEAR
     #req_upgrade = _req_upgrade
 

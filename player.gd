@@ -130,6 +130,9 @@ func play_swap_sfx():
 		add_child(ice_spear_inst)
 		var destroy_tween = create_tween()
 		destroy_tween.tween_property(ice_spear_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(ice_spear_inst.get_node("IceSpear"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(ice_spear_inst.get_node("Koori"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(ice_spear_inst.get_node("Koori").material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.tween_callback(func(): ice_spear_inst.queue_free())
 		Utils.play_audio(load("res://Audio/swap_to_ice.mp3"), 0.8, 0.86, 0.3)
 		sprite.animation = "ice"
@@ -141,6 +144,8 @@ func play_swap_sfx():
 		var destroy_tween = create_tween()
 		destroy_tween.tween_property(explosion_inst.material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.parallel().tween_property(explosion_inst.get_node("Sprite2D"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(explosion_inst.get_node("Hi"), "modulate:a", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		destroy_tween.parallel().tween_property(explosion_inst.get_node("Hi").material, "shader_parameter/alpha_multiplier", 0, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		destroy_tween.tween_callback(func(): explosion_inst.queue_free())
 		Utils.play_audio(load("res://Audio/swap_to_explosion_2.mp3"), 0.9, 1.1, 0.5)
 		sprite.animation = "default"

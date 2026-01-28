@@ -1,0 +1,178 @@
+[gd_scene load_steps=25 format=3 uid="uid://clpgcnfbjrsnu"]
+
+[ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Resource" uid="uid://b06iv7m0juebf" path="res://player_stats.tres" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cqdkhs6c67bqp" path="res://camera_2d.tscn" id="3_1jxqw"]
+[ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="4_dw050"]
+[ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="5_1jxqw"]
+[ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bn38vq25ak27o" path="res://Textures/Player/player_sprite_ice.png" id="6_n7ghd"]
+[ext_resource type="Script" uid="uid://bqnbt5t6qnae0" path="res://stored_ice_spears.gd" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="11_nvl01"]
+[ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="12_ivps1"]
+[ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="13_urp6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 11.0
+
+[sub_resource type="Curve2D" id="Curve2D_b26j0"]
+_data = {
+"points": PackedVector2Array(-164.253, 29.3407, 164.253, -29.3407, 13.3569, -277.858, 0, 0, 0, 0, 371, -210, 0, 0, 0, 0, 457.399, 13.3947, 0, 0, 0, 0, 371.753, 218.005, 0, 0, 0, 0, 8.74517, 279.988, 0, 0, 0, 0, -372.71, 227.336, 1.7507, -3.54214, -1.7507, 3.54214, -501.179, 5.39693, 0, 0, 0, 0, -360.192, -263.196, 0, 0, 0, 0, 15.3333, -277.192)
+}
+point_count = 9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
+shader = ExtResource("4_dw050")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("6_n7ghd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("6_n7ghd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}],
+"loop": true,
+"name": &"ice",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b26j0"]
+radius = 41.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urp6f"]
+shader = ExtResource("12_ivps1")
+shader_parameter/light_texture = ExtResource("13_urp6f")
+shader_parameter/light_color = Vector3(0, 100, 255)
+shader_parameter/brightness = 0.4
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 0.5
+shader_parameter/max_brightness = 0.4
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_onrkg")
+stats = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="Camera2D" parent="." groups=["camera"] instance=ExtResource("3_1jxqw")]
+zoom = Vector2(0.75, 0.75)
+
+[node name="Path2D" type="Path2D" parent="Camera2D"]
+position = Vector2(-2, 4)
+scale = Vector2(1.3, 1.3)
+curve = SubResource("Curve2D_b26j0")
+
+[node name="SpawnPathFollow" type="PathFollow2D" parent="Camera2D/Path2D"]
+unique_name_in_owner = true
+position = Vector2(13.3569, -277.858)
+rotation = -0.176767
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_b26j0")
+sprite_frames = SubResource("SpriteFrames_hqtel")
+animation = &"ice"
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.78
+autostart = true
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_sweqy")
+metadata/_custom_type_script = "uid://dot06i76bu1x0"
+
+[node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_1jxqw")]
+offset_left = -35.0
+offset_top = -28.0
+offset_right = 36.0
+offset_bottom = -18.0
+health_component = NodePath("../HealthComponent")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_1jxqw")
+
+[node name="HurtboxComponent" type="Node" parent="Hurtbox" node_paths=PackedStringArray("health_component", "area_2d")]
+unique_name_in_owner = true
+script = ExtResource("5_2hs0m")
+health_component = NodePath("../../HealthComponent")
+area_2d = NodePath("..")
+metadata/_custom_type_script = "uid://cxkixd4an1ym"
+
+[node name="StoredIceSpears" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -55.0
+offset_right = 655.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+alignment = 1
+script = ExtResource("9_b26j0")
+
+[node name="PickupRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius"]
+shape = SubResource("CircleShape2D_b26j0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+energy = 0.28
+texture = ExtResource("11_nvl01")
+
+[node name="Light" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_urp6f")
+position = Vector2(0.999996, 0.999996)
+scale = Vector2(0.321289, 0.321289)
+texture = ExtResource("13_urp6f")
+
+[connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

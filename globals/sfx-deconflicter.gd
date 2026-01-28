@@ -70,6 +70,7 @@ func play_sound(audio: AudioStream, from_pitch: float = 1.0, to_pitch: float = 1
 		audio_player.volume_linear = volume # * Game.volume
 		audio_player.pitch_scale = randf_range(from_pitch, to_pitch)
 		audio_player.max_polyphony = 100
+		audio_player.process_mode = Node.PROCESS_MODE_ALWAYS
 		Engine.get_main_loop().root.add_child(audio_player)
 		#created_audio_stream_players[audio.resource_path] = audio_player
 		saved_audio[audio.resource_path] = {
