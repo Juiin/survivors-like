@@ -41,7 +41,7 @@ func _ready() -> void:
 
 	health_component.connect("died", die)
 	health_component.connect("took_damage", flash)
-	connect("tree_exiting", Callable(self, "_on_tree_exiting"))
+	connect("tree_exiting", Callable(self , "_on_tree_exiting"))
 
 	match stats.type:
 		Enums.UpgradeType.EXPLOSION:
@@ -152,7 +152,9 @@ func die() -> void:
 	death_inst.scale = scale
 	get_tree().current_scene.get_node("%YSort").add_child(death_inst)
 	death_inst.set_sprite(stats.sprite)
-	death_inst.play()
+	
+	death_inst.shatter()
+	
 
 	var death_sfxs = [load("res://Audio/sndEnemyDeath1.mp3"), load("res://Audio/sndEnemyDeath2.mp3"), load("res://Audio/sndEnemyDeath3.mp3")]
 	Utils.play_audio(death_sfxs.pick_random(), 0.9, 1.1, 0.1)

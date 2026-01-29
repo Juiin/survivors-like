@@ -6,7 +6,7 @@ extends Upgrade
 func _init():
     upgrade_name = "Burn Nova on Kill"
     upgrade_description = "10% chance to erupt a burning Nova when killing a burning enemy, dealing 5 Damage"
-    cost = [200, 500, 800, 1200, 1600, 2000, 2500, 3000, 4500, 6000]
+    cost = [150, 350, 650, 1000, 1300, 1600, 2000, 2300, 2600, 3000]
     type = Enums.UpgradeType.EXPLOSION
 
 func apply_player_upgrade(player: Player) -> void:

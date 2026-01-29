@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lretkarla2mw"]
+[gd_scene load_steps=9 format=3 uid="uid://lretkarla2mw"]
 
 [ext_resource type="SpriteFrames" uid="uid://b2axoikcpgdhu" path="res://Textures/Enemy/rat_weak.tres" id="1_e4uu0"]
 [ext_resource type="Script" uid="uid://1jvl45yfjpm2" path="res://Effects/death_animation.gd" id="1_m6x23"]
+[ext_resource type="Texture2D" uid="uid://c1rtl18t5bw3p" path="res://Textures/Enemy/zombie_blue.png" id="3_nittw"]
 
 [sub_resource type="Animation" id="Animation_nittw"]
 length = 0.001
@@ -88,6 +89,16 @@ _data = {
 &"death": SubResource("Animation_m6x23")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ihsfv"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_vapcu"]
+offsets = PackedFloat32Array(0.347222, 1)
+colors = PackedColorArray(0.687215, 0.687215, 0.687215, 1, 1, 1, 1, 0)
+
 [node name="DeathAnimation" type="Node2D"]
 script = ExtResource("1_m6x23")
 
@@ -97,7 +108,33 @@ libraries = {
 }
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -16)
 sprite_frames = ExtResource("1_e4uu0")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ihsfv")
+emitting = false
+amount = 50
+texture = ExtResource("3_nittw")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 150.0
+angular_velocity_max = 360.0
+radial_accel_max = 10.0
+tangential_accel_max = 10.0
+damping_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_vapcu")
+anim_offset_max = 1.0
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
