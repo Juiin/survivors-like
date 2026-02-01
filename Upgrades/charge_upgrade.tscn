@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcx4jexy4vhgv"]
 
 [ext_resource type="Script" uid="uid://cxi0jgjnjar0d" path="res://Upgrades/charge_upgrade.gd" id="1_dfilu"]
-[ext_resource type="Texture2D" uid="uid://cs7wiuulwen2p" path="res://Textures/GUI/difficulty.png" id="2_dfilu"]
+[ext_resource type="Texture2D" uid="uid://bv56fmj0s8dn0" path="res://Textures/GUI/atkspd.png" id="2_wvcjs"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="3_wvcjs"]
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="4_xv1p1"]
 
@@ -25,10 +25,10 @@ script = ExtResource("1_dfilu")
 
 [node name="GreyedOut" type="Sprite2D" parent="."]
 self_modulate = Color(0.46, 0.46, 0.46, 1)
-texture = ExtResource("2_dfilu")
+texture = ExtResource("2_wvcjs")
 
 [node name="Fill" type="Sprite2D" parent="."]
-texture = ExtResource("2_dfilu")
+texture = ExtResource("2_wvcjs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dfilu")

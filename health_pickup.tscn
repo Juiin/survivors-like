@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ct3wbjasx5bxa" path="res://health_pickup.gd" id="1_awyve"]
 [ext_resource type="Texture2D" uid="uid://dmipqvwfpjyxo" path="res://Textures/Items/apple_red.png" id="2_awyve"]
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="2_jk1s8"]
-[ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="3_ssuja"]
+[ext_resource type="Texture2D" uid="uid://c8xdalqrn3g2" path="res://Textures/Particles/circle_0222.png" id="3_16jou"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="5_16jou"]
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="6_6dxyd"]
 
@@ -13,7 +13,7 @@ radius = 6.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1s8"]
 resource_local_to_scene = true
 shader = ExtResource("2_jk1s8")
-shader_parameter/sample = ExtResource("3_ssuja")
+shader_parameter/sample = ExtResource("3_16jou")
 shader_parameter/speed = 2.0
 shader_parameter/max_zoom = 4.0
 shader_parameter/layer_count = 3

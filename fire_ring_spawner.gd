@@ -4,7 +4,7 @@ var start_radius: float
 var max_radius := 700
 @export var shrink_speed: float = 75.0
 @export var fire_width: float = 32.0 # width in pixels of one fire sprite
-@export var min_radius: float = 225.0 # stop shrinking at this point
+@export var min_radius: float = 205.0 # stop shrinking at this point
 @export var damage_per_second_outside: float = 15.0
 
 var current_radius: float
@@ -25,12 +25,12 @@ func _ready():
 	# update_fire_ring_timer.start()
 
 	var shrink_tween = create_tween()
-	shrink_tween.tween_property(self, "current_radius", max_radius, 5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+	shrink_tween.tween_property(self , "current_radius", max_radius, 5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
 	shrink_tween.tween_callback(func():
 		for fire in fires:
 			fire.get_node("Hitbox").queue_free()
 		Game.spawn_boss())
-	shrink_tween.tween_property(self, "current_radius", min_radius, 100).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	shrink_tween.tween_property(self , "current_radius", min_radius, 100).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 
 	# Precompute max number of fires needed at start radius
 	var circumference = TAU * max_radius

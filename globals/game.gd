@@ -210,12 +210,13 @@ func _process(delta: float) -> void:
 		elapsed_time += delta
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug_give_money"):
-		ice_spear_money += 100
-		explosion_money += 100
-	if event.is_action_pressed("debug_give_money_alot"):
-		ice_spear_money += 10000
-		explosion_money += 10000
+	if OS.is_debug_build():
+		if event.is_action_pressed("debug_give_money"):
+			ice_spear_money += 100
+			explosion_money += 100
+		if event.is_action_pressed("debug_give_money_alot"):
+			ice_spear_money += 10000
+			explosion_money += 10000
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
 

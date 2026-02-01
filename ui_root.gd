@@ -60,6 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		toggle_menu()
 
+
 func toggle_menu() -> void:
 	if ice_spear_upgrade_menu.visible:
 		ice_spear_upgrade_menu.close()

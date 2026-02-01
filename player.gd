@@ -16,6 +16,7 @@ var pickup_radius_increase := 0.0
 @export var stats: Stats
 @onready var sprite := $AnimatedSprite2D
 @onready var light := $Light
+@onready var freeze_nova_indicator_particles := $FreezeNovaIndicator
 
 var ice_spear_scene := load("res://ice_spear.tscn")
 var explosion_scene := load("res://explosion.tscn")
@@ -196,6 +197,24 @@ func attack():
 	
 func update_ice_spear_stored(amount: int) -> void:
 	ice_spear_stored = min(amount, max_ice_spear_stored)
+	var part_01 = preload("res://Textures/Particles/circle_022.png")
+	var part_02 = preload("res://Textures/Particles/circle_02.png")
+	var part_03 = preload("res://Textures/Particles/circle_0222.png")
+	
+	match ice_spear_stored:
+		0:
+			freeze_nova_indicator_particles.visible = false
+		1:
+			freeze_nova_indicator_particles.texture = part_01
+			freeze_nova_indicator_particles.visible = true
+		2:
+			freeze_nova_indicator_particles.texture = part_02
+			freeze_nova_indicator_particles.visible = true
+		_:
+			freeze_nova_indicator_particles.texture = part_03
+			freeze_nova_indicator_particles.visible = true
+
+
 	%StoredIceSpears.update_count(ice_spear_stored)
 
 func died() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=744 format=3 uid="uid://c176l7d8g3owa"]
+[gd_scene load_steps=742 format=3 uid="uid://c176l7d8g3owa"]
 
 [ext_resource type="Script" uid="uid://lp8e4duc4ynk" path="res://main.gd" id="1_0odxb"]
 [ext_resource type="PackedScene" uid="uid://clpgcnfbjrsnu" path="res://player.tscn" id="2_h2yge"]
@@ -30,8 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://baeotlmv6lrmp" path="res://audio_volume.tscn" id="26_lswn8"]
 [ext_resource type="Script" uid="uid://cyeao5vh7aux1" path="res://mover.gd" id="27_xuqvo"]
 [ext_resource type="Script" uid="uid://c281tn4veua4l" path="res://upgrades_button.gd" id="28_qsp4k"]
-[ext_resource type="TileSet" uid="uid://c4kokfk4inbnb" path="res://Textures/deco.tres" id="30_seu75"]
-[ext_resource type="Script" uid="uid://bb2t7mycs0nog" path="res://tile_map.gd" id="31_htxhm"]
 [ext_resource type="Shader" uid="uid://be8e4vd3v6gpa" path="res://vignette.gdshader" id="32_htxhm"]
 
 [sub_resource type="Resource" id="Resource_cegan"]
@@ -2708,14 +2706,14 @@ script = ExtResource("1_0odxb")
 [node name="Controls" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.835294)
 z_index = -9
-position = Vector2(5.99998, -61)
+position = Vector2(6, -61)
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("23_d13ii")
 
 [node name="Label" type="Label" parent="Controls"]
-offset_left = -510.345
+offset_left = -862.069
 offset_top = 62.0691
-offset_right = -229.345
+offset_right = -581.069
 offset_bottom = 166.069
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 33
@@ -2723,13 +2721,22 @@ theme_override_font_sizes/font_size = 150
 text = "Move"
 
 [node name="Label2" type="Label" parent="Controls"]
-offset_left = 20.6898
+offset_left = 296.552
 offset_top = 68.9655
-offset_right = 835.69
+offset_right = 1111.55
 offset_bottom = 172.966
 theme_override_constants/outline_size = 33
 theme_override_font_sizes/font_size = 150
 text = "Switch Spell"
+
+[node name="Label3" type="Label" parent="Controls"]
+offset_left = -131.035
+offset_top = 68.9655
+offset_right = 683.966
+offset_bottom = 172.966
+theme_override_constants/outline_size = 33
+theme_override_font_sizes/font_size = 150
+text = "Aim"
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.77, 0.77, 0.77, 1)
@@ -5564,15 +5571,6 @@ upgrade = SubResource("Resource_qm1f0")
 position = Vector2(6346, -1734)
 upgrade = SubResource("Resource_4ieun")
 
-[node name="TileMap" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.718381, 0.718381, 0.718381, 1)
-position = Vector2(-6400, -3601)
-scale = Vector2(2, 2)
-tile_set = ExtResource("30_seu75")
-script = ExtResource("31_htxhm")
-
 [node name="YSort" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
@@ -5729,11 +5727,11 @@ stretch_mode = 3
 
 [node name="NewUpgradeIcon" type="Panel" parent="UIRoot"]
 unique_name_in_owner = true
-visible = false
 offset_left = 71.0
 offset_top = -96.0
 offset_right = 71.0
 offset_bottom = -96.0
+scale = Vector2(0.85, 0.85)
 script = ExtResource("9_efxa6")
 
 [node name="TextureRect" type="TextureRect" parent="UIRoot/NewUpgradeIcon"]
@@ -5742,7 +5740,6 @@ offset_right = 1024.0
 offset_bottom = 1024.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("10_dg77c")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="UIRoot/NewUpgradeIcon"]
 modulate = Color(1, 1, 1, 0.745098)

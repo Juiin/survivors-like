@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://0bpjqia01nj6"]
 
 [ext_resource type="Script" uid="uid://dl3m0qmocuh3d" path="res://Attacks/freeze_nova.gd" id="1_japkh"]
-[ext_resource type="Texture2D" uid="uid://yf7i0gqprkkx" path="res://Textures/Particles/circle_02.png" id="1_ujpwk"]
+[ext_resource type="Texture2D" uid="uid://c8xdalqrn3g2" path="res://Textures/Particles/circle_0222.png" id="2_kqsmv"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="3_kqsmv"]
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="4_0renm"]
 
@@ -34,7 +34,7 @@ script = ExtResource("1_japkh")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 1
-texture = ExtResource("1_ujpwk")
+texture = ExtResource("2_kqsmv")
 lifetime = 0.5
 one_shot = true
 local_coords = true

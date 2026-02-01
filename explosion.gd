@@ -6,7 +6,7 @@ var aoe_increase := 0.0:
 	set(value):
 		aoe_increase = value
 		scale = base_scale * (1 + value)
-		modulate.a = remap(value, -0.5, 2, 1, 0.3)
+		modulate.a = remap(value, -0.5, 0.1, 1, 0.3)
 		modulate.a = clamp(modulate.a, 0.3, 1)
 
 var apply_burn := true
@@ -24,7 +24,7 @@ func _ready() -> void:
 	sprite.animation_finished.connect(die)
 	
 	var fade_out = create_tween()
-	fade_out.tween_property(self, "modulate:a", 0, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_delay(0.25)
+	fade_out.tween_property(self , "modulate:a", 0, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_delay(0.25)
 
 	if apply_burn:
 		var inst = burn.instantiate()
