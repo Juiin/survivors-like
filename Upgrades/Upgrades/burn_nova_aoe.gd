@@ -6,7 +6,7 @@ extends Upgrade
 func _init(_req_upgrade: Upgrade):
     upgrade_name = "Burn Nova AoE"
     upgrade_description = "15% increased Burn Nova AoE"
-    cost = [150, 300, 500, 800, 1000, 1500]
+    cost = [100, 200, 350, 500, 800, 1000, 1500]
     type = Enums.UpgradeType.EXPLOSION
     req_upgrade = _req_upgrade
     endless = true

@@ -40,7 +40,7 @@ enum form {
 var current_form: form = form.ST
 
 var ice_spear_stored := 0: set = update_ice_spear_stored
-var max_ice_spear_stored := 3
+var max_ice_spear_stored := 3: set = update_max_ice_spear_stored
 var base_ice_spear_store_time := 4.0
 var increased_ice_spear_store_time := 0.0
 var ice_spear_store_time := base_ice_spear_store_time:
@@ -53,9 +53,11 @@ func _restart_ice_spear_tween():
 	if ice_spear_store_tween and ice_spear_store_tween.is_running():
 		ice_spear_store_tween.kill()
 
+	%StoredIceSpears.recharge_progress = 0.0
+
 	ice_spear_store_tween = create_tween()
 	ice_spear_store_tween.set_loops()
-
+	ice_spear_store_tween.set_parallel().tween_property(%StoredIceSpears, "recharge_progress", 1.0, ice_spear_store_time)
 	ice_spear_store_tween.tween_callback(func():
 		update_ice_spear_stored(ice_spear_stored + 1)
 	).set_delay(ice_spear_store_time)
@@ -67,6 +69,7 @@ func _ready() -> void:
 	attack_timer.timeout.connect(attack)
 
 	ice_spear_store_tween = create_tween()
+	ice_spear_store_tween.set_parallel().tween_property(%StoredIceSpears, "recharge_progress", 1.0, ice_spear_store_time)
 	ice_spear_store_tween.set_loops().tween_callback(
 		func():
 			update_ice_spear_stored(ice_spear_stored + 1)
@@ -197,25 +200,33 @@ func attack():
 	
 func update_ice_spear_stored(amount: int) -> void:
 	ice_spear_stored = min(amount, max_ice_spear_stored)
-	var part_01 = preload("res://Textures/Particles/circle_022.png")
-	var part_02 = preload("res://Textures/Particles/circle_02.png")
-	var part_03 = preload("res://Textures/Particles/circle_0222.png")
+	# var part_01 = preload("res://Textures/Particles/circle_022.png")
+	# var part_02 = preload("res://Textures/Particles/circle_02.png")
+	# var part_03 = preload("res://Textures/Particles/circle_0222.png")
 	
-	match ice_spear_stored:
-		0:
-			freeze_nova_indicator_particles.visible = false
-		1:
-			freeze_nova_indicator_particles.texture = part_01
-			freeze_nova_indicator_particles.visible = true
-		2:
-			freeze_nova_indicator_particles.texture = part_02
-			freeze_nova_indicator_particles.visible = true
-		_:
-			freeze_nova_indicator_particles.texture = part_03
-			freeze_nova_indicator_particles.visible = true
+	# match ice_spear_stored:
+	# 	0:
+	# 		freeze_nova_indicator_particles.visible = false
+	# 	1:
+	# 		freeze_nova_indicator_particles.texture = part_01
+	# 		freeze_nova_indicator_particles.visible = true
+	# 	2:
+	# 		freeze_nova_indicator_particles.texture = part_02
+	# 		freeze_nova_indicator_particles.visible = true
+	# 	_:
+	# 		freeze_nova_indicator_particles.texture = part_03
+	# 		freeze_nova_indicator_particles.visible = true
 
 
 	%StoredIceSpears.update_count(ice_spear_stored)
+
+func update_max_ice_spear_stored(amount: int) -> void:
+	var difference: int = amount - max_ice_spear_stored
+	max_ice_spear_stored = amount
+	for i in difference:
+		var stored_ice_spear = preload("res://stored_ice_spear.tscn").instantiate()
+		%StoredIceSpears.add_child(stored_ice_spear)
+	
 
 func died() -> void:
 	#get_tree().paused = true
