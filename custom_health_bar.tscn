@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6gq24e8cpfvs"]
+
+[ext_resource type="Script" uid="uid://4tfsfiggatje" path="res://custom_health_bar.gd" id="1_ij7pp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ij7pp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs5hy"]
+resource_local_to_scene = true
+bg_color = Color(0.207843, 0.501961, 0.247059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.243433, 0.144259, 0.111202, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij7pp"]
+bg_color = Color(0.0787439, 0.0388591, 0.0239882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vuwd"]
+bg_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="CustomHealthBar" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -560.0
+offset_bottom = -350.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_styles/background = SubResource("StyleBoxEmpty_ij7pp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rs5hy")
+step = 0.001
+value = 40.0
+show_percentage = false
+script = ExtResource("1_ij7pp")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ij7pp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0vuwd")
+value = 66.0
+show_percentage = false
+
+[node name="ResetVisibility" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ResetVisibility" to="." method="_on_reset_visibility_timeout"]

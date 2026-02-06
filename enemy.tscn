@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_iifgy"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://bey62ij0i7l6l" path="res://hitbox_component.gd" id="6_3yqyl"]
-[ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="7_wujgv"]
+[ext_resource type="PackedScene" uid="uid://c6gq24e8cpfvs" path="res://custom_health_bar.tscn" id="8_dxifv"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="8_e1ltt"]
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="9_dxifv"]
 
@@ -26,13 +26,12 @@ shader_parameter/hit_flash_on = false
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
 radius = 17.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8ge"]
-bg_color = Color(0.79, 0.2765, 0.1975, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwjut"]
+resource_local_to_scene = true
+bg_color = Color(0.552941, 0.0941176, 0.0941176, 1)
+border_width_bottom = 5
+border_color = Color(0.10741, 0.0531345, 0.0351662, 1)
 border_blend = true
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwjut"]
 resource_local_to_scene = true
@@ -96,12 +95,12 @@ metadata/_custom_type_script = "uid://bey62ij0i7l6l"
 position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_3yqyl")
 
-[node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_wujgv")]
+[node name="CustomHealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_dxifv")]
 offset_left = -11.0
 offset_top = -36.0
-offset_right = 12.0
-offset_bottom = -32.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_hb8ge")
+offset_right = 104.0
+offset_bottom = -16.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_pwjut")
 health_component = NodePath("../HealthComponent")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -120,3 +119,5 @@ texture = ExtResource("9_dxifv")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+
+[editable path="CustomHealthBar"]

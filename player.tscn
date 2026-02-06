@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=37 format=3 uid="uid://clpgcnfbjrsnu"]
 
 [ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
@@ -8,11 +8,11 @@
 [ext_resource type="Shader" uid="uid://cu7amglsy48s8" path="res://hit_flash.gdshader" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://c8xdalqrn3g2" path="res://Textures/Particles/circle_0222.png" id="4_pylmc"]
 [ext_resource type="Script" uid="uid://dot06i76bu1x0" path="res://health_component.gd" id="4_sweqy"]
-[ext_resource type="PackedScene" uid="uid://cgmcifkrw366" path="res://hp_bar.tscn" id="5_1jxqw"]
 [ext_resource type="Script" uid="uid://cxkixd4an1ym" path="res://hurtbox_component.gd" id="5_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bn38vq25ak27o" path="res://Textures/Player/player_sprite_ice.png" id="6_n7ghd"]
 [ext_resource type="Script" uid="uid://bqnbt5t6qnae0" path="res://stored_ice_spears.gd" id="9_b26j0"]
 [ext_resource type="Texture2D" uid="uid://c3py6rxguraxx" path="res://Effects/light.tres" id="11_nvl01"]
+[ext_resource type="PackedScene" uid="uid://c6gq24e8cpfvs" path="res://custom_health_bar.tscn" id="11_pylmc"]
 [ext_resource type="PackedScene" uid="uid://dmbpfep3t6c1y" path="res://stored_ice_spear.tscn" id="12_606se"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="12_ivps1"]
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="13_u1c27"]
@@ -103,6 +103,16 @@ animations = [{
 "name": &"ice",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q13i1"]
+resource_local_to_scene = true
+bg_color = Color(0.207843, 0.501961, 0.247059, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0.10741, 0.0531345, 0.0351662, 1)
+border_blend = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
 
@@ -384,12 +394,15 @@ autostart = true
 script = ExtResource("4_sweqy")
 metadata/_custom_type_script = "uid://dot06i76bu1x0"
 
-[node name="HpBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_1jxqw")]
-offset_left = -36.0
+[node name="CustomHealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("11_pylmc")]
+unique_name_in_owner = true
+offset_left = -31.0
 offset_top = -38.0
-offset_right = 35.0
-offset_bottom = -28.0
+offset_right = 284.0
+offset_bottom = 6.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_q13i1")
 health_component = NodePath("../HealthComponent")
+white_catchup_time = 1.5
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_mask = 0

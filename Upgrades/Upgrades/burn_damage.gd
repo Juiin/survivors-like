@@ -7,7 +7,7 @@ var increase := 1.0
 func _init():
 	upgrade_name = "Burn Damage"
 	upgrade_description = "+1 to Burn Damage per Second"
-	cost = [75, 125, 175, 225, 275, 325, 350, 375, 400, 425, 450, 475, 500]
+	cost = [50, 100, 150, 200, 250, 300, 325, 350, 375, 400, 425, 450, 475, 500]
 	type = Enums.UpgradeType.EXPLOSION
 	endless = true
 

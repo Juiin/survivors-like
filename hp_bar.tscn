@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://63gygt76rbqt" path="res://hp_bar.gd" id="1_ybxu1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqw0a"]
-bg_color = Color(0.109804, 0.109804, 0.109804, 0.721569)
+bg_color = Color(0.141176, 0.0705882, 0.054902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybxu1"]
-bg_color = Color(0, 0.72733, 0.118612, 1)
+bg_color = Color(0.552941, 0.0941176, 0.0941176, 1)
 corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
@@ -24,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_eqw0a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ybxu1")
+step = 0.001
 value = 55.0
 show_percentage = false
 script = ExtResource("1_ybxu1")
