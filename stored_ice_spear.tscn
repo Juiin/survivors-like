@@ -1,16 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmbpfep3t6c1y"]
+[gd_scene load_steps=8 format=3 uid="uid://dmbpfep3t6c1y"]
 
 [ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="1_40jxu"]
 [ext_resource type="Texture2D" uid="uid://dcau8hcjox8v5" path="res://Textures/Items/Weapons/ice_spear.png" id="2_b3jw0"]
-[ext_resource type="Texture2D" uid="uid://bhcq31lxl80f5" path="res://Textures/Particles/circle_022.png" id="2_gh7ty"]
 [ext_resource type="Texture2D" uid="uid://c8xdalqrn3g2" path="res://Textures/Particles/circle_0222.png" id="2_kbh0r"]
-[ext_resource type="Texture2D" uid="uid://c84onkkrmcxlm" path="res://Textures/Particles/white circle.png" id="4_kbh0r"]
+[ext_resource type="Texture2D" uid="uid://nqirgcpdsfpa" path="res://Textures/Particles/white circle-export.png" id="4_gh7ty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6d7qu"]
 shader = ExtResource("1_40jxu")
 shader_parameter/sample = ExtResource("2_kbh0r")
 shader_parameter/speed = 1.0
-shader_parameter/max_zoom = 2.0
+shader_parameter/max_zoom = 2.5
 shader_parameter/layer_count = 3
 shader_parameter/color_count = 1
 shader_parameter/pivot = Vector2(0.5, 0.5)
@@ -215,23 +214,6 @@ shader_parameter/clock_feather = 0.0
 shader_parameter/progress = 0.0
 shader_parameter/progress_bias = Vector2(0, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13ii"]
-resource_local_to_scene = true
-shader = ExtResource("1_40jxu")
-shader_parameter/sample = ExtResource("2_gh7ty")
-shader_parameter/speed = 1.0
-shader_parameter/max_zoom = 2.0
-shader_parameter/layer_count = 3
-shader_parameter/color_count = 1
-shader_parameter/pivot = Vector2(0.5, 0.5)
-shader_parameter/is_only_bigger = true
-shader_parameter/is_show_original = true
-shader_parameter/is_use_colors = true
-shader_parameter/boarder_zoom = 2.0
-shader_parameter/contrast_offset = 0.1
-shader_parameter/color_array = PackedVector3Array(0, 1, 1, 0.5, 1, 1, 0.5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/alpha_multiplier = 1.0
-
 [node name="StoredIceSpear" type="Control"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
@@ -245,12 +227,34 @@ material = SubResource("ShaderMaterial_6d7qu")
 texture = ExtResource("2_b3jw0")
 offset = Vector2(8, 8)
 
-[node name="StoredIceSpearBackground" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Circle2" type="TextureRect" parent="."]
+modulate = Color(0.0470588, 0.0470588, 0.0470588, 0.501961)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.4
+offset_top = -4.0
+offset_right = 5.6
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("4_gh7ty")
+stretch_mode = 2
+
+[node name="StoredIceSpearBackground" type="TextureRect" parent="."]
+modulate = Color(0.10748, 0.10748, 0.10748, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.6
+offset_top = 2.0
+offset_right = 0.599998
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
@@ -262,21 +266,27 @@ stretch_mode = 2
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_6cxag")
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 0.6
+offset_top = 2.0
+offset_right = 40.6
+offset_bottom = 42.0
 
 [node name="Circle" type="TextureRect" parent="FillAmount"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.301961, 0.505882, 0.658824, 0.764706)
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(16, 16)
-texture = ExtResource("4_kbh0r")
+texture = ExtResource("4_gh7ty")
 stretch_mode = 2
 
 [node name="Fill" type="TextureRect" parent="FillAmount"]
@@ -285,16 +295,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_b3jw0")
-stretch_mode = 2
-
-[node name="StoredIceSpear" type="TextureRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_d13ii")
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
 texture = ExtResource("2_b3jw0")
 stretch_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://clpgcnfbjrsnu"]
+[gd_scene load_steps=34 format=3 uid="uid://clpgcnfbjrsnu"]
 
 [ext_resource type="Texture2D" uid="uid://b7ygvnkc8mn2v" path="res://Textures/Player/player_sprite.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cg5r338mcnxvx" path="res://player.gd" id="1_onrkg"]
@@ -15,9 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c6gq24e8cpfvs" path="res://custom_health_bar.tscn" id="11_pylmc"]
 [ext_resource type="PackedScene" uid="uid://dmbpfep3t6c1y" path="res://stored_ice_spear.tscn" id="12_606se"]
 [ext_resource type="Shader" uid="uid://bx00beupe116e" path="res://lighting.gdshader" id="12_ivps1"]
-[ext_resource type="Shader" uid="uid://dglohiqwas0tr" path="res://zoom_highlight.gdshader" id="13_u1c27"]
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="13_urp6f"]
-[ext_resource type="Texture2D" uid="uid://bhcq31lxl80f5" path="res://Textures/Particles/circle_022.png" id="14_bwjto"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbfsw"]
 shader = ExtResource("3_q13i1")
@@ -309,23 +307,6 @@ shader_parameter/clock_feather = 0.0
 shader_parameter/progress = 0.0
 shader_parameter/progress_bias = Vector2(0, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_op7ga"]
-resource_local_to_scene = true
-shader = ExtResource("13_u1c27")
-shader_parameter/sample = ExtResource("14_bwjto")
-shader_parameter/speed = 1.0
-shader_parameter/max_zoom = 2.0
-shader_parameter/layer_count = 3
-shader_parameter/color_count = 1
-shader_parameter/pivot = Vector2(0.5, 0.5)
-shader_parameter/is_only_bigger = true
-shader_parameter/is_show_original = true
-shader_parameter/is_use_colors = true
-shader_parameter/boarder_zoom = 2.0
-shader_parameter/contrast_offset = 0.1
-shader_parameter/color_array = PackedVector3Array(0, 1, 1, 0.5, 1, 1, 0.5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/alpha_multiplier = 1.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_b26j0"]
 radius = 41.0
 
@@ -448,11 +429,8 @@ layout_mode = 2
 [node name="NovaIndicator" parent="StoredIceSpears/StoredIceSpear3" index="0"]
 visible = true
 
-[node name="FillAmount" parent="StoredIceSpears/StoredIceSpear3" index="2"]
+[node name="FillAmount" parent="StoredIceSpears/StoredIceSpear3" index="3"]
 material = SubResource("ShaderMaterial_u1c27")
-
-[node name="StoredIceSpear" parent="StoredIceSpears/StoredIceSpear3" index="3"]
-material = SubResource("ShaderMaterial_op7ga")
 
 [node name="PickupRadius" type="Area2D" parent="."]
 
