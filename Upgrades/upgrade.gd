@@ -14,6 +14,8 @@ var req_upgrade_level := 1
 var endless = false;
 var times_upgraded := 0
 var charged_sprite: Texture2D
+var has_freeze_hint = false
+var has_burn_hint = false
 
 var type: Enums.UpgradeType
 

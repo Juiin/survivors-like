@@ -45,7 +45,7 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_u1c27"]
 offsets = PackedFloat32Array(0, 0.824766, 1)
-colors = PackedColorArray(0.0235294, 1, 1, 1, 0.0235294, 1, 1, 1, 0.0235294, 1, 1, 0)
+colors = PackedColorArray(0.02, 1, 1, 1, 0.02, 1, 1, 1, 0.0235294, 1, 1, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 11.0
@@ -328,6 +328,7 @@ stats = ExtResource("2_i3pqv")
 [node name="FreezeNovaIndicator" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_pbfsw")
+position = Vector2(1, 0)
 amount = 3
 texture = ExtResource("4_pylmc")
 lifetime = 3.0
@@ -433,6 +434,7 @@ visible = true
 material = SubResource("ShaderMaterial_u1c27")
 
 [node name="PickupRadius" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius"]
 shape = SubResource("CircleShape2D_b26j0")

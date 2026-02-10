@@ -7,6 +7,8 @@ var recharging_child: Node
 var recharge_progress: float = 0.0
 var current_amount := 0
 
+var played_rdy_sound := false
+
 func _ready() -> void:
 	recharging_child = get_child(0)
 
@@ -17,11 +19,21 @@ func _process(delta):
 	percent += remap(recharge_progress, 0.0, 1.0, 0.0, 0.33)
 	percent = clamp(percent, 0.0, 1.0)
 	owner.get_node("FreezeNovaIndicator").material.set_shader_parameter("progress", percent)
+	var cur_color = owner.get_node("FreezeNovaIndicator").color_ramp.get_color(1)
+	var new_color = cur_color
+	new_color.a = Tween.interpolate_value(0.5, 1.0, percent, 1.0, Tween.TRANS_QUAD, Tween.EASE_IN)
+	owner.get_node("FreezeNovaIndicator").color_ramp.set_color(1, new_color)
+
+	if percent >= 1.0 && !played_rdy_sound:
+		Utils.play_audio(load("res://Audio/freeze_nova_rdy.ogg"))
+		played_rdy_sound = true
 
 func update_count(amount: int) -> void:
 	recharge_progress = 0.0
 	recharging_child = null
 	current_amount = amount
+	if amount == 0:
+		played_rdy_sound = false
 	var children = get_children()
 	for i in children.size():
 		var fill := children[i].get_node("%FillAmount")

@@ -12,6 +12,8 @@ bg_color = Color(0.563092, 0.542529, 0.650186, 0.65098)
 
 [node name="UpgradeEntry" type="PanelContainer"]
 custom_minimum_size = Vector2(172, 30)
+offset_right = 172.0
+offset_bottom = 51.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_272bh")
 script = ExtResource("1_16uid")
 
@@ -28,23 +30,31 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="UpgradeName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="UpgradeName" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 6
+bbcode_enabled = true
 text = "Upgrade Name"
+fit_content = true
 
-[node name="UpgradeDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="UpgradeDescription" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(122, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/italics_font_size = 11
+theme_override_font_sizes/mono_font_size = 11
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 11
+bbcode_enabled = true
 text = "Upgrade descption might be longdfs dfdsfsdfdsfdsfsdad
 dsadasdasdasdasdasdsadassd"
-vertical_alignment = 1
+fit_content = true
 autowrap_mode = 2
+meta_underlined = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://jccb5e6nxhrh"]
+
+[ext_resource type="Theme" uid="uid://7qtcjymtctma" path="res://Theme/fire.tres" id="1_jkrx5"]
+[ext_resource type="Script" uid="uid://dlk88o2pbuwmu" path="res://extra_info.gd" id="2_4qdon"]
+[ext_resource type="Theme" uid="uid://m71051m0sgdy" path="res://Theme/Shatter&Burn.tres" id="2_lljje"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkrx5"]
+bg_color = Color(0.229151, 0.427452, 0.637865, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.000166145, 0.000735757, 0.00186135, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="ExtraInfo" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -22.5
+offset_right = 80.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(81.5, 25.5)
+theme = ExtResource("1_jkrx5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jkrx5")
+script = ExtResource("2_4qdon")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="InfoText" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(151, 33)
+layout_mode = 2
+theme = ExtResource("2_lljje")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/italics_font_size = 11
+theme_override_font_sizes/mono_font_size = 11
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 13
+bbcode_enabled = true
+text = "Freeze by having 3+ Ice Spears stored up and having the next one you cast erupt a freezing Nova"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

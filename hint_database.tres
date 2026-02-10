@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_7g2rg")
-hints = Array[String](["Stone Throwers always drop 300 Gems for both Spells", "The Chest always drops a healing Apple", "Explosion and Burn Nova both always apply a burn DoT", "With 3+ Ice Spears stored up, the next one will cast a Freezing Nova", "Freeze Novas AoE is increased by the amount of stored Ice Spears", "Big enemies drop gems which are 7 times more valuable", "Ice Spears pierce amount is reset when returning", "Red enemies drop Fire Gems, blue enemies drop Ice Gems", "Remember to spend your money often", "No more enemies will spawn after summoning the boss", "Burn Nova deals the same amount of damage as the Explosion", "Upgrading Difficulty, also increases the value of already dropped Gems"])
+hints = Array[String](["Stone Throwers always drop 300 Gems for both Spells", "The Chest always drops a healing Apple", "With 3+ Ice Spears stored up, the next one will cast a Freezing Nova", "Freeze Novas AoE is increased by the amount of stored Ice Spears", "Big enemies drop gems which are 7 times more valuable", "Ice Spears pierce amount is reset when returning", "Red enemies drop Fire Gems, blue enemies drop Ice Gems", "No more enemies will spawn after summoning the boss", "Upgrading Difficulty, also increases the value of already dropped Gems"])
 metadata/_custom_type_script = "uid://bweg3v0gbsajg"

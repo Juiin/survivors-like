@@ -63,48 +63,48 @@ const CHEST_RED_STATS = preload("res://Enemies/chest_red.tres")
 const POSSIBLE_ENEMY_STATS = [
 	[SLIME_BLUE_STATS,
 	SLIME_RED_STATS],
-	[FROG_RED_STATS,
-	FROG_BLUE_STATS],
+	[FROG_BLUE_STATS,
+	FROG_RED_STATS],
 	[EYE_BLUE_STATS,
 	EYE_RED_STATS],
 	[RAT_WEAK_STATS,
 	RAT_RED_STATS],
-	[TREE_STUMP_RED_STATS,
-	TREE_STUMP_BLUE_STATS],
-	[SNAIL_RED_STATS,
-	SNAIL_BLUE_STATS],
-	[SHROOM_RED_STATS,
-	SHROOM_BLUE_STATS],
-	[WORM_RED_STATS,
-	WORM_BLUE_STATS],
-	[PLANT_RED_STATS,
-	PLANT_BLUE_STATS],
+	[TREE_STUMP_BLUE_STATS,
+	TREE_STUMP_RED_STATS],
+	[SNAIL_BLUE_STATS,
+	SNAIL_RED_STATS],
+	[SHROOM_BLUE_STATS,
+	SHROOM_RED_STATS],
+	[WORM_BLUE_STATS,
+	WORM_RED_STATS],
+	[PLANT_BLUE_STATS,
+	PLANT_RED_STATS],
 	[HORNET_BLUE_STATS,
 	HORNET_RED_STATS],
-	[TORNADO_RED_STATS,
-	TORNADO_BLUE_STATS],
-	[CRAB_RED_STATS,
-	CRAB_BLUE_STATS],
-	[TENTACLE_BALL_RED_STATS,
-	TENTACLE_BALL_BLUE_STATS],
+	[TORNADO_BLUE_STATS,
+	TORNADO_RED_STATS],
+	[CRAB_BLUE_STATS,
+	CRAB_RED_STATS],
+	[TENTACLE_BALL_BLUE_STATS,
+	TENTACLE_BALL_RED_STATS],
 	[GHOST_BLUE_STATS,
 	GHOST_RED_STATS],
-	[FIRE_RED_STATS,
-	FIRE_BLUE_STATS],
-	[CYCLOPS_SMALL_RED_STATS,
-	CYCLOPS_SMALL_BLUE_STATS],
-	[CRYSTAL_RED_STATS,
-	CRYSTAL_BLUE_STATS],
+	[FIRE_BLUE_STATS,
+	FIRE_RED_STATS],
+	[CYCLOPS_SMALL_BLUE_STATS,
+	CYCLOPS_SMALL_RED_STATS],
+	[CRYSTAL_BLUE_STATS,
+	CRYSTAL_RED_STATS],
 	[ZOMBIE_BLUE_STATS,
 	ZOMBIE_RED_STATS],
-	[WRAITH_RED_STATS,
-	WRAITH_BLUE_STATS],
-	[STONE_RED_STATS,
-	STONE_BLUE_STATS],
+	[WRAITH_BLUE_STATS,
+	WRAITH_RED_STATS],
+	[STONE_BLUE_STATS,
+	STONE_RED_STATS],
 	[AMEBA_STATS,
 	AMEBA_RED_STATS],
-	[ARMOUR_RED_STATS,
-	ARMOUR_BLUE_STATS],
+	[ARMOUR_BLUE_STATS,
+	ARMOUR_RED_STATS],
 	[WIZARD_BLUE_STATS,
 	WIZARD_RED_STATS]
 ]
@@ -132,6 +132,8 @@ var throw_enemy_spawn_timer: Timer
 var swarm_timer = Timer
 var next_spawn_is_swarm = false
 var to_spawn_enemies: Array[Stats] = [SLIME_RED_STATS]
+var enemy_spawn_type = Enums.UpgradeType.EXPLOSION
+
 
 var total_currency_collected := 0
 
@@ -162,6 +164,7 @@ func start_game() -> void:
 	active_enemies = 0
 	total_currency_collected = 0
 	to_spawn_enemies = [SLIME_RED_STATS]
+	enemy_spawn_type = Enums.UpgradeType.EXPLOSION
 	next_spawn_is_swarm = false
 	elapsed_time = 0.0
 	money_multi = 1.0
@@ -344,7 +347,10 @@ func spawn_enemy():
 		spawn_timer.set_wait_time(new_spawn_time)
 
 		if active_enemies < max_enemy_count:
-			to_spawn_enemies.append(possible_enemy_stats[enemy_index][randi_range(0, 1)])
+			to_spawn_enemies.append(possible_enemy_stats[enemy_index][enemy_spawn_type])
+			enemy_spawn_type = Enums.UpgradeType.EXPLOSION if enemy_spawn_type == Enums.UpgradeType.ICE_SPEAR else Enums.UpgradeType.ICE_SPEAR
+			print("appended:", possible_enemy_stats[enemy_index][enemy_spawn_type].sprite.resource_path)
+
 
 func spawn_health_enemy():
 	if boss_is_active:

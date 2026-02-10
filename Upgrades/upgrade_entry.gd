@@ -6,6 +6,8 @@ var upgrade_index: int
 
 var upgrade: Upgrade
 
+var extra_info: Node
+
 func _ready() -> void:
 	upgrade = upgrade_array[upgrade_index]
 
@@ -30,6 +32,22 @@ func _ready() -> void:
 	Game.explosion_money_changed.connect(update_description)
 	Game.ice_spear_money_changed.connect(update_background_color)
 	Game.explosion_money_changed.connect(update_background_color)
+	%UpgradeDescription.meta_hover_started.connect(_on_mouse_entered)
+	%UpgradeName.meta_hover_started.connect(_on_mouse_entered)
+	%UpgradeDescription.meta_hover_ended.connect(_on_mouse_exited)
+	%UpgradeName.meta_hover_ended.connect(_on_mouse_exited)
+
+func _on_mouse_entered(meta) -> void:
+	if (upgrade.has_freeze_hint || upgrade.has_burn_hint) && !extra_info:
+		extra_info = load("res://extra_info.tscn").instantiate()
+		extra_info.global_position = get_global_mouse_position()
+		extra_info.type = Enums.UpgradeType.ICE_SPEAR if upgrade.has_freeze_hint else Enums.UpgradeType.EXPLOSION
+		get_tree().current_scene.get_node("UIRoot").add_child(extra_info)
+
+func _on_mouse_exited(meta) -> void:
+	if extra_info:
+		extra_info.queue_free()
+		extra_info = null
 
 func _on_buy_button_pressed() -> void:
 	if Game.enough_upgrade_cost(upgrade.type, upgrade.cost[upgrade.level]):

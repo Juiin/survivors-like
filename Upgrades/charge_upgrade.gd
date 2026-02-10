@@ -33,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 	audio_charge_player = Utils.play_audio_return(audio_charge, 0.9, 1.1, 0.7)
 
 	charge_up_tween = create_tween()
-	charge_up_tween.tween_property(self, "charge", 1.0, 5.5)
+	charge_up_tween.tween_property(self , "charge", 1.0, 5.5)
 	charge_up_tween.tween_callback(has_charged_up)
 
 
@@ -50,7 +50,7 @@ func has_charged_up() -> void:
 	charged_up = true
 	if audio_charge_player:
 		audio_charge_player.queue_free()
-	Effects.spawn_floating_text(upgrade.upgrade_description, global_position, Color.WHITE, 6.0)
+	Effects.spawn_floating_text(upgrade.upgrade_description, global_position, Color.WHITE, 10.0)
 	Utils.play_audio(load("res://Audio/SoundEffect/charge_upgrade.mp3"), 0.9, 1, 0.8)
 	var player = get_tree().get_first_node_in_group("player")
 	upgrade.apply_player_upgrade(player)
