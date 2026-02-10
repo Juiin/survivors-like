@@ -95,7 +95,7 @@ func add_item(player_name: String, score_value: String) -> void:
 	list_index += 1
 	item.get_node("%PlayerName").text = str(list_index) + str(". ") + player_name
 	var final_score = format_time(float(score_value))
-	item.get_node("%Score").text = final_score
+	item.get_node("%Score").text = final_score + "m"
 	item.offset_top = list_index * 100
 	%ScoreItemContainer.add_child(item)
 
