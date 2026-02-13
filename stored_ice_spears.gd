@@ -27,6 +27,9 @@ func _process(delta):
 	if percent >= 1.0 && !played_rdy_sound:
 		Utils.play_audio(load("res://Audio/freeze_nova_rdy.ogg"))
 		played_rdy_sound = true
+		owner.get_node("%FreezeNovaRdyParticles").emitting = true
+		await owner.get_node("%FreezeNovaRdyParticles").finished
+		owner.get_node("AnimatedSprite2D").self_modulate = Color(0.25, 1.0, 1.0, 1.0)
 
 func update_count(amount: int) -> void:
 	recharge_progress = 0.0
@@ -34,6 +37,7 @@ func update_count(amount: int) -> void:
 	current_amount = amount
 	if amount == 0:
 		played_rdy_sound = false
+		owner.get_node("AnimatedSprite2D").self_modulate = Color.WHITE
 	var children = get_children()
 	for i in children.size():
 		var fill := children[i].get_node("%FillAmount")

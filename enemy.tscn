@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c766mqx6khosr" path="res://Textures/Particles/light.png" id="9_dxifv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wujgv"]
+radius = 8.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ltt"]
 resource_local_to_scene = true
@@ -24,7 +25,7 @@ shader_parameter/hit_flash_on = false
 [sub_resource type="CircleShape2D" id="CircleShape2D_hb8ge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
-radius = 17.0
+radius = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwjut"]
 resource_local_to_scene = true
@@ -50,7 +51,6 @@ motion_mode = 1
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_wujgv")
 

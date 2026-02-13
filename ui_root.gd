@@ -10,6 +10,8 @@ extends CanvasLayer
 @onready var main_menu_button := %MainMenuButton
 @onready var upgrade_button := %UpgradesButton
 @onready var audio_volume := %AudioVolume
+@onready var freeze_extra_info := %FreezeExtraInfo
+@onready var burn_extra_info := %BurnExtraInfo
 
 var ice_spear_drop_pickup: Upgrade = IceSpearDropPickupUpgrade.new()
 var freeze_nova_on_pickup: Upgrade = FreezeNovaOnPickupUpgrade.new(ice_spear_drop_pickup)
@@ -68,7 +70,8 @@ func toggle_menu() -> void:
 		global_upgrade_menu.close()
 		hints.close()
 		main_menu_button.get_node("Mover").close()
-		
+		freeze_extra_info.get_node("Mover").close()
+		burn_extra_info.get_node("Mover").close()
 		audio_volume.get_node("Mover").close()
 		elapsed_game_timer.close(func(): get_tree().paused=false; upgrade_button.set_to_upgrades())
 		Utils.play_audio(load("res://Audio/menu_close.mp3"))
@@ -80,6 +83,8 @@ func toggle_menu() -> void:
 		hints.open()
 		main_menu_button.get_node("Mover").open()
 		audio_volume.get_node("Mover").open()
+		freeze_extra_info.get_node("Mover").open()
+		burn_extra_info.get_node("Mover").open()
 		get_tree().paused = true
 		upgrade_button.set_to_resume()
 		Utils.play_audio(load("res://Audio/menu_open.mp3"), 0.9, 1.1)
