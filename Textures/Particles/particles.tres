@@ -1,26 +1,13 @@
-[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://ambient_mood_particles"]
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bhlv2ht0j6bcg"]
 
 [resource]
-emission_shape = 0
+lifetime_randomness = 0.2
 direction = Vector3(0, -1, 0)
 spread = 180.0
 initial_velocity_min = 10.0
 initial_velocity_max = 25.0
-velocity_random = 0.6
-gravity = Vector3(0, 0, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 5.0
-
-scale_min = 0.4
-scale_max = 1.0
-scale_random = 0.4
-
-rotation_min = 0.0
-rotation_max = 6.28319
 angular_velocity_min = -30.0
 angular_velocity_max = 30.0
-
-lifetime_randomness = 0.2
-
-color = Color(1, 1, 1, 1)
-color_ramp = null
+orbit_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.4

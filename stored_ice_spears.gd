@@ -9,6 +9,8 @@ var current_amount := 0
 
 var played_rdy_sound := false
 
+var player_color_tween: Tween
+
 func _ready() -> void:
 	recharging_child = get_child(0)
 
@@ -28,8 +30,10 @@ func _process(delta):
 		Utils.play_audio(load("res://Audio/freeze_nova_rdy.ogg"))
 		played_rdy_sound = true
 		owner.get_node("%FreezeNovaRdyParticles").emitting = true
-		await owner.get_node("%FreezeNovaRdyParticles").finished
-		owner.get_node("AnimatedSprite2D").self_modulate = Color(0.25, 1.0, 1.0, 1.0)
+		if player_color_tween:
+			player_color_tween.kill()
+		player_color_tween = create_tween()
+		player_color_tween.tween_property(owner.get_node("AnimatedSprite2D"), "self_modulate", Color(0.25, 1.0, 1.0, 1.0), 0.4)
 
 func update_count(amount: int) -> void:
 	recharge_progress = 0.0
@@ -37,6 +41,8 @@ func update_count(amount: int) -> void:
 	current_amount = amount
 	if amount == 0:
 		played_rdy_sound = false
+		if player_color_tween:
+			player_color_tween.kill()
 		owner.get_node("AnimatedSprite2D").self_modulate = Color.WHITE
 	var children = get_children()
 	for i in children.size():
