@@ -5965,9 +5965,12 @@ text = "How to [color=#7fd4ff][b]Freeze[/b][/color]
 Store 3+ Ice Spears, then cast one to trigger a freezing Nova, freezing enemies for 5 Seconds"
 
 [node name="Mover" type="Node2D" parent="UIRoot/FreezeExtraInfo"]
-position = Vector2(0, 233)
+position = Vector2(0, -195)
 script = ExtResource("27_xuqvo")
 auto_open = false
+open_trans = 7
+close_trans = 4
+close_ease = 0
 metadata/_custom_type_script = "uid://cyeao5vh7aux1"
 
 [node name="BurnExtraInfo" parent="UIRoot" instance=ExtResource("32_jq2sk")]
@@ -5984,9 +5987,12 @@ text = "How to [color=#ff7a3a][b]Burn[/b][/color]
 Hit enemies with Explosion or Burn Nova to inflict 1 damage per second for 3 seconds (base values)"
 
 [node name="Mover" type="Node2D" parent="UIRoot/BurnExtraInfo"]
-position = Vector2(0, -256)
+position = Vector2(0, 214)
 script = ExtResource("27_xuqvo")
 auto_open = false
+open_trans = 7
+close_trans = 4
+close_ease = 0
 metadata/_custom_type_script = "uid://cyeao5vh7aux1"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
