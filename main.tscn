@@ -5965,7 +5965,7 @@ text = "How to [color=#7fd4ff][b]Freeze[/b][/color]
 Store 3+ Ice Spears, then cast one to trigger a freezing Nova, freezing enemies for 5 Seconds"
 
 [node name="Mover" type="Node2D" parent="UIRoot/FreezeExtraInfo"]
-position = Vector2(0, -195)
+position = Vector2(0, -201)
 script = ExtResource("27_xuqvo")
 auto_open = false
 open_trans = 7
